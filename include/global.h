@@ -515,8 +515,8 @@ struct FollowerMapData
 struct Follower
 {
     /*0x00*/ u8 inProgress:1;
-             u8 warpEnd:1;
-             u8 createSurfBlob:3;
+             u8 warpEnd:2;
+             u8 createSurfBlob:2;
              u8 comeOutDoorStairs:3;
     /*0x01*/ u8 objId;
     /*0x02*/ u8 currentSprite;

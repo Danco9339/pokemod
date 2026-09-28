@@ -253,6 +253,17 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
     //Check if state would cause hidden follower to reappear
     if (IsStateMovement(state) && gSaveBlock2Ptr->follower.warpEnd)
     {
+        if (gSaveBlock2Ptr->follower.warpEnd > 1)
+        {
+            gSaveBlock2Ptr->follower.warpEnd--;
+            follower->invisible = TRUE;
+            MoveObjectEventToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
+            follower->facingDirection = player->facingDirection;
+            follower->movementDirection = player->movementDirection;
+            PlayerLogCoordinates(player);
+            return;
+        }
+
         gSaveBlock2Ptr->follower.warpEnd = 0;
         gSaveBlock2Ptr->follower.comeOutDoorStairs = 0;
         
@@ -1186,7 +1197,7 @@ void FollowMe_WarpSetEnd(void)
     player = &gObjectEvents[gPlayerAvatar.objectEventId];
     follower = &gObjectEvents[GetFollowerMapObjId()];
 
-    gSaveBlock2Ptr->follower.warpEnd = 1;
+    gSaveBlock2Ptr->follower.warpEnd = 2;
     PlayerLogCoordinates(player);
 
     follower->invisible = TRUE;
