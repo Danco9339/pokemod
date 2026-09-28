@@ -110,11 +110,17 @@ LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach:
 RivalsHouse_1F_EventScript_RivalMom::
 	lock
 	faceplayer
+	goto_if_set FLAG_MOM_RESCUED, RivalsHouse_1F_EventScript_MomRescuedCheer
 	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE103, RivalsHouse_1F_EventScript_GoHomeEverySoOften
 	goto_if_set FLAG_SYS_POKEMON_GET, RivalsHouse_1F_EventScript_RivalIsOnRoute103
 	goto_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, RivalsHouse_1F_EventScript_RivalTooBusy
 	special GetRivalSonDaughterString
 	msgbox RivalsHouse_1F_Text_LikeChildLikeFather, MSGBOX_DEFAULT
+	release
+	end
+
+RivalsHouse_1F_EventScript_MomRescuedCheer::
+	msgbox RivalsHouse_1F_Text_MomRescuedCheer, MSGBOX_DEFAULT
 	release
 	end
 
@@ -308,43 +314,45 @@ LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs2:
 	step_end
 
 RivalsHouse_1F_Text_OhYoureTheNewNeighbor:
-	.string "Oh, hello. And you are?\p"
-	.string "… … … … … … … … …\n"
-	.string "… … … … … … … … …\p"
-	.string "Oh, you're {PLAYER}{KUN}, our new next-door\n"
-	.string "neighbor! Hi!\p"
-	.string "We have a {STR_VAR_1} about the same\n"
-	.string "age as you.\p"
-	.string "Our {STR_VAR_1} was excited about making\n"
-	.string "a new friend.\p"
-	.string "Our {STR_VAR_1} is upstairs, I think.$"
+	.string "Oh, {PLAYER}{KUN}! Ho appena saputo della\n"
+	.string "terribile disgrazia...\p"
+	.string "Tua madre... rapita dal TEAM IDRO!\n"
+	.string "È un'angoscia tremenda per tutti noi!\p"
+	.string "Io e tua madre siamo sempre state così amiche...\n"
+	.string "Non posso credere a una simile crudeltà!\p"
+	.string "Nostro {STR_VAR_1} {RIVAL} è di sopra ed è\n"
+	.string "sconvolto dall'accaduto. Mi ha detto che\l"
+	.string "vuole aiutarti con tutto il cuore!\p"
+	.string "Ti prego, vai di sopra a parlargli!\n"
+	.string "Noi vicini faremo il possibile per sostenerti!$"
 
 RivalsHouse_1F_Text_LikeChildLikeFather:
-	.string "Like child, like father.\p"
-	.string "My husband is as wild about POKéMON\n"
-	.string "as our child.\p"
-	.string "If he's not at his LAB, he's likely\n"
-	.string "scrabbling about in grassy places.$"
+	.string "{RIVAL} è di sopra a prepararsi per aiutarti.\n"
+	.string "Mio marito, il PROF. BIRCH, è al LABORATORIO\l"
+	.string "e sta cercando una soluzione disperata.\p"
+	.string "Non arrenderti, {PLAYER}{KUN}!$"
 
 RivalsHouse_1F_Text_TooBusyToNoticeVisit:
-	.string "That {RIVAL}!\p"
-	.string "I guess our child is too busy with\n"
-	.string "POKéMON to notice that you came\l"
-	.string "to visit, {PLAYER}{KUN}.$"
+	.string "{RIVAL} è sopraffatto dalla determinazione\n"
+	.string "di aiutarti a salvare tua madre!$"
 
 RivalsHouse_1F_Text_WentOutToRoute103:
-	.string "Oh, {RIVAL} went out to ROUTE 103\n"
-	.string "just a little while ago.\p"
-	.string "Like father, like child.\n"
-	.string "{RIVAL} can't stay quietly at home.$"
+	.string "Oh, {RIVAL} è appena corso al PERCORSO 103\n"
+	.string "ad allenarsi!\p"
+	.string "Mi ha detto: “Devo diventare più forte per\n"
+	.string "aiutare {PLAYER}{KUN} a salvare sua madre!”\p"
+	.string "Raggiungilo non appena avrai il tuo POKéMON!$"
 
 RivalsHouse_1F_Text_ShouldGoHomeEverySoOften:
-	.string "I think it's wonderful for people to\n"
-	.string "travel with POKéMON.\p"
-	.string "But you should go home every so often\n"
-	.string "to let your mother know you're okay.\p"
-	.string "She might not say it, but I'm sure she\n"
-	.string "worries about you, {PLAYER}{KUN}.$"
+	.string "Non perderti d'animo, {PLAYER}{KUN}!\n"
+	.string "Sii forte per tua madre!\p"
+	.string "{RIVAL} e mio marito credono in te con tutto\n"
+	.string "il cuore. Tutta la città fa il tifo per te!$"
+
+RivalsHouse_1F_Text_MomRescuedCheer:
+	.string "Evviva! Tua madre è finalmente a casa sana\n"
+	.string "e salva! Sei un vero eroe, {PLAYER}{KUN}!\l"
+	.string "Tutta la città è orgogliosa di te!$"
 
 RivalsHouse_1F_Text_MayWhoAreYou:
 	.string "Huh?\n"

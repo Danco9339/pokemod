@@ -132,25 +132,28 @@ void SubtractMoneyFromVar0x8005(void)
 
 void PrintMoneyAmountInMoneyBox(u8 windowId, int amount, u8 speed)
 {
-    u8 x = (amount >= 1000000) ? 24 : 38;
-    PrintMoneyAmount(windowId, x, 1, amount, speed);
+    PrintMoneyAmount(windowId, 0, 1, amount, speed);
 }
 
 void PrintMoneyAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
 {
-    u8 *txtPtr;
-    s32 strLength;
+    s32 strWidth;
+    u8 printX;
+    u8 windowWidth = GetWindowAttribute(windowId, WINDOW_WIDTH) * 8;
 
     ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_LEFT_ALIGN, 8);
+    StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
 
-    strLength = 8 - StringLength(gStringVar1);
-    txtPtr = gStringVar4;
+    if (windowWidth == 0)
+        windowWidth = 80;
 
-    while (strLength-- > 0)
-        *(txtPtr++) = CHAR_SPACER;
+    strWidth = GetStringWidth(FONT_NORMAL, gStringVar4, 0);
+    if (windowWidth >= strWidth + 4)
+        printX = windowWidth - 4 - strWidth;
+    else
+        printX = 0;
 
-    StringExpandPlaceholders(txtPtr, gText_PokedollarVar1);
-    AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, x, y, speed, NULL);
+    AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, printX, y, speed, NULL);
 }
 
 void PrintMoneyAmountInMoneyBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete, int amount)
@@ -161,6 +164,7 @@ void PrintMoneyAmountInMoneyBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete
 
 void ChangeAmountInMoneyBox(int amount)
 {
+    FillWindowPixelBuffer(sMoneyBoxWindowId, PIXEL_FILL(1));
     PrintMoneyAmountInMoneyBox(sMoneyBoxWindowId, amount, 0);
 }
 

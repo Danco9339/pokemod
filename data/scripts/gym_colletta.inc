@@ -10,6 +10,7 @@ RustboroCity_Gym_EventScript_RoxanneColletta::
 	giveitem ITEM_LEGEND_FLUTE_ICE
 	setflag FLAG_COLLETTA_ROXANNE
 	addvar VAR_COLLETTA_GYMS_COUNT, 1
+	call Common_EventScript_CheckCollettaPokenav
 	release
 	end
 
@@ -25,6 +26,7 @@ DewfordTown_Gym_EventScript_BrawlyColletta::
 	giveitem ITEM_LEGEND_BELL_SILVER
 	setflag FLAG_COLLETTA_BRAWLY
 	addvar VAR_COLLETTA_GYMS_COUNT, 1
+	call Common_EventScript_CheckCollettaPokenav
 	release
 	end
 
@@ -40,6 +42,7 @@ MauvilleCity_Gym_EventScript_WattsonColletta::
 	giveitem ITEM_LEGEND_FLUTE_THUNDER
 	setflag FLAG_COLLETTA_WATTSON
 	addvar VAR_COLLETTA_GYMS_COUNT, 1
+	call Common_EventScript_CheckCollettaPokenav
 	release
 	end
 
@@ -55,6 +58,7 @@ LavaridgeTown_Gym_EventScript_FlanneryColletta::
 	giveitem ITEM_LEGEND_FLUTE_FIRE
 	setflag FLAG_COLLETTA_FLANNERY
 	addvar VAR_COLLETTA_GYMS_COUNT, 1
+	call Common_EventScript_CheckCollettaPokenav
 	release
 	end
 
@@ -72,6 +76,7 @@ PetalburgCity_Gym_EventScript_NormanColletta::
 	setflag FLAG_COLLETTA_NORMAN
 	setflag FLAG_DEVON_INVESTMENT_UNLOCKED
 	addvar VAR_COLLETTA_GYMS_COUNT, 1
+	call Common_EventScript_CheckCollettaPokenav
 	release
 	end
 
@@ -93,6 +98,7 @@ FortreeCity_Gym_EventScript_WinonaColletta::
 	giveitem ITEM_LEGEND_BELL_RAINBOW
 	setflag FLAG_COLLETTA_WINONA
 	addvar VAR_COLLETTA_GYMS_COUNT, 1
+	call Common_EventScript_CheckCollettaPokenav
 	release
 	end
 
@@ -108,6 +114,7 @@ MossdeepCity_Gym_EventScript_TateAndLizaColletta::
 	giveitem ITEM_LEGEND_MIRAGE_ORB
 	setflag FLAG_COLLETTA_TATE_AND_LIZA
 	addvar VAR_COLLETTA_GYMS_COUNT, 1
+	call Common_EventScript_CheckCollettaPokenav
 	release
 	end
 
@@ -123,8 +130,22 @@ SootopolisCity_Gym_1F_EventScript_JuanColletta::
 	giveitem ITEM_LEGEND_TIME_AMBER
 	setflag FLAG_COLLETTA_JUAN
 	addvar VAR_COLLETTA_GYMS_COUNT, 1
+	call Common_EventScript_CheckCollettaPokenav
 	release
 	end
+
+Common_EventScript_CheckCollettaPokenav::
+	goto_if_set FLAG_SYS_POKENAV_GET, Common_EventScript_CheckCollettaPokenavReturn
+	goto_if_lt VAR_COLLETTA_GYMS_COUNT, 4, Common_EventScript_CheckCollettaPokenavReturn
+	msgbox gText_CollettaUnlockPokenav, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	message RustboroCity_DevonCorp_3F_Text_ReceivedPokenav
+	waitfanfare
+	setflag FLAG_SYS_POKENAV_GET
+	setflag FLAG_RECEIVED_POKENAV
+	msgbox gText_CollettaExplainPokenav, MSGBOX_DEFAULT
+Common_EventScript_CheckCollettaPokenavReturn::
+	return
 
 gText_Received100kColletta:
 	.string "{PLAYER} ha ricevuto 100.000 ¥ per la colletta!$"
@@ -255,3 +276,17 @@ gText_JuanCollettaDefeat:
 gText_JuanCollettaPost:
 	.string "RODILFO: Un trionfo d'arte e coraggio!\n"
 	.string "Ecco le 100.000 monete e l'AMBRA DEL TEMPO per CELEBI!$"
+
+gText_CollettaUnlockPokenav:
+	.string "Congratulazioni! Hai già ottenuto il supporto\n"
+	.string "di ben 4 palestre!\p"
+	.string "Per aiutarti a coordinare le ricerche di tua\n"
+	.string "madre e rintracciare gli altri Capipalestra,\l"
+	.string "ti dono questo dispositivo speciale!$"
+
+gText_CollettaExplainPokenav:
+	.string "Il POKéNAV ti permetterà di orientarti lungo\n"
+	.string "tutta la regione di HOENN!\p"
+	.string "Forza Campione, non mollare!\n"
+	.string "Tua madre conta su di te!$"
+

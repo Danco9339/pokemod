@@ -46,15 +46,9 @@ RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
 	waitmovement 0
 	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor, MSGBOX_DEFAULT
 	giveitem ITEM_LETTER
-	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_ITEM
-	message RustboroCity_DevonCorp_3F_Text_ReceivedPokenav
-	waitfanfare
-	setflag FLAG_SYS_POKENAV_GET
-	setflag FLAG_RECEIVED_POKENAV
-	setflag FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT
-	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp, MSGBOX_DEFAULT
+	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneThankYouRecoverGoods, MSGBOX_DEFAULT
 	closemessage
+	setflag FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT
 	call Common_EventScript_OutOfCenterPartyHeal
 	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare, MSGBOX_DEFAULT
 	setflag FLAG_HIDE_ROUTE_116_WANDAS_BOYFRIEND
@@ -233,6 +227,12 @@ RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp:
 RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare:
 	.string "MR. STONE: Well, then, {PLAYER}{KUN},\n"
 	.string "go with caution and care!$"
+
+RustboroCity_DevonCorp_3F_Text_MrStoneThankYouRecoverGoods:
+	.string "SIG. PIETRA: Ti ringrazio infinitamente\n"
+	.string "per aver recuperato la MERCE DEVON!\p"
+	.string "Consegna quella LETTERA a STEVEN a BLUFFER.\n"
+	.string "Conto sul tuo coraggio, Campione!$"
 
 RustboroCity_DevonCorp_3F_Text_CountingOnYou:
 	.string "MR. STONE: I'm counting on you!$"

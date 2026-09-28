@@ -268,6 +268,7 @@ PlayersHouse_1F_Movement_MomReturnToSeatFemale:
 PlayersHouse_1F_EventScript_Mom::
 	lock
 	faceplayer
+	goto_if_set FLAG_MOM_RESCUED, PlayersHouse_1F_EventScript_MomSafeAndSound
 	goto_if_eq VAR_LITTLEROOT_HOUSES_STATE_MAY, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
 	goto_if_eq VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
 	goto_if_set FLAG_HAS_MATCH_CALL, PlayersHouse_1F_EventScript_TryRegisterMom
@@ -276,6 +277,11 @@ PlayersHouse_1F_EventScript_Mom::
 	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 7, PlayersHouse_1F_EventScript_DidYouMeetProfBirch
 	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
 	release
+	end
+
+PlayersHouse_1F_EventScript_MomSafeAndSound::
+	msgbox PlayersHouse_1F_Text_MomRescuedHome, MSGBOX_DEFAULT
+	goto PlayersHouse_1F_EventScript_MomHealsParty
 	end
 
 PlayersHouse_1F_EventScript_DontPushYourselfTooHard::
@@ -615,3 +621,10 @@ PlayersHouse_1F_Movement_PlayerApproachTVForLatiFemale:
 EventScript_RunningShoesManual::
 	msgbox PlayersHouse_1F_Text_RunningShoesManual, MSGBOX_SIGN
 	end
+
+PlayersHouse_1F_Text_MomRescuedHome:
+	.string "MAMMA: Oh, {PLAYER}! Grazie di avermi\n"
+	.string "salvata dalle grinfie del TEAM IDRO!\p"
+	.string "Sapevo che il mio Campione non mi avrebbe\n"
+	.string "deluso! Sei stato eccezionale!\p"
+	.string "Riposati un po' qui a casa, tesoro...$"

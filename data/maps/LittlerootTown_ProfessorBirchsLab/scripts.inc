@@ -480,6 +480,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveRaikou::
 	waitfanfare
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchExplainMission, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_BEAST_STARTER
+	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_ADVENTURE_STARTED
 	setflag FLAG_RESCUED_BIRCH
 	setvar VAR_RANSOM_MOM_STATE, 2
@@ -497,6 +498,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveEntei::
 	waitfanfare
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchExplainMission, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_BEAST_STARTER
+	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_ADVENTURE_STARTED
 	setflag FLAG_RESCUED_BIRCH
 	setvar VAR_RANSOM_MOM_STATE, 2
@@ -514,6 +516,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveSuicune::
 	waitfanfare
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchExplainMission, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_BEAST_STARTER
+	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_ADVENTURE_STARTED
 	setflag FLAG_RESCUED_BIRCH
 	setvar VAR_RANSOM_MOM_STATE, 2
@@ -812,63 +815,47 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome:
 	.string "you should get some rest at home.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
-	.string "PROF. BIRCH: Oh, hi, {PLAYER}{KUN}!\p"
-	.string "I heard you beat {RIVAL} on\n"
-	.string "your first try. That's excellent!\p"
-	.string "{RIVAL}'s been helping with my research\n"
-	.string "for a long time.\p"
-	.string "{RIVAL} has an extensive history as\n"
-	.string "a TRAINER already.\p"
-	.string "Here, {PLAYER}{KUN}, I ordered this for my\n"
-	.string "research, but I think you should have\l"
-	.string "this POKéDEX.$"
+	.string "PROF. BIRCH: Oh, {PLAYER}{KUN}!\n"
+	.string "Ho saputo che ti stai già allenando senza\l"
+	.string "sosta insieme a {RIVAL}!\p"
+	.string "La tua determinazione a salvare tua madre\n"
+	.string "è encomiabile.\p"
+	.string "Prendi questo POKéDEX: ti sarà di immenso aiuto\n"
+	.string "nel tuo viaggio verso tutte le PALESTRE di HOENN!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex:
 	.string "{PLAYER} received the POKéDEX!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex:
-	.string "PROF. BIRCH: The POKéDEX is a high-tech\n"
-	.string "tool that automatically makes a record\l"
-	.string "of any POKéMON you meet or catch.\p"
-	.string "My kid, {RIVAL}, goes everywhere\n"
-	.string "with it.\p"
-	.string "Whenever my kid catches a rare POKéMON\n"
-	.string "and records its data in the POKéDEX,\l"
-	.string "why, {RIVAL} looks for me while I'm out\l"
-	.string "doing fieldwork, and shows me.$"
+	.string "PROF. BIRCH: Il POKéDEX registrerà automaticamente\n"
+	.string "tutti i POKéMON che incontrerai o catturerai.\p"
+	.string "Usalo per potenziare al massimo la tua squadra!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait:
-	.string "PROF. BIRCH: Countless POKéMON\n"
-	.string "await you!\p"
-	.string "Argh, I'm getting the itch to get out\n"
-	.string "and do fieldwork again!$"
+	.string "PROF. BIRCH: Le PALESTRE di HOENN ti aspettano!\n"
+	.string "Siamo tutti con te, Campione!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese:
-	.string "MAY: Oh, wow, {PLAYER}{KUN}!\n"
-	.string "You got a POKéDEX, too!\p"
-	.string "That's great! Just like me!\n"
-	.string "I've got something for you, too!$"
+	.string "MAY: {PLAYER}{KUN}! Come promesso, eccoti un\n"
+	.string "aiuto concreto da parte mia!\p"
+	.string "Usa queste POKé BALL per catturare nuovi\n"
+	.string "compagni di squadra ed essere pronto alla sfida!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
-	.string "MAY: It's fun if you can get a lot of\n"
-	.string "POKéMON!\p"
-	.string "I'm going to look all over the place\n"
-	.string "because I want different POKéMON.\p"
-	.string "If I find any cute POKéMON, I'll catch\n"
-	.string "them with POKé BALLS!$"
+	.string "MAY: Ricorda che puoi contare su di me ogni\n"
+	.string "volta che avrai bisogno di un allenamento!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull:
 	.string "Oh? Your BAG's full.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MayWhereShouldIGoNext:
-	.string "MAY: I wonder where I should go look\n"
-	.string "for POKéMON next?$"
+	.string "MAY: Forza {PLAYER}{KUN}, so che salverai tua madre!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese:
-	.string "BRENDAN: Huh…\n"
-	.string "So you got a POKéDEX, too.\p"
-	.string "Well then, here.\n"
-	.string "I'll give you these.$"
+	.string "BRENDAN: {PLAYER}! Mantengo la parola data:\n"
+	.string "prendi queste POKé BALL per rinforzare il team!\p"
+	.string "Costruisci una squadra inarrestabile per\n"
+	.string "sconfiggere la LEGA e liberare tua madre!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls:
 	.string "BRENDAN: You know it's more fun to\n"

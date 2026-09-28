@@ -866,26 +866,23 @@ LittlerootTown_EventScript_MomRansomExchange::
 	waitfanfare
 	msgbox LittlerootTown_Text_AquaCaptorGivesMomBack, MSGBOX_DEFAULT
 	closemessage
-	msgbox LittlerootTown_Text_MomThankYouChampion, MSGBOX_DEFAULT
-	closemessage
 	setflag FLAG_MOM_RESCUED
 	setvar VAR_RANSOM_MOM_STATE, 3
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM
-	checkplayergender
-	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_SetHomeDoorCoordsMale
-	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_SetHomeDoorCoordsFemale
-	applywaitmovement LOCALID_LITTLEROOT_MOM, Common_Movement_WalkInPlaceFasterUp
-	opendoor VAR_0x8009, VAR_0x800A
-	waitdooranim
-	applywaitmovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitThroughDoor
-	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
-	closedoor VAR_0x8009, VAR_0x800A
-	waitdooranim
+	applywaitmovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_AquaGruntFlee
 	removeobject LOCALID_LITTLEROOT_MOM
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
 	release
 	end
+
+LittlerootTown_Movement_AquaGruntFlee:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
 
 LittlerootTown_EventScript_RansomNotEnoughMoney::
 	msgbox LittlerootTown_Text_AquaCaptorNeedMoreMoney, MSGBOX_DEFAULT
@@ -942,8 +939,10 @@ LittlerootTown_Text_PaidRansom1Million:
 
 LittlerootTown_Text_AquaCaptorGivesMomBack:
 	.string "TEAM IDRO: Un milione tondo tondo!\n"
-	.string "Il TEAM IDRO riconosce la tua grandezza!\p"
-	.string "Patti rispettati! Riprenditi tua madre!$"
+	.string "Il TEAM IDRO mantiene la parola data!\p"
+	.string "Tua madre è stata liberata: la troverai\n"
+	.string "sana e salva dentro la tua casa!\p"
+	.string "Ci si vede, Campione!$"
 
 LittlerootTown_Text_MomThankYouChampion:
 	.string "MAMMA: Oh, {PLAYER}, tesoro mio!\n"
