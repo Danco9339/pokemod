@@ -7,6 +7,13 @@ InsideOfTruck_OnLoad:
 	setmetatile 4, 1, METATILE_InsideOfTruck_ExitLight_Top, FALSE
 	setmetatile 4, 2, METATILE_InsideOfTruck_ExitLight_Mid, FALSE
 	setmetatile 4, 3, METATILE_InsideOfTruck_ExitLight_Bottom, FALSE
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, InsideOfTruck_OnLoad_Male
+	setdynamicwarp MAP_LITTLEROOT_TOWN, 12, 10
+	end
+
+InsideOfTruck_OnLoad_Male:
+	setdynamicwarp MAP_LITTLEROOT_TOWN, 3, 10
 	end
 
 InsideOfTruck_OnResume:
