@@ -152,8 +152,6 @@ void FollowMe_SetIndicatorToComeOutDoor(void)
 
 void FollowMe_SetIndicatorToRecreateSurfBlob(void)
 {
-    if (gSaveBlock2Ptr->follower.inProgress)
-        gSaveBlock2Ptr->follower.createSurfBlob = 2;
 }
 
 void FollowMe_TryRemoveFollowerOnWhiteOut(void)
@@ -215,11 +213,8 @@ static void TryUpdateFollowerSpriteUnderwater(void)
 {
     if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
     {
-        struct ObjectEvent* follower = &gObjectEvents[GetFollowerMapObjId()];
-        SetFollowerSprite(FOLLOWER_SPRITE_INDEX_UNDERWATER);
-
-        follower = &gObjectEvents[GetFollowerMapObjId()]; //Can change on reload sprite
-        follower->fieldEffectSpriteId = StartUnderwaterSurfBlobBobbing(follower->spriteId);
+        if (gSaveBlock2Ptr->follower.inProgress)
+            gObjectEvents[GetFollowerMapObjId()].invisible = TRUE;
     }
 }
 
@@ -240,6 +235,12 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
         return; //Don't follow during a script
     else if (ArePlayerFieldControlsLocked())
         return; //Don't follow while controls are locked (e.g. door animations)!
+
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) || gMapHeader.mapType == MAP_TYPE_UNDERWATER)
+    {
+        follower->invisible = TRUE;
+        return;
+    }
                 
     
     // fix post-surf jump
@@ -609,13 +610,7 @@ bool8 FollowMe_IsCollisionExempt(struct ObjectEvent* obstacle, struct ObjectEven
 
 void FollowMe_FollowerToWater(void)
 {
-    if (!gSaveBlock2Ptr->follower.inProgress)
-        return;
-
-    //Prepare for making the follower do the jump and spawn the surf head
-    //right in front of the follower's location.
-    FollowMe(&gObjectEvents[gPlayerAvatar.objectEventId], MOVEMENT_ACTION_JUMP_DOWN, TRUE);
-    gSaveBlock2Ptr->follower.createSurfBlob = 1;
+    HideFollower();
 }
 
 void FollowMe_BindToSurbBlobOnReloadScreen(void)
@@ -626,6 +621,12 @@ void FollowMe_BindToSurbBlobOnReloadScreen(void)
         return;
     
     follower = &gObjectEvents[GetFollowerMapObjId()];
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) || gMapHeader.mapType == MAP_TYPE_UNDERWATER)
+    {
+        follower->invisible = TRUE;
+        return;
+    }
+
     TryUpdateFollowerSpriteUnderwater();
 
     if (gSaveBlock2Ptr->follower.createSurfBlob != 2 && gSaveBlock2Ptr->follower.createSurfBlob != 3)
@@ -701,11 +702,6 @@ static void SetUpSurfBlobFieldEffect(struct ObjectEvent* npc)
 
 void PrepareFollowerDismountSurf(void)
 {
-    if (!gSaveBlock2Ptr->follower.inProgress)
-        return;
-
-    FollowMe(&gObjectEvents[gPlayerAvatar.objectEventId], MOVEMENT_ACTION_WALK_NORMAL_DOWN, TRUE);
-    gSaveBlock2Ptr->follower.createSurfBlob = 3;
 }
 
 static void SetSurfDismount(void)
@@ -1073,6 +1069,13 @@ bool8 FollowerCanBike(void)
 
 void FollowMe_HandleBike(void)
 {
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) || gMapHeader.mapType == MAP_TYPE_UNDERWATER)
+    {
+        if (gSaveBlock2Ptr->follower.inProgress)
+            gObjectEvents[GetFollowerMapObjId()].invisible = TRUE;
+        return;
+    }
+
     if (gSaveBlock2Ptr->follower.currentSprite == FOLLOWER_SPRITE_INDEX_SURF) //Follower is surfing
         return; //Sprite will automatically be adjusted when they finish surfing
 
@@ -1086,6 +1089,13 @@ void FollowMe_HandleBike(void)
 
 void FollowMe_HandleSprite(void)
 {
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) || gMapHeader.mapType == MAP_TYPE_UNDERWATER)
+    {
+        if (gSaveBlock2Ptr->follower.inProgress)
+            gObjectEvents[GetFollowerMapObjId()].invisible = TRUE;
+        return;
+    }
+
     if (gSaveBlock2Ptr->follower.flags & FOLLOWER_FLAG_CAN_BIKE)
     {
         if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE)
@@ -1596,6 +1606,62 @@ void UpdateFollowerPokemon(void)
             }
         }
     }
+
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) || gMapHeader.mapType == MAP_TYPE_UNDERWATER)
+    {
+        followerObjId = GetFollowerObjectId();
+        if (followerObjId < OBJECT_EVENTS_COUNT && gObjectEvents[followerObjId].active)
+            gObjectEvents[followerObjId].invisible = TRUE;
+    }
+}
+
+void FollowMe_SpawnAfterFly(void)
+{
+    struct ObjectEvent *player;
+    struct ObjectEvent *follower;
+    u8 followerObjId;
+    s16 x, y;
+
+    if (!gSaveBlock2Ptr->follower.inProgress)
+        return;
+
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) || gMapHeader.mapType == MAP_TYPE_UNDERWATER)
+        return;
+
+    followerObjId = GetFollowerObjectId();
+    if (followerObjId >= OBJECT_EVENTS_COUNT || !gObjectEvents[followerObjId].active)
+        return;
+
+    player = &gObjectEvents[gPlayerAvatar.objectEventId];
+    follower = &gObjectEvents[followerObjId];
+
+    x = player->currentCoords.x;
+    y = player->currentCoords.y;
+
+    switch (player->facingDirection)
+    {
+    case DIR_SOUTH:
+        y -= 1;
+        break;
+    case DIR_NORTH:
+        y += 1;
+        break;
+    case DIR_WEST:
+        x += 1;
+        break;
+    case DIR_EAST:
+        x -= 1;
+        break;
+    }
+
+    MoveObjectEventToMapCoords(follower, x, y);
+    follower->facingDirection = player->facingDirection;
+    follower->movementDirection = player->movementDirection;
+    ObjectEventClearHeldMovementIfActive(follower);
+    ObjectEventTurn(follower, player->facingDirection);
+    follower->invisible = FALSE;
+    gSaveBlock2Ptr->follower.warpEnd = 0;
+    PlayerLogCoordinates(player);
 }
 
 

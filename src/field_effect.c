@@ -1346,6 +1346,7 @@ void ReturnToFieldFromFlyMapSelect(void)
 static void FieldCallback_UseFly(void)
 {
     FadeInFromBlack();
+    HideFollower();
     CreateTask(Task_UseFly, 0);
     LockPlayerFieldControls();
     FreezeObjectEvents();
@@ -1361,6 +1362,7 @@ static void Task_UseFly(u8 taskId)
         if (!IsWeatherNotFadingIn())
             return;
 
+        HideFollower();
         gFieldEffectArguments[0] = GetCursorSelectionMonId();
         if ((int)gFieldEffectArguments[0] > PARTY_SIZE - 1)
             gFieldEffectArguments[0] = 0;
@@ -1384,6 +1386,7 @@ static void FieldCallback_FlyIntoMap(void)
     FadeInFromBlack();
     CreateTask(Task_FlyIntoMap, 0);
     gObjectEvents[gPlayerAvatar.objectEventId].invisible = TRUE;
+    HideFollower();
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
     {
         ObjectEventTurn(&gObjectEvents[gPlayerAvatar.objectEventId], DIR_WEST);
@@ -1408,6 +1411,7 @@ static void Task_FlyIntoMap(u8 taskId)
     }
     if (!FieldEffectActiveListContains(FLDEFF_FLY_IN))
     {
+        FollowMe_SpawnAfterFly();
         UnlockPlayerFieldControls();
         UnfreezeObjectEvents();
         DestroyTask(taskId);
@@ -1919,6 +1923,7 @@ void Task_UseDive(u8 taskId)
 
 static bool8 DiveFieldEffect_Init(struct Task *task)
 {
+    HideFollower();
     gPlayerAvatar.preventStep = TRUE;
     task->data[0]++;
     return FALSE;
@@ -1926,6 +1931,7 @@ static bool8 DiveFieldEffect_Init(struct Task *task)
 
 static bool8 DiveFieldEffect_ShowMon(struct Task *task)
 {
+    HideFollower();
     LockPlayerFieldControls();
     gFieldEffectArguments[0] = task->data[15];
     FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
@@ -2375,6 +2381,7 @@ static void Task_TeleportWarpOut(u8 taskId)
 
 static void TeleportWarpOutFieldEffect_Init(struct Task *task)
 {
+    HideFollower();
     LockPlayerFieldControls();
     FreezeObjectEvents();
     CameraObjectFreeze();
@@ -2459,6 +2466,7 @@ static void FieldCallback_TeleportWarpIn(void)
     FreezeObjectEvents();
     gFieldCallback = NULL;
     gObjectEvents[gPlayerAvatar.objectEventId].invisible = TRUE;
+    HideFollower();
     CameraObjectFreeze();
     CreateTask(Task_TeleportWarpIn, 0);
 }
@@ -2546,6 +2554,7 @@ static void TeleportWarpInFieldEffect_SpinGround(struct Task *task)
             UnlockPlayerFieldControls();
             CameraObjectReset();
             UnfreezeObjectEvents();
+            FollowMe_WarpSetEnd();
             DestroyTask(FindTaskIdByFunc(Task_TeleportWarpIn));
         }
     }
@@ -3051,7 +3060,7 @@ static void SurfFieldEffect_JumpOnSurfBlob(struct Task *task)
         ObjectEventSetGraphicsId(objectEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_SURFING));
         ObjectEventClearHeldMovementIfFinished(objectEvent);
         ObjectEventSetHeldMovement(objectEvent, GetJumpSpecialMovementAction(objectEvent->movementDirection));
-        FollowMe_FollowerToWater();
+        HideFollower();
         gFieldEffectArguments[0] = task->tDestX;
         gFieldEffectArguments[1] = task->tDestY;
         gFieldEffectArguments[2] = gPlayerAvatar.objectEventId;

@@ -27,6 +27,7 @@ bool8 SetUpFieldMove_Teleport(void)
 
 static void FieldCallback_Teleport(void)
 {
+    HideFollower();
     Overworld_ResetStateAfterTeleport();
     FieldEffectStart(FLDEFF_USE_TELEPORT);
     gFieldEffectArguments[0] = (u32)GetCursorSelectionMonId();

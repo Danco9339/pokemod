@@ -57,5 +57,6 @@ bool8 IsPlayerOnFoot(void);
 
 void UpdateFollowerPokemon(void);
 void Follower_PrepareMonInteraction(void);
+void FollowMe_SpawnAfterFly(void);
 
 #endif //GUARD_FOLLOW_ME_H
