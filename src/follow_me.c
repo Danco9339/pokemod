@@ -238,6 +238,8 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
         return;
     else if (ScriptContext_IsEnabled() && !ignoreScriptActive)
         return; //Don't follow during a script
+    else if (ArePlayerFieldControlsLocked())
+        return; //Don't follow while controls are locked (e.g. door animations)!
                 
     
     // fix post-surf jump
@@ -253,9 +255,9 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
         gSaveBlock2Ptr->follower.warpEnd = 0;
         gSaveBlock2Ptr->follower.comeOutDoorStairs = 0;
         
-        follower->invisible = FALSE;
         MoveObjectEventToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
         ObjectEventTurn(follower, player->facingDirection); //The follower should be facing the same direction as the player when it comes out of hiding
+        follower->invisible = FALSE;
 
         if (gSaveBlock2Ptr->follower.createSurfBlob == 2) //Recreate surf blob
         {
@@ -1177,6 +1179,7 @@ void FollowMe_WarpSetEnd(void)
     gSaveBlock2Ptr->follower.warpEnd = 1;
     PlayerLogCoordinates(player);
 
+    follower->invisible = TRUE;
     MoveObjectEventToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
     
     follower->facingDirection = player->facingDirection;
@@ -1562,7 +1565,7 @@ void UpdateFollowerPokemon(void)
                 FollowMe_WarpSetEnd();
                 followerObjId = GetFollowerObjectId();
                 if (followerObjId < OBJECT_EVENTS_COUNT)
-                    gObjectEvents[followerObjId].invisible = FALSE;
+                    gObjectEvents[followerObjId].invisible = TRUE;
             }
         }
     }
@@ -1588,7 +1591,7 @@ void UpdateFollowerPokemon(void)
                     FollowMe_WarpSetEnd();
                     followerObjId = GetFollowerObjectId();
                     if (followerObjId < OBJECT_EVENTS_COUNT)
-                        gObjectEvents[followerObjId].invisible = FALSE;
+                        gObjectEvents[followerObjId].invisible = TRUE;
                 }
             }
         }

@@ -308,7 +308,11 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
     if (InTrainerHill() == TRUE)
         script = GetTrainerHillTrainerScript();
     else if (objectEventId == GetFollowerObjectId())
+    {
+        if (gObjectEvents[objectEventId].invisible)
+            return NULL;
         script = GetFollowerScriptPointer();
+    }
     else
         script = GetObjectEventScriptPointerByObjectEventId(objectEventId);
 
