@@ -2172,3 +2172,40 @@ static const struct SpriteFrameImage sPicTable_RubySapphireMay[] = {
     overworld_frame(gObjectEventPic_RubySapphireMayNormal, 2, 4, 7),
     overworld_frame(gObjectEventPic_RubySapphireMayNormal, 2, 4, 8),
 };
+
+static const struct SpriteFrameImage sPicTable_Treecko[] = {
+    overworld_frame(gObjectEventPic_Treecko, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Treecko, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Treecko, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Treecko, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Treecko, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Treecko, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Treecko, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Treecko, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Treecko, 2, 2, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_Torchic[] = {
+    overworld_frame(gObjectEventPic_Torchic, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Torchic, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Torchic, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Torchic, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Torchic, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Torchic, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Torchic, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Torchic, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Torchic, 2, 2, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_Mudkip[] = {
+    overworld_frame(gObjectEventPic_Mudkip, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 2, 0),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 2, 1),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 2, 2),
+};
+
