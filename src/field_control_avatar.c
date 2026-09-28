@@ -29,6 +29,7 @@
 #include "trainer_hill.h"
 #include "wild_encounter.h"
 #include "follow_me.h"
+#include "devon_stock_market.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
 #include "constants/field_poison.h"
@@ -556,6 +557,7 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
     IncrementRematchStepCounter();
     UpdateFriendshipStepCounter();
     UpdateFarawayIslandStepCounter();
+    UpdateDevonStockMarket();
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_FORCED_MOVE) && !MetatileBehavior_IsForcedMovementTile(metatileBehavior))
     {

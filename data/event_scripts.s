@@ -1057,3 +1057,6 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+	.include "data/scripts/legendary_summon.inc"
+	.include "data/scripts/devon_stocks.inc"
+	.include "data/scripts/gym_colletta.inc"

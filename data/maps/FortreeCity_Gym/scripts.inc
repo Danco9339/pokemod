@@ -17,7 +17,9 @@ FortreeCity_Gym_EventScript_InitRotatingGates::
 	end
 
 FortreeCity_Gym_EventScript_Winona::
-	trainerbattle_single TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaIntro, FortreeCity_Gym_Text_WinonaDefeat, FortreeCity_Gym_EventScript_WinonaDefeated, NO_MUSIC
+	lock
+	faceplayer
+	goto_if_unset FLAG_COLLETTA_WINONA, FortreeCity_Gym_EventScript_WinonaColletta
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, FortreeCity_Gym_EventScript_WinonaRematch
 	goto_if_unset FLAG_RECEIVED_TM_AERIAL_ACE, FortreeCity_Gym_EventScript_GiveAerialAce2

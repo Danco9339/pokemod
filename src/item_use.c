@@ -1130,4 +1130,19 @@ void ItemUseOutOfBattle_CannotUse(u8 taskId)
     DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
 
+extern const u8 EventScript_UseLegendarySummonItem[];
+
+static void ItemUseOnFieldCB_SummonLegendary(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_UseLegendarySummonItem);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_SummonLegendary(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_SummonLegendary;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+
 #undef tUsingRegisteredKeyItem

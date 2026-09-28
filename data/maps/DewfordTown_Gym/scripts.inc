@@ -7,6 +7,7 @@ DewfordTown_Gym_OnTransition:
 	end
 
 DewfordTown_Gym_EventScript_SetFlashLevel::
+	goto_if_set FLAG_BADGE02_GET, DewfordTown_Gym_EventScript_SetLightsOn
 	goto_if_defeated TRAINER_BRAWLY_1, DewfordTown_Gym_EventScript_SetLightsOn
 	call DewfordTown_Gym_EventScript_CountTrainersDefeated
 	copyvar VAR_0x8001, VAR_0x8000
@@ -133,7 +134,9 @@ DewfordTown_Gym_EventScript_StopCountingTrainers::
 	return
 
 DewfordTown_Gym_EventScript_Brawly::
-	trainerbattle_single TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC
+	lock
+	faceplayer
+	goto_if_unset FLAG_COLLETTA_BRAWLY, DewfordTown_Gym_EventScript_BrawlyColletta
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, DewfordTown_Gym_EventScript_BrawlyRematch
 	goto_if_unset FLAG_RECEIVED_TM_BULK_UP, DewfordTown_Gym_EventScript_GiveBulkUp2

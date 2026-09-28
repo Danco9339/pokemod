@@ -3,6 +3,7 @@ MauvilleCity_Gym_MapScripts::
 	.byte 0
 
 MauvilleCity_Gym_OnLoad:
+	goto_if_set FLAG_BADGE03_GET, MauvilleCity_Gym_EventScript_DeactivatePuzzle
 	goto_if_set FLAG_DEFEATED_MAUVILLE_GYM, MauvilleCity_Gym_EventScript_DeactivatePuzzle
 	switch VAR_MAUVILLE_GYM_STATE
 	case 0, MauvilleCity_Gym_EventScript_UpdateBarriers
@@ -74,7 +75,9 @@ MauvilleCity_Gym_EventScript_DeactivatePuzzle::
 	end
 
 MauvilleCity_Gym_EventScript_Wattson::
-	trainerbattle_single TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonIntro, MauvilleCity_Gym_Text_WattsonDefeat, MauvilleCity_Gym_EventScript_WattsonDefeated, NO_MUSIC
+	lock
+	faceplayer
+	goto_if_unset FLAG_COLLETTA_WATTSON, MauvilleCity_Gym_EventScript_WattsonColletta
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_Gym_EventScript_WattsonRematch
 	goto_if_unset FLAG_RECEIVED_TM_SHOCK_WAVE, MauvilleCity_Gym_EventScript_GiveShockWave2

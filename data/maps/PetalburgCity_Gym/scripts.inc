@@ -6,6 +6,7 @@ PetalburgCity_Gym_MapScripts::
 	.byte 0
 
 PetalburgCity_Gym_OnLoad:
+	call_if_set FLAG_BADGE05_GET, PetalburgCity_Gym_EventScript_UnlockAllDoors
 	goto_if_eq VAR_PETALBURG_GYM_STATE, 6, PetalburgCity_Gym_EventScript_OpenUnlockedDoors
 	call_if_ge VAR_PETALBURG_GYM_STATE, 7, PetalburgCity_Gym_EventScript_UnlockAllDoors
 	end
@@ -101,6 +102,7 @@ PetalburgCity_Gym_Movement_WallyExitGym:
 PetalburgCity_Gym_EventScript_Norman::
 	lock
 	faceplayer
+	goto_if_unset FLAG_COLLETTA_NORMAN, PetalburgCity_Gym_EventScript_NormanColletta
 	switch VAR_PETALBURG_GYM_STATE
 	case 2, PetalburgCity_Gym_EventScript_NormanNoBadges
 	case 3, PetalburgCity_Gym_EventScript_NormanOneBadge

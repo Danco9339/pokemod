@@ -44,7 +44,9 @@ LavaridgeTown_Gym_1F_EventScript_EndCheckBuryTrainers::
 	return
 
 LavaridgeTown_Gym_1F_EventScript_Flannery::
-	trainerbattle_single TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated, NO_MUSIC
+	lock
+	faceplayer
+	goto_if_unset FLAG_COLLETTA_FLANNERY, LavaridgeTown_Gym_EventScript_FlanneryColletta
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, LavaridgeTown_Gym_1F_EventScript_FlanneryRematch
 	goto_if_unset FLAG_RECEIVED_TM_OVERHEAT, LavaridgeTown_Gym_1F_EventScript_GiveOverheat2

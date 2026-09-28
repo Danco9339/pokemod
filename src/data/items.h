@@ -2796,92 +2796,92 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_0E4] =
+    [ITEM_LEGEND_FLUTE_ICE] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("FLAUTO GHIAC."),
+        .itemId = ITEM_LEGEND_FLUTE_ICE,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sLegendFluteIceDesc,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
-    [ITEM_0E5] =
+    [ITEM_LEGEND_BELL_SILVER] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("BIGL. ARGENTO"),
+        .itemId = ITEM_LEGEND_BELL_SILVER,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sLegendBellSilverDesc,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
-    [ITEM_0E6] =
+    [ITEM_LEGEND_FLUTE_THUNDER] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("FLAUTO TUONO"),
+        .itemId = ITEM_LEGEND_FLUTE_THUNDER,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sLegendFluteThunderDesc,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
-    [ITEM_0E7] =
+    [ITEM_LEGEND_FLUTE_FIRE] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("FLAUTO FUOCO"),
+        .itemId = ITEM_LEGEND_FLUTE_FIRE,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sLegendFluteFireDesc,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
-    [ITEM_0E8] =
+    [ITEM_LEGEND_ORB_PSYCHIC] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("SFERA PSICH."),
+        .itemId = ITEM_LEGEND_ORB_PSYCHIC,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sLegendOrbPsychicDesc,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
-    [ITEM_0E9] =
+    [ITEM_LEGEND_BELL_RAINBOW] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("BIGL. IRIDE"),
+        .itemId = ITEM_LEGEND_BELL_RAINBOW,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sLegendBellRainbowDesc,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
-    [ITEM_0EA] =
+    [ITEM_LEGEND_MIRAGE_ORB] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("SFERA MIRAGG."),
+        .itemId = ITEM_LEGEND_MIRAGE_ORB,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sLegendMirageOrbDesc,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
-    [ITEM_0EB] =
+    [ITEM_LEGEND_TIME_AMBER] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("AMBRA TEMPO"),
+        .itemId = ITEM_LEGEND_TIME_AMBER,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sLegendTimeAmberDesc,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
     [ITEM_0EC] =

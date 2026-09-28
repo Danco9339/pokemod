@@ -205,6 +205,50 @@ void NewGameInitData(void)
     ResetTrainerHillResults();
     ResetContestLinkResults();
     memset(&gSaveBlock2Ptr->follower, 0, sizeof(gSaveBlock2Ptr->follower));
+
+    // Phase 2: Player starts as Champion returning home!
+    FlagSet(FLAG_BADGE01_GET);
+    FlagSet(FLAG_BADGE02_GET);
+    FlagSet(FLAG_BADGE03_GET);
+    FlagSet(FLAG_BADGE04_GET);
+    FlagSet(FLAG_BADGE05_GET);
+    FlagSet(FLAG_BADGE06_GET);
+    FlagSet(FLAG_BADGE07_GET);
+    FlagSet(FLAG_BADGE08_GET);
+
+    FlagSet(FLAG_SYS_B_DASH);
+    FlagSet(FLAG_RECEIVED_RUNNING_SHOES);
+    FlagSet(FLAG_SYS_POKEDEX_GET);
+    FlagSet(FLAG_SYS_NATIONAL_DEX);
+    FlagSet(FLAG_RECEIVED_POKEDEX_FROM_BIRCH);
+    FlagSet(FLAG_SYS_POKENAV_GET);
+    FlagSet(FLAG_RECEIVED_POKENAV);
+
+    AddBagItem(ITEM_HM01, 1);
+    AddBagItem(ITEM_HM02, 1);
+    AddBagItem(ITEM_HM03, 1);
+    AddBagItem(ITEM_HM04, 1);
+    AddBagItem(ITEM_HM05, 1);
+    AddBagItem(ITEM_HM06, 1);
+    AddBagItem(ITEM_HM07, 1);
+    AddBagItem(ITEM_HM08, 1);
+    AddBagItem(ITEM_ULTRA_BALL, 10);
+    AddBagItem(ITEM_HYPER_POTION, 5);
+    AddBagItem(ITEM_REVIVE, 5);
+
+    VarSet(VAR_RANSOM_MOM_STATE, 0);
+    VarSet(VAR_COLLETTA_GYMS_COUNT, 0);
+    VarSet(VAR_DEVON_STOCKS_VALUE_LOW, 0);
+    VarSet(VAR_DEVON_STOCKS_VALUE_HIGH, 0);
+    VarSet(VAR_DEVON_STOCKS_INVESTED_LOW, 0);
+    VarSet(VAR_DEVON_STOCKS_INVESTED_HIGH, 0);
+    VarSet(VAR_DEVON_STOCKS_STEP_COUNTER, 0);
+    VarSet(VAR_DEVON_MARKET_TREND, 50);
+
+    FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH);
+    FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN);
+    FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
+    FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM);
 }
 
 static void ResetMiniGamesRecords(void)

@@ -1,6 +1,47 @@
 static const u8 sDummyDesc[] = _(
     "?????");
 
+static const u8 sLegendFluteIceDesc[] = _(
+    "Un flauto di ghiaccio\n"
+    "perenne. Suonalo per\n"
+    "risvegliare ARTICUNO.");
+
+static const u8 sLegendBellSilverDesc[] = _(
+    "Un antico emblema d'ar-\n"
+    "gento dei mari. Evoca\n"
+    "LUGIA all'istante.");
+
+static const u8 sLegendFluteThunderDesc[] = _(
+    "Un flauto percorso da\n"
+    "fulmini. Suonalo per\n"
+    "risvegliare ZAPDOS.");
+
+static const u8 sLegendFluteFireDesc[] = _(
+    "Un flauto caldo come\n"
+    "magma. Suonalo per\n"
+    "risvegliare MOLTRES.");
+
+static const u8 sLegendOrbPsychicDesc[] = _(
+    "Una sfera di pura ener-\n"
+    "gia psionica. Usala\n"
+    "per evocare MEWTWO.");
+
+static const u8 sLegendBellRainbowDesc[] = _(
+    "Uno stendardo sacro\n"
+    "dell'arcobaleno. Evoca\n"
+    "HO-OH all'istante.");
+
+static const u8 sLegendMirageOrbDesc[] = _(
+    "Una sfera eterea e can-\n"
+    "giante. Usala per\n"
+    "far apparire MEW.");
+
+static const u8 sLegendTimeAmberDesc[] = _(
+    "Una misteriosa gemma\n"
+    "temporale. Usala per\n"
+    "invocare CELEBI.");
+
+
 // Pokeballs
 static const u8 sMasterBallDesc[] = _(
     "The best BALL that\n"

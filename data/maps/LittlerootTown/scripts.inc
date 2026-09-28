@@ -46,7 +46,26 @@ LittlerootTown_OnTransition:
 	call_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_HideMapNamePopup
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
+	call_if_set FLAG_LEAGUE_BEATEN_AGAIN, LittlerootTown_EventScript_CheckShowMomCaptive
 	end
+
+LittlerootTown_EventScript_CheckShowMomCaptive::
+	goto_if_set FLAG_MOM_RESCUED, LittlerootTown_EventScript_HideMomCaptive
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_ShowMomCaptiveMale
+	setobjectxyperm LOCALID_LITTLEROOT_MOM, 14, 9
+	setobjectmovementtype LOCALID_LITTLEROOT_MOM, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+LittlerootTown_EventScript_ShowMomCaptiveMale::
+	setobjectxyperm LOCALID_LITTLEROOT_MOM, 5, 9
+	setobjectmovementtype LOCALID_LITTLEROOT_MOM, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+LittlerootTown_EventScript_HideMomCaptive::
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
+	return
 
 LittlerootTown_EventScript_LeftLabAfterDexUpgrade::
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3
@@ -111,10 +130,8 @@ LittlerootTown_EventScript_StepOffTruckMale::
 	lockall
 	setvar VAR_0x8004, 5
 	setvar VAR_0x8005, 8
-	call LittlerootTown_EventScript_GoInsideWithMom
+	call LittlerootTown_EventScript_NewStoryIntro
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK
-	warpsilent MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F, 8, 8
-	waitstate
 	releaseall
 	end
 
@@ -122,43 +139,62 @@ LittlerootTown_EventScript_StepOffTruckFemale::
 	lockall
 	setvar VAR_0x8004, 14
 	setvar VAR_0x8005, 8
-	call LittlerootTown_EventScript_GoInsideWithMom
+	call LittlerootTown_EventScript_NewStoryIntro
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK
-	warpsilent MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F, 2, 8
-	waitstate
 	releaseall
 	end
 
-LittlerootTown_EventScript_GoInsideWithMom::
+LittlerootTown_EventScript_NewStoryIntro::
 	delay 15
 	playse SE_LEDGE
 	applywaitmovement LOCALID_PLAYER, LittlerootTown_Movement_PlayerStepOffTruck
-	opendoor VAR_0x8004, VAR_0x8005
-	waitdooranim
-	addobject LOCALID_LITTLEROOT_MOM
-	applywaitmovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomExitHouse
-	closedoor VAR_0x8004, VAR_0x8005
-	waitdooranim
-	delay 10
-	applywaitmovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachPlayerAtTruck
-	msgbox LittlerootTown_Text_OurNewHomeLetsGoInside, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomApproachDoor
-	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PlayerApproachDoor
-	waitmovement 0
-	opendoor VAR_0x8004, VAR_0x8005
-	waitdooranim
-	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomEnterHouse
-	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PlayerEnterHouse
-	waitmovement 0
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
-	setvar VAR_LITTLEROOT_INTRO_STATE, 3
-	hideplayer
-	closedoor VAR_0x8004, VAR_0x8005
-	waitdooranim
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
+	addobject 3
+	setobjectxy 3, 5, 9
+	turnobject 3, DIR_NORTH
+	delay 20
+	playse SE_PIN
+	applymovement 3, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 3, Common_Movement_FacePlayer
+	waitmovement 0
+	delay 15
+	applywaitmovement 3, LittlerootTown_Movement_BoyRunToPlayer
+	msgbox LittlerootTown_Text_ChampionMomKidnapped, MSGBOX_DEFAULT
+	closemessage
+	applywaitmovement 3, LittlerootTown_Movement_BoyReturnToCrowd
+	setvar VAR_LITTLEROOT_INTRO_STATE, 7
+	setvar VAR_LITTLEROOT_TOWN_STATE, 1
+	setvar VAR_RANSOM_MOM_STATE, 1
 	return
+
+LittlerootTown_Movement_BoyRunToPlayer:
+	walk_down
+	walk_in_place_faster_left
+	step_end
+
+LittlerootTown_Movement_BoyReturnToCrowd:
+	walk_up
+	walk_in_place_faster_down
+	step_end
+
+LittlerootTown_Text_ChampionMomKidnapped:
+	.string "CAMPIONE! Oh cielo, sei tornato!\p"
+	.string "Mentre eri alla LEGA POKéMON a conquistare\n"
+	.string "il titolo, è successa una disgrazia immane!\p"
+	.string "TUA MADRE... TUA MADRE È STATA RAPITA!\p"
+	.string "Una flotta del TEAM IDRO ha circondato la casa\n"
+	.string "e l'ha trascinata via in mare aperto!\p"
+	.string "Hanno lasciato un ricatto terrificante:\n"
+	.string "pretendono 1.000.000 di monete di riscatto!\p"
+	.string "E dicono che tratteranno solo se sconfiggerai\n"
+	.string "di nuovo la LEGA POKéMON per dimostrare di\l"
+	.string "essere ancora il Campione!\p"
+	.string "Il PROFESSOR BIRCH è sconvolto nel suo\n"
+	.string "LABORATORIO e ti sta cercando disperatamente!\p"
+	.string "Presto, corri subito da lui!$"
 
 LittlerootTown_Movement_MomExitHouse:
 	walk_down
@@ -248,10 +284,8 @@ LittlerootTown_EventScript_Boy::
 LittlerootTown_EventScript_Twin::
 	lock
 	faceplayer
-	goto_if_set FLAG_ADVENTURE_STARTED, LittlerootTown_EventScript_GoodLuck
-	goto_if_set FLAG_RESCUED_BIRCH, LittlerootTown_EventScript_YouSavedBirch
-	goto_if_ne VAR_LITTLEROOT_TOWN_STATE, 0, LittlerootTown_EventScript_GoSaveBirch
-	msgbox LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut, MSGBOX_DEFAULT
+	goto_if_set FLAG_RECEIVED_BEAST_STARTER, LittlerootTown_EventScript_GoodLuck
+	msgbox LittlerootTown_Text_TwinGoToBirch, MSGBOX_DEFAULT
 	release
 	end
 
@@ -365,13 +399,17 @@ LittlerootTown_Movement_TwinReturnRight:
 
 LittlerootTown_EventScript_GoSaveBirchTrigger::
 	lockall
+	goto_if_set FLAG_RECEIVED_BEAST_STARTER, LittlerootTown_EventScript_GoSaveBirchTriggerDone
 	applywaitmovement LOCALID_LITTLEROOT_TWIN, Common_Movement_WalkInPlaceFasterRight
 	applywaitmovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
-	special GetPlayerBigGuyGirlString
-	msgbox LittlerootTown_Text_CanYouGoSeeWhatsHappening, MSGBOX_DEFAULT
+	msgbox LittlerootTown_Text_TwinGoToBirch, MSGBOX_DEFAULT
 	closemessage
-	applywaitmovement LOCALID_LITTLEROOT_TWIN, Common_Movement_FaceOriginalDirection
-	setvar VAR_LITTLEROOT_TOWN_STATE, 2
+	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PushPlayerBackFromRoute
+	waitmovement 0
+	releaseall
+	end
+
+LittlerootTown_EventScript_GoSaveBirchTriggerDone::
 	releaseall
 	end
 
@@ -454,22 +492,14 @@ LittlerootTown_EventScript_GiveRunningShoesTrigger5::
 	end
 
 LittlerootTown_EventScript_GiveRunningShoesTrigger::
-	checkplayergender
-	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_MomNoticePlayerMale
-	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_MomNoticePlayerFemale
-	checkplayergender
-	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_SetHomeDoorCoordsMale
-	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_SetHomeDoorCoordsFemale
-	msgbox LittlerootTown_Text_WaitPlayer, MSGBOX_DEFAULT
-	closemessage
-	checkplayergender
-	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_MomApproachPlayerMale
-	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_MomApproachPlayerFemale
-	call LittlerootTown_EventScript_GiveRunningShoes
-	checkplayergender
-	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_MomReturnHomeMale
-	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_MomReturnHomeFemale
-	goto LittlerootTown_EventScript_SetReceivedRunningShoes
+	releaseall
+	end
+
+LittlerootTown_EventScript_GiveRunningShoes::
+	return
+
+LittlerootTown_EventScript_SetReceivedRunningShoes::
+	releaseall
 	end
 
 LittlerootTown_EventScript_SetHomeDoorCoordsMale::
@@ -817,10 +847,34 @@ LittlerootTown_Movement_MomExitThroughDoor:
 LittlerootTown_EventScript_Mom::
 	lock
 	faceplayer
+	goto_if_set FLAG_MOM_RESCUED, LittlerootTown_EventScript_MomRescued
+	goto_if_set FLAG_LEAGUE_BEATEN_AGAIN, LittlerootTown_EventScript_MomRansomExchange
+	msgbox LittlerootTown_Text_AquaCaptorDemands, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_EventScript_MomRansomExchange::
+	msgbox LittlerootTown_Text_AquaCaptorLeagueBeaten, MSGBOX_DEFAULT
+	callnative CheckRansomMoney
+	goto_if_eq VAR_RESULT, FALSE, LittlerootTown_EventScript_RansomNotEnoughMoney
+	msgbox LittlerootTown_Text_AquaCaptorAskPay, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_RansomRefused
+	callnative PayRansom
+	playfanfare MUS_OBTAIN_ITEM
+	message LittlerootTown_Text_PaidRansom1Million
+	waitmessage
+	waitfanfare
+	msgbox LittlerootTown_Text_AquaCaptorGivesMomBack, MSGBOX_DEFAULT
+	closemessage
+	msgbox LittlerootTown_Text_MomThankYouChampion, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_MOM_RESCUED
+	setvar VAR_RANSOM_MOM_STATE, 3
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_SetHomeDoorCoordsMale
 	call_if_eq VAR_RESULT, FEMALE, LittlerootTown_EventScript_SetHomeDoorCoordsFemale
-	call LittlerootTown_EventScript_GiveRunningShoes
 	applywaitmovement LOCALID_LITTLEROOT_MOM, Common_Movement_WalkInPlaceFasterUp
 	opendoor VAR_0x8009, VAR_0x800A
 	waitdooranim
@@ -828,27 +882,78 @@ LittlerootTown_EventScript_Mom::
 	hideobjectat LOCALID_LITTLEROOT_MOM, MAP_LITTLEROOT_TOWN
 	closedoor VAR_0x8009, VAR_0x800A
 	waitdooranim
-	goto LittlerootTown_EventScript_SetReceivedRunningShoes
-	end
-
-LittlerootTown_EventScript_SetReceivedRunningShoes::
 	removeobject LOCALID_LITTLEROOT_MOM
-	setflag FLAG_SYS_B_DASH
-	setvar VAR_LITTLEROOT_TOWN_STATE, 4
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
 	release
 	end
 
-LittlerootTown_EventScript_GiveRunningShoes::
-	msgbox LittlerootTown_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_ITEM
-	message LittlerootTown_Text_SwitchShoesWithRunningShoes
-	waitfanfare
-	setflag FLAG_RECEIVED_RUNNING_SHOES
-	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT
-	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
-	closemessage
-	delay 30
-	return
+LittlerootTown_EventScript_RansomNotEnoughMoney::
+	msgbox LittlerootTown_Text_AquaCaptorNeedMoreMoney, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_EventScript_RansomRefused::
+	msgbox LittlerootTown_Text_AquaCaptorRefused, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_EventScript_MomRescued::
+	msgbox LittlerootTown_Text_MomRescuedSafe, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_Text_TwinGoToBirch:
+	.string "CAMPIONE! Il PROFESSOR BIRCH ti sta\n"
+	.string "aspettando al LABORATORIO!\p"
+	.string "Devi assolutamente andare da lui prima\n"
+	.string "di avventurarti lungo il PERCORSO 101!$"
+
+LittlerootTown_Text_AquaCaptorDemands:
+	.string "TEAM IDRO: Ehi tu, ragazzino!\n"
+	.string "Abbiamo noi tua madre! Se la vuoi rivedere,\l"
+	.string "porta 1.000.000 ¥ e dimostra di essere\l"
+	.string "il Campione battendo di nuovo la LEGA POKéMON!\l"
+	.string "Altrimenti scordatela!$"
+
+LittlerootTown_Text_AquaCaptorLeagueBeaten:
+	.string "TEAM IDRO: E così hai sconfitto di nuovo\n"
+	.string "la LEGA POKéMON! Impressionante, Campione!\p"
+	.string "Ma i patti erano due: il titolo di Campione\n"
+	.string "e 1.000.000 ¥ per il riscatto!\p"
+	.string "Hai portato il milione di monete?$"
+
+LittlerootTown_Text_AquaCaptorNeedMoreMoney:
+	.string "TEAM IDRO: Cosa?! Non hai ancora 1.000.000 ¥\n"
+	.string "con te!\p"
+	.string "Niente soldi, niente mamma! Torna quando avrai\n"
+	.string "raccolto l'intera somma!$"
+
+LittlerootTown_Text_AquaCaptorAskPay:
+	.string "TEAM IDRO: Ottimo! Vedo che hai con te l'intera\n"
+	.string "somma di 1.000.000 ¥!\p"
+	.string "Vuoi pagare il riscatto e liberare tua madre?$"
+
+LittlerootTown_Text_AquaCaptorRefused:
+	.string "TEAM IDRO: Come osi fare lo spavaldo?!\n"
+	.string "Tua madre resta con noi finché non paghi!$"
+
+LittlerootTown_Text_PaidRansom1Million:
+	.string "{PLAYER} ha pagato 1.000.000 ¥ di riscatto\nal TEAM IDRO!$"
+
+LittlerootTown_Text_AquaCaptorGivesMomBack:
+	.string "TEAM IDRO: Un milione tondo tondo!\n"
+	.string "Il TEAM IDRO riconosce la tua grandezza!\p"
+	.string "Patti rispettati! Riprenditi tua madre!$"
+
+LittlerootTown_Text_MomThankYouChampion:
+	.string "MAMMA: Oh, {PLAYER}, tesoro mio!\n"
+	.string "Sapevo che saresti venuto a salvarmi!\p"
+	.string "Sei il miglior Campione che una madre potesse\n"
+	.string "desiderare! Torniamo finalmente a casa nostra!$"
+
+LittlerootTown_Text_MomRescuedSafe:
+	.string "MAMMA: Grazie ancora per avermi salvata,\n"
+	.string "tesoro mio! Riposati a casa quando vuoi!$"
 
 LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "MOM: {PLAYER}, we're here, honey!\p"

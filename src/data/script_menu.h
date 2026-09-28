@@ -54,6 +54,44 @@ static const struct MenuAction MultichoiceList_RegisterMenu[] =
     {gText_Cancel2},
 };
 
+static const u8 sText_DevonMenu_Portfolio[] = _("Portafoglio");
+static const u8 sText_DevonMenu_Deposit[]   = _("Deposita");
+static const u8 sText_DevonMenu_Withdraw[]  = _("Preleva");
+static const u8 sText_DevonMenu_News[]      = _("Notizie Mercato");
+
+static const u8 sText_DevonDep_10k[]        = _("10.000 ¥");
+static const u8 sText_DevonDep_50k[]        = _("50.000 ¥");
+static const u8 sText_DevonDep_100k[]       = _("100.000 ¥");
+static const u8 sText_DevonDep_All[]        = _("Tutto il Denaro");
+
+static const u8 sText_DevonWith_All[]       = _("Tutto il Valore");
+static const u8 sText_DevonWith_Half[]      = _("Metà Valore");
+
+static const struct MenuAction MultichoiceList_DevonStocks[] =
+{
+    {sText_DevonMenu_Portfolio},
+    {sText_DevonMenu_Deposit},
+    {sText_DevonMenu_Withdraw},
+    {sText_DevonMenu_News},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_DevonDeposit[] =
+{
+    {sText_DevonDep_10k},
+    {sText_DevonDep_50k},
+    {sText_DevonDep_100k},
+    {sText_DevonDep_All},
+    {gText_Cancel2},
+};
+
+static const struct MenuAction MultichoiceList_DevonWithdraw[] =
+{
+    {sText_DevonWith_All},
+    {sText_DevonWith_Half},
+    {gText_Cancel2},
+};
+
 static const struct MenuAction MultichoiceList_Bike[] =
 {
     {gText_Mach},
@@ -793,13 +831,13 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BASE_PC_WITH_REGISTRY]      = MULTICHOICE(MultichoiceList_BasePCWithRegistry),
     [MULTI_REGISTER_MENU]              = MULTICHOICE(MultichoiceList_RegisterMenu),
     [MULTI_SSTIDAL_LILYCOVE]           = MULTICHOICE(MultichoiceList_Exit),
-    [MULTI_UNUSED_9]                   = MULTICHOICE(MultichoiceList_Exit),
-    [MULTI_UNUSED_10]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_DEVON_STOCKS]               = MULTICHOICE(MultichoiceList_DevonStocks),
+    [MULTI_DEVON_DEPOSIT]              = MULTICHOICE(MultichoiceList_DevonDeposit),
     [MULTI_FRONTIER_PASS_INFO]         = MULTICHOICE(MultichoiceList_FrontierPassInfo),
     [MULTI_BIKE]                       = MULTICHOICE(MultichoiceList_Bike),
     [MULTI_STATUS_INFO]                = MULTICHOICE(MultichoiceList_StatusInfo),
     [MULTI_BRINEY_OFF_DEWFORD]         = MULTICHOICE(MultichoiceList_BrineyOffDewford),
-    [MULTI_UNUSED_15]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_DEVON_WITHDRAW]              = MULTICHOICE(MultichoiceList_DevonWithdraw),
     [MULTI_VIEWED_PAINTINGS]           = MULTICHOICE(MultichoiceList_ViewedPaintings),
     [MULTI_YESNOINFO]                  = MULTICHOICE(MultichoiceList_YesNoInfo),
     [MULTI_BATTLE_MODE]                = MULTICHOICE(MultichoiceList_BattleMode),

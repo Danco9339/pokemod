@@ -1537,18 +1537,18 @@
 #define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
 #define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
 #define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
-#define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
-#define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag
-#define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag
-#define FLAG_UNUSED_0x907                           (SYSTEM_FLAGS + 0xA7) // Unused Flag
-#define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag
-#define FLAG_UNUSED_0x909                           (SYSTEM_FLAGS + 0xA9) // Unused Flag
-#define FLAG_UNUSED_0x90A                           (SYSTEM_FLAGS + 0xAA) // Unused Flag
-#define FLAG_UNUSED_0x90B                           (SYSTEM_FLAGS + 0xAB) // Unused Flag
-#define FLAG_UNUSED_0x90C                           (SYSTEM_FLAGS + 0xAC) // Unused Flag
-#define FLAG_UNUSED_0x90D                           (SYSTEM_FLAGS + 0xAD) // Unused Flag
-#define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
-#define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
+#define FLAG_COLLETTA_ROXANNE                       (SYSTEM_FLAGS + 0xA4)
+#define FLAG_COLLETTA_BRAWLY                        (SYSTEM_FLAGS + 0xA5)
+#define FLAG_COLLETTA_WATTSON                       (SYSTEM_FLAGS + 0xA6)
+#define FLAG_COLLETTA_FLANNERY                      (SYSTEM_FLAGS + 0xA7)
+#define FLAG_COLLETTA_NORMAN                        (SYSTEM_FLAGS + 0xA8)
+#define FLAG_COLLETTA_WINONA                        (SYSTEM_FLAGS + 0xA9)
+#define FLAG_COLLETTA_TATE_AND_LIZA                 (SYSTEM_FLAGS + 0xAA)
+#define FLAG_COLLETTA_JUAN                          (SYSTEM_FLAGS + 0xAB)
+#define FLAG_DEVON_INVESTMENT_UNLOCKED              (SYSTEM_FLAGS + 0xAC)
+#define FLAG_LEAGUE_BEATEN_AGAIN                    (SYSTEM_FLAGS + 0xAD)
+#define FLAG_MOM_RESCUED                            (SYSTEM_FLAGS + 0xAE)
+#define FLAG_RECEIVED_BEAST_STARTER                 (SYSTEM_FLAGS + 0xAF)
 #define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
 #define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag
 #define FLAG_UNUSED_0x912                           (SYSTEM_FLAGS + 0xB2) // Unused Flag

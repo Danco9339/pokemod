@@ -456,12 +456,105 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter::
 LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
 	lock
 	faceplayer
-	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon
-	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_GrassyPatchWaiting
-	goto_if_unset FLAG_HAS_MATCH_CALL, LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
-	goto_if_unset FLAG_ENABLE_PROF_BIRCH_MATCH_CALL, EventScript_RegisterProfBirch
-	goto LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
+	goto_if_unset FLAG_RECEIVED_BEAST_STARTER, LittlerootTown_ProfessorBirchsLab_EventScript_BirchGiveBeastStarter
+	goto_if_set FLAG_DEVON_INVESTMENT_UNLOCKED, LittlerootTown_ProfessorBirchsLab_EventScript_BirchStockMarket
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchEncourageColletta, MSGBOX_DEFAULT
+	release
 	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BirchGiveBeastStarter::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchIntroMomKidnapped, MSGBOX_DEFAULT
+	callnative GiveRandomLegendaryBeast
+	goto_if_eq VAR_RANSOM_MOM_BEAST_CHOSEN, 0, LittlerootTown_ProfessorBirchsLab_EventScript_GiveRaikou
+	goto_if_eq VAR_RANSOM_MOM_BEAST_CHOSEN, 1, LittlerootTown_ProfessorBirchsLab_EventScript_GiveEntei
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_GiveSuicune
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_GiveRaikou::
+	playmoncry SPECIES_RAIKOU, CRY_MODE_ENCOUNTER
+	bufferspeciesname STR_VAR_1, SPECIES_RAIKOU
+	givemon SPECIES_RAIKOU, 50, ITEM_LUM_BERRY
+	playfanfare MUS_OBTAIN_ITEM
+	message LittlerootTown_ProfessorBirchsLab_Text_ReceivedBeastMon
+	waitmessage
+	waitfanfare
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchExplainMission, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_BEAST_STARTER
+	setflag FLAG_ADVENTURE_STARTED
+	setflag FLAG_RESCUED_BIRCH
+	setvar VAR_RANSOM_MOM_STATE, 2
+	setvar VAR_LITTLEROOT_TOWN_STATE, 4
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_GiveEntei::
+	playmoncry SPECIES_ENTEI, CRY_MODE_ENCOUNTER
+	bufferspeciesname STR_VAR_1, SPECIES_ENTEI
+	givemon SPECIES_ENTEI, 50, ITEM_LUM_BERRY
+	playfanfare MUS_OBTAIN_ITEM
+	message LittlerootTown_ProfessorBirchsLab_Text_ReceivedBeastMon
+	waitmessage
+	waitfanfare
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchExplainMission, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_BEAST_STARTER
+	setflag FLAG_ADVENTURE_STARTED
+	setflag FLAG_RESCUED_BIRCH
+	setvar VAR_RANSOM_MOM_STATE, 2
+	setvar VAR_LITTLEROOT_TOWN_STATE, 4
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_GiveSuicune::
+	playmoncry SPECIES_SUICUNE, CRY_MODE_ENCOUNTER
+	bufferspeciesname STR_VAR_1, SPECIES_SUICUNE
+	givemon SPECIES_SUICUNE, 50, ITEM_LUM_BERRY
+	playfanfare MUS_OBTAIN_ITEM
+	message LittlerootTown_ProfessorBirchsLab_Text_ReceivedBeastMon
+	waitmessage
+	waitfanfare
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchExplainMission, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_BEAST_STARTER
+	setflag FLAG_ADVENTURE_STARTED
+	setflag FLAG_RESCUED_BIRCH
+	setvar VAR_RANSOM_MOM_STATE, 2
+	setvar VAR_LITTLEROOT_TOWN_STATE, 4
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_Text_BirchIntroMomKidnapped:
+	.string "PROF. BIRCH: CAMPIONE! Sei arrivato!\p"
+	.string "È un incubo tremendo... Il TEAM IDRO ha osato\n"
+	.string "fare irruzione e ha RAPITO TUA MADRE!\p"
+	.string "Pretendono una cifra assurda: 1.000.000 di\n"
+	.string "monete per liberarla, ed esigono che tu\l"
+	.string "riconquisti il titolo battendo di nuovo la LEGA!\p"
+	.string "Non potevo lasciarti solo in questo dramma.\n"
+	.string "Mentre eri via, ho intrapreso una pericolosa\l"
+	.string "spedizione nelle terre remote di JOHTO,\l"
+	.string "rischiando la mia stessa vita per te...\p"
+	.string "E sono riuscito a catturare una delle\n"
+	.string "leggendarie BESTIE SACRE! È qui per te!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ReceivedBeastMon:
+	.string "{PLAYER} ha ricevuto la leggendaria\nbestia sacra {STR_VAR_1}!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_BirchExplainMission:
+	.string "PROF. BIRCH: Ascoltami attentamente!\n"
+	.string "Ecco la strategia per pagare il riscatto:\p"
+	.string "1. Visita tutte le 8 PALESTRE di HOENN.\n"
+	.string "I Capipalestra vogliono aiutarti: sconfiggili\l"
+	.string "e ciascuno donerà 100.000 monete alla colletta\l"
+	.string "e ti donerà un antico strumento per evocare\l"
+	.string "un POKéMON LEGGENDARIO di Kanto o Johto!\p"
+	.string "2. Raggiungi la cifra di 1.000.000 di monete.\p"
+	.string "3. Sconfiggi di nuovo la LEGA POKéMON!\p"
+	.string "Vai, Campione! Salva tua madre!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_BirchEncourageColletta:
+	.string "PROF. BIRCH: Continua a girare le PALESTRE\n"
+	.string "per raccogliere i fondi della colletta!\p"
+	.string "Dobbiamo raggiungere 1.000.000 di monete\n"
+	.string "per pagare il riscatto del TEAM IDRO!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon, MSGBOX_DEFAULT
