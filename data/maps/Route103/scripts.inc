@@ -277,54 +277,54 @@ Route103_EventScript_Isabelle::
 	end
 
 Route103_Text_MayRoute103Pokemon:
-	.string "MAY: Devo trovare POKéMON sempre più forti\n"
-	.string "per aiutare {PLAYER}{KUN} ad allenarsi al meglio!$"
+	.string "VERA: Devo trovare POKéMON forti\n"
+	.string "per aiutare {PLAYER}{KUN} al meglio!$"
 
 Route103_Text_MayLetsBattle:
 	.string "Eccoti, {PLAYER}{KUN}!\p"
-	.string "Vedo che mio padre ti ha affidato un POKéMON\n"
-	.string "leggendario straordinario!\p"
-	.string "Come ti ho promesso, lottiamo subito!\n"
-	.string "Sarà il nostro primo vero allenamento per\n"
-	.string "prepararti a riconquistare la LEGA e a\l"
-	.string "salvare tua madre!\p"
+	.string "Vedo che mio padre ti ha affidato\n"
+	.string "un POKéMON straordinario!\p"
+	.string "Come promesso, lottiamo subito!\n"
+	.string "Sarà il nostro allenamento per\l"
+	.string "aiutarti a salvare tua madre!\p"
 	.string "Fatti sotto, non mi risparmierò!$"
 
 Route103_Text_MayDefeated:
-	.string "Incredibile! Che forza travolgente!$"
+	.string "Incredibile! Che forza pura!$"
 
 Route103_Text_MayTimeToHeadBack:
-	.string "MAY: Sei impressionante, {PLAYER}{KUN}!\p"
-	.string "Quel POKéMON leggendario combatte con te in\n"
-	.string "perfetta armonia.\p"
-	.string "Con questa determinazione, sbaraglierai ogni\n"
-	.string "Capopalestra e la LEGA POKéMON!\p"
-	.string "Ricordati: sarò sempre il tuo sparring partner!\n"
-	.string "Ora torniamo subito al LABORATORIO di papà!$"
+	.string "VERA: Sei formidabile!\p"
+	.string "Quel POKéMON leggendario lotta\n"
+	.string "in perfetta sintonia con te!\p"
+	.string "Sarò sempre il tuo sparring\n"
+	.string "partner per la LEGA POKéMON!\p"
+	.string "Ora torniamo al LABORATORIO\n"
+	.string "da mio padre!$"
 
 Route103_Text_BrendanRoute103Pokemon:
-	.string "BRENDAN: Devo perfezionare la mia tattica per\n"
-	.string "dare a {PLAYER} l'allenamento più duro possibile!$"
+	.string "BRENDON: Devo perfezionare la\n"
+	.string "tattica per aiutare {PLAYER}!$"
 
 Route103_Text_BrendanLetsBattle:
-	.string "Ehi, {PLAYER}! Ti stavo aspettando!\p"
-	.string "Mio padre ti ha dato un POKéMON formidabile!\p"
-	.string "Mantengo la parola: lottiamo senza esclusione\n"
-	.string "di colpi! Questo scontro ti temprerà per la\l"
-	.string "LEGA POKéMON e per salvare tua madre!\p"
-	.string "Dimostrami di che pasta sei fatto!$"
+	.string "Ehi, {PLAYER}! Ti aspettavo!\p"
+	.string "Mio padre ti ha dato un POKéMON\n"
+	.string "davvero formidabile!\p"
+	.string "Lottiamo al massimo! Lo scontro\n"
+	.string "ti aiuterà a salvare tua madre\l"
+	.string "e a riconquistare la LEGA!\p"
+	.string "Dimostrami la tua vera forza!$"
 
 Route103_Text_BrendanDefeated:
 	.string "Accidenti! Che potenza micidiale!$"
 
 Route103_Text_BrendanTimeToHeadBack:
-	.string "BRENDAN: Mamma mia, {PLAYER}! Sei un mostro!\p"
-	.string "La tua determinazione a salvare tua madre ti\n"
-	.string "rende inarrestabile.\p"
-	.string "Se continui a lottare con questa grinta, il\n"
-	.string "TEAM IDRO avrà vita brevissima!\p"
-	.string "Conta sempre sul mio aiuto!\n"
-	.string "Ora torniamo al LABORATORIO da papà!$"
+	.string "BRENDON: Sei un vero Campione!\p"
+	.string "La tua determinazione a salvare\n"
+	.string "tua madre ti rende inarrestabile!\p"
+	.string "Il TEAM IDRO non avrà scampo!\p"
+	.string "Conta sempre sul mio sostegno!\n"
+	.string "Ora torniamo da mio padre al\l"
+	.string "LABORATORIO!$"
 
 Route103_Text_ShouldHaveBroughtPotion:
 	.string "My POKéMON is staggeringly tired…\n"

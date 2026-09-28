@@ -818,61 +818,63 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchRivalGoneHome:
 
 LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex:
 	.string "PROF. BIRCH: Oh, {PLAYER}{KUN}!\n"
-	.string "Ho saputo che ti stai già allenando senza\l"
-	.string "sosta insieme a {RIVAL}!\p"
-	.string "La tua determinazione a salvare tua madre\n"
-	.string "è encomiabile.\p"
-	.string "Prendi questo POKéDEX: ti sarà di immenso aiuto\n"
-	.string "nel tuo viaggio verso tutte le PALESTRE di HOENN!$"
+	.string "So che ti stai già allenando\l"
+	.string "duramente con {RIVAL}!\p"
+	.string "La tua determinazione a salvare\n"
+	.string "tua madre è encomiabile!\p"
+	.string "Prendi questo POKéDEX: ti sarà\n"
+	.string "di grande aiuto nel tuo viaggio!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex:
-	.string "{PLAYER} received the POKéDEX!$"
+	.string "{PLAYER} riceve il POKéDEX!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex:
-	.string "PROF. BIRCH: Il POKéDEX registrerà automaticamente\n"
-	.string "tutti i POKéMON che incontrerai o catturerai.\p"
-	.string "Usalo per potenziare al massimo la tua squadra!$"
+	.string "PROF. BIRCH: Il POKéDEX registra\n"
+	.string "tutti i dati sui POKéMON.\p"
+	.string "Usalo per potenziare al massimo\n"
+	.string "la tua squadra!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CountlessPokemonAwait:
-	.string "PROF. BIRCH: Le PALESTRE di HOENN ti aspettano!\n"
-	.string "Siamo tutti con te, Campione!$"
+	.string "PROF. BIRCH: Le PALESTRE di HOENN\n"
+	.string "ti aspettano!\l"
+	.string "Siamo tutti con te, CAMPIONE!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese:
-	.string "MAY: {PLAYER}{KUN}! Come promesso, eccoti un\n"
-	.string "aiuto concreto da parte mia!\p"
-	.string "Usa queste POKé BALL per catturare nuovi\n"
-	.string "compagni di squadra ed essere pronto alla sfida!$"
+	.string "VERA: {PLAYER}{KUN}!\n"
+	.string "Come promesso, ecco un aiuto!\p"
+	.string "Usa queste POKé BALL per creare\n"
+	.string "una squadra imbattibile!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls:
-	.string "MAY: Ricorda che puoi contare su di me ogni\n"
-	.string "volta che avrai bisogno di un allenamento!$"
+	.string "VERA: Ricorda che puoi contare\n"
+	.string "su di me per ogni allenamento!\l"
+	.string "Salveremo tua madre, vedrai!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_OhYourBagsFull:
-	.string "Oh? Your BAG's full.$"
+	.string "Oh? Lo ZAINO è pieno.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MayWhereShouldIGoNext:
-	.string "MAY: Forza {PLAYER}{KUN}, so che salverai tua madre!$"
+	.string "VERA: Forza {PLAYER}{KUN}, so che\n"
+	.string "salverai tua madre!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BrendanGotPokedexTooTakeThese:
-	.string "BRENDAN: {PLAYER}! Mantengo la parola data:\n"
-	.string "prendi queste POKé BALL per rinforzare il team!\p"
-	.string "Costruisci una squadra inarrestabile per\n"
-	.string "sconfiggere la LEGA e liberare tua madre!$"
+	.string "BRENDON: {PLAYER}!\n"
+	.string "Mantengo la parola data:\l"
+	.string "prendi queste POKé BALL!\p"
+	.string "Costruisci una squadra forte\n"
+	.string "per liberare tua madre!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_CatchCoolPokemonWithPokeBalls:
-	.string "BRENDAN: You know it's more fun to\n"
-	.string "have a whole bunch of POKéMON.\p"
-	.string "I'm going to explore all over the place\n"
-	.string "to find different POKéMON.\p"
-	.string "If I find any cool POKéMON, you bet\n"
-	.string "I'll try to get them with POKé BALLS.$"
+	.string "BRENDON: Conta sempre su di me\n"
+	.string "per allenarti al massimo!\l"
+	.string "Sconfiggeremo il TEAM IDRO!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_HeyYourBagsFull:
-	.string "Hey, your BAG's full.$"
+	.string "Ehi, lo ZAINO è pieno.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BrendanWhereShouldIGoNext:
-	.string "BRENDAN: Where should I look for\n"
-	.string "POKéMON next…$"
+	.string "BRENDON: Non arrenderti mai,\n"
+	.string "CAMPIONE!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_SeriousLookingMachine:
 	.string "It's a serious-looking machine.\n"
