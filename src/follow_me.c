@@ -251,20 +251,7 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
     if (IsStateMovement(state) && gSaveBlock2Ptr->follower.warpEnd)
     {
         gSaveBlock2Ptr->follower.warpEnd = 0;
-
-        if (gSaveBlock2Ptr->follower.comeOutDoorStairs == 1)
-        {
-            gPlayerAvatar.preventStep = TRUE;
-            taskId = CreateTask(Task_FollowerOutOfDoor, 1);
-            gTasks[taskId].data[0] = 0;
-            gTasks[taskId].data[2] = follower->currentCoords.x;
-            gTasks[taskId].data[3] = follower->currentCoords.y;
-            goto RESET;
-        }
-        else if (gSaveBlock2Ptr->follower.comeOutDoorStairs == 2)
-        {
-            gSaveBlock2Ptr->follower.comeOutDoorStairs = 0;
-        }
+        gSaveBlock2Ptr->follower.comeOutDoorStairs = 0;
         
         follower->invisible = FALSE;
         MoveObjectEventToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
@@ -803,37 +790,44 @@ void Task_DoDoorWarp(u8 taskId)
     case 2:
         if (IsPlayerStandingStill())
         {
-            if (!gSaveBlock2Ptr->follower.inProgress || gObjectEvents[followerObjId].invisible) //Don't close door on follower
-                task->data[1] = FieldAnimateDoorClose(*x, *y - 1);
             ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjId]);
             SetPlayerVisibility(0);
-            task->data[0] = 3;
+
+            if (gSaveBlock2Ptr->follower.inProgress && !gObjectEvents[followerObjId].invisible)
+            {
+                task->data[0] = 3;
+            }
+            else
+            {
+                task->data[1] = FieldAnimateDoorClose(*x, *y - 1);
+                task->data[0] = 5;
+            }
         }
         break;
     case 3:
-        if (task->data[1] < 0 || gTasks[task->data[1]].isActive != TRUE)
+        if (ObjectEventClearHeldMovementIfFinished(&gObjectEvents[followerObjId]))
         {
+            ObjectEventSetHeldMovement(&gObjectEvents[followerObjId], MOVEMENT_ACTION_WALK_NORMAL_UP);
             task->data[0] = 4;
         }
         break;
     case 4:
-        if (gSaveBlock2Ptr->follower.inProgress)
+        if (ObjectEventClearHeldMovementIfFinished(&gObjectEvents[followerObjId]))
         {
-            ObjectEventClearHeldMovementIfActive(&gObjectEvents[followerObjId]);
-            ObjectEventSetHeldMovement(&gObjectEvents[followerObjId], MOVEMENT_ACTION_WALK_NORMAL_UP);
+            gObjectEvents[followerObjId].invisible = TRUE;
+            task->data[1] = FieldAnimateDoorClose(*x, *y - 1);
+            task->data[0] = 5;
         }
-
-        TryFadeOutOldMapMusic();
-        WarpFadeOutScreen();
-        PlayRainStoppingSoundEffect();
-        task->data[0] = 0;
-        task->func = Task_WarpAndLoadMap;
         break;
     case 5:
-        TryFadeOutOldMapMusic();
-        PlayRainStoppingSoundEffect();
-        task->data[0] = 0;
-        task->func = Task_WarpAndLoadMap;
+        if (task->data[1] < 0 || gTasks[task->data[1]].isActive != TRUE)
+        {
+            TryFadeOutOldMapMusic();
+            WarpFadeOutScreen();
+            PlayRainStoppingSoundEffect();
+            task->data[0] = 0;
+            task->func = Task_WarpAndLoadMap;
+        }
         break;
     }
 }
@@ -1183,8 +1177,7 @@ void FollowMe_WarpSetEnd(void)
     gSaveBlock2Ptr->follower.warpEnd = 1;
     PlayerLogCoordinates(player);
 
-    toY = gSaveBlock2Ptr->follower.comeOutDoorStairs == 1 ? (player->currentCoords.y - 1) : player->currentCoords.y;
-    MoveObjectEventToMapCoords(follower, player->currentCoords.x, toY);
+    MoveObjectEventToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
     
     follower->facingDirection = player->facingDirection;
     follower->movementDirection = player->movementDirection;
@@ -1478,17 +1471,22 @@ extern const u8 EventScript_FollowerPokemon[];
 
 void Follower_PrepareMonInteraction(void)
 {
+    u16 species;
+
     if (gPlayerPartyCount > 0)
     {
         struct Pokemon *mon = &gPlayerParty[0];
-        u16 species = GetMonData(mon, MON_DATA_SPECIES);
+        species = GetMonData(mon, MON_DATA_SPECIES);
         gSpecialVar_0x8004 = species;
         GetMonData(mon, MON_DATA_NICKNAME, gStringVar1);
         StringGet_Nickname(gStringVar1);
+        PlayCry_Normal(species, 0);
     }
     else
     {
+        species = SPECIES_PIKACHU;
         gSpecialVar_0x8004 = SPECIES_PIKACHU;
+        PlayCry_Normal(SPECIES_PIKACHU, 0);
     }
 }
 

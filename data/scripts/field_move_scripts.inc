@@ -357,11 +357,11 @@ WalkRight:
 EventScript_FollowerPokemon::
 	lock
 	facefollower
+	waitse
 	callnative Follower_PrepareMonInteraction
-	playmoncry VAR_0x8004, CRY_MODE_NORMAL
+	waitmoncry
 	applymovement OBJ_EVENT_ID_FOLLOWER, Follower_Movement_Heart
 	waitmovement 0
-	waitmoncry
 	msgbox gText_FollowerPokemonLove, MSGBOX_DEFAULT
 	release
 	end

@@ -353,7 +353,6 @@ static void Task_ExitDoor(u8 taskId)
     case 3:
         if (task->data[1] < 0 || gTasks[task->data[1]].isActive != TRUE)
         {
-            FollowMe_SetIndicatorToComeOutDoor();
             FollowMe_WarpSetEnd();
             UnfreezeObjectEvents();
             task->tState = 4;
@@ -394,7 +393,6 @@ static void Task_ExitNonAnimDoor(u8 taskId)
     case 2:
         if (IsPlayerStandingStill())
         {
-            FollowMe_SetIndicatorToComeOutDoor();
             FollowMe_WarpSetEnd();
             UnfreezeObjectEvents();
             task->tState = 3;
