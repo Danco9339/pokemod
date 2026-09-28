@@ -473,7 +473,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_BirchGiveBeastStarter::
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveRaikou::
 	playmoncry SPECIES_RAIKOU, CRY_MODE_ENCOUNTER
 	bufferspeciesname STR_VAR_1, SPECIES_RAIKOU
-	givemon SPECIES_RAIKOU, 50, ITEM_LUM_BERRY
+	givemon SPECIES_RAIKOU, 5, ITEM_LUM_BERRY
 	playfanfare MUS_OBTAIN_ITEM
 	message LittlerootTown_ProfessorBirchsLab_Text_ReceivedBeastMon
 	waitmessage
@@ -490,7 +490,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveRaikou::
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveEntei::
 	playmoncry SPECIES_ENTEI, CRY_MODE_ENCOUNTER
 	bufferspeciesname STR_VAR_1, SPECIES_ENTEI
-	givemon SPECIES_ENTEI, 50, ITEM_LUM_BERRY
+	givemon SPECIES_ENTEI, 5, ITEM_LUM_BERRY
 	playfanfare MUS_OBTAIN_ITEM
 	message LittlerootTown_ProfessorBirchsLab_Text_ReceivedBeastMon
 	waitmessage
@@ -507,7 +507,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveEntei::
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveSuicune::
 	playmoncry SPECIES_SUICUNE, CRY_MODE_ENCOUNTER
 	bufferspeciesname STR_VAR_1, SPECIES_SUICUNE
-	givemon SPECIES_SUICUNE, 50, ITEM_LUM_BERRY
+	givemon SPECIES_SUICUNE, 5, ITEM_LUM_BERRY
 	playfanfare MUS_OBTAIN_ITEM
 	message LittlerootTown_ProfessorBirchsLab_Text_ReceivedBeastMon
 	waitmessage

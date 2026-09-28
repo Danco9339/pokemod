@@ -59,6 +59,7 @@ LavaridgeTown_Gym_EventScript_FlanneryColletta::
 	end
 
 PetalburgCity_Gym_EventScript_NormanColletta::
+	goto_if_lt VAR_COLLETTA_GYMS_COUNT, 7, PetalburgCity_Gym_EventScript_NormanBusySearching
 	msgbox gText_NormanCollettaIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_NORMAN_5, gText_NormanCollettaDefeat
 	msgbox gText_NormanCollettaPost, MSGBOX_DEFAULT
@@ -68,10 +69,15 @@ PetalburgCity_Gym_EventScript_NormanColletta::
 	waitmessage
 	waitfanfare
 	giveitem ITEM_LEGEND_ORB_PSYCHIC
-	msgbox gText_NormanDevonNotice, MSGBOX_DEFAULT
 	setflag FLAG_COLLETTA_NORMAN
 	setflag FLAG_DEVON_INVESTMENT_UNLOCKED
 	addvar VAR_COLLETTA_GYMS_COUNT, 1
+	release
+	end
+
+PetalburgCity_Gym_EventScript_NormanBusySearching::
+	msgbox gText_NormanBusySearching, MSGBOX_DEFAULT
+	setflag FLAG_DEVON_INVESTMENT_UNLOCKED
 	release
 	end
 
@@ -175,27 +181,41 @@ gText_FlanneryCollettaPost:
 	.string "FIAMMETTA: Sei una fiamma inarrestabile!\n"
 	.string "Ecco le 100.000 monete e il FLAUTO FUOCO per MOLTRES!$"
 
+gText_NormanBusySearching:
+	.string "NORMAN: {PLAYER}! Sono sconvolto per tua madre...\n"
+	.string "Sto coordinando le ricerche giorno e notte con\l"
+	.string "le pattuglie di tutta la regione di Hoenn!\p"
+	.string "So che stai raccogliendo la colletta per pagare\n"
+	.string "il riscatto, ma ora sono troppo forte per te e non\l"
+	.string "posso fermarmi proprio adesso.\p"
+	.string "Dimostrami la tua determinazione battendo prima\n"
+	.string "gli altri 7 Capipalestra di Hoenn!\p"
+	.string "Solo allora potrai sfidarmi: sarò io l'ultimo\n"
+	.string "Capopalestra da affrontare per completare la somma\l"
+	.string "e darti il mio contributo!\p"
+	.string "Nel frattempo, ho parlato con il PROF. BIRCH:\n"
+	.string "ti aiuterà con gli investimenti azionari della\l"
+	.string "DEVON SpA al suo laboratorio per far fruttare\l"
+	.string "i tuoi risparmi!$"
+
 gText_NormanCollettaIntro:
-	.string "NORMAN: Figlio mio! Ti stavo aspettando!\n"
-	.string "Tua madre... la mia adorata moglie!\l"
-	.string "Quei vigliacchi del TEAM IDRO la pagheranno!\p"
-	.string "Ho raccolto 100.000 ¥ qui in palestra per il riscatto.\n"
-	.string "Ma prima, dimostrami la risolutezza del Campione!$"
+	.string "NORMAN: {PLAYER}! Hai raccolto il sostegno di\n"
+	.string "tutti gli altri 7 Capipalestra di Hoenn!\p"
+	.string "Vedo la determinazione e la maturità nei tuoi occhi.\n"
+	.string "Ora tocca a noi: sarò l'ultimo ostacolo da superare\l"
+	.string "prima di salvare tua madre!\p"
+	.string "Mostrami tutto ciò che hai imparato!$"
 
 gText_NormanCollettaDefeat:
-	.string "Sei diventato incredibilmente forte, figlio mio.$"
+	.string "Incredibile... Sei diventato persino più forte\n"
+	.string "di me, figlio mio!$"
 
 gText_NormanCollettaPost:
-	.string "NORMAN: Sono fiero di te. Ecco le 100.000 monete\n"
-	.string "e la misteriosa SFERA PSICHICA per MEWTWO!$"
-
-gText_NormanDevonNotice:
-	.string "NORMAN: Un'ultima cosa fondamentale:\n"
-	.string "il PROFESSOR BIRCH mi ha appena contattato.\p"
-	.string "Ha aperto un piano d'investimento nelle\n"
-	.string "AZIONI DEVON SpA con rendimento settimanale +4%!\p"
-	.string "Raggiungerai il milione molto più in fretta.\n"
-	.string "Vai subito al suo Laboratorio a parlargli!$"
+	.string "NORMAN: Non ho più alcun dubbio. Sei pronto per\n"
+	.string "affrontare il TEAM IDRO e salvare la mamma!\p"
+	.string "Ecco il mio contributo di 100.000 ¥ per la colletta,\n"
+	.string "e prendi questo antico cimelio di Kanto: la SFERA\l"
+	.string "PSICHICA, capace di risvegliare MEWTWO!$"
 
 gText_WinonaCollettaIntro:
 	.string "ALICE: Campione! Il vento ha portato la triste\n"

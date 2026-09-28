@@ -3,8 +3,23 @@ EventScript_TV::
 	incrementgamestat GAME_STAT_WATCHED_TV
 	special ResetTVShowState
 	specialvar VAR_RESULT, CheckForPlayersHouseNews
-	goto_if_eq VAR_RESULT, PLAYERS_HOUSE_TV_MOVIE, EventScript_PlayersHouseMovie
-	goto_if_eq VAR_RESULT, PLAYERS_HOUSE_TV_LATI, EventScript_PlayersHouseLatiNewsFlash
+	goto_if_eq VAR_RESULT, PLAYERS_HOUSE_TV_NONE, EventScript_TV_NotPlayersHouse
+	goto_if_set FLAG_MOM_RESCUED, EventScript_PlayersHouseMomRescuedNews
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox gText_TV_MomKidnappedNewsFlash, MSGBOX_DEFAULT
+	special TurnOffTVScreen
+	releaseall
+	end
+
+EventScript_PlayersHouseMomRescuedNews::
+	msgbox gText_TV_MomRescuedNewsFlash, MSGBOX_DEFAULT
+	special TurnOffTVScreen
+	releaseall
+	end
+
+EventScript_TV_NotPlayersHouse::
 	goto_if_unset FLAG_SYS_TV_START, EventScript_MomDadMightLikeThis1
 	goto_if_set FLAG_SYS_TV_WATCH, EventScript_MomDadMightLikeThis1
 	specialvar VAR_RESULT, IsGabbyAndTyShowOnTheAir
@@ -83,3 +98,21 @@ EventScript_DoInSearchOfTrainers::
 	goto_if_eq VAR_RESULT, 0, EventScript_DoInSearchOfTrainers
 	goto EventScript_TurnOffTV
 	end
+
+gText_TV_MomKidnappedNewsFlash:
+	.string "EDIZIONE STRAORDINARIA DEL TELEGIORNALE!\p"
+	.string "“Interrompiamo i programmi per una notizia\n"
+	.string "sconvolgente da ALDANOVA.\p"
+	.string "La signora di casa, madre del nuovo Campione\n"
+	.string "della Lega Pokémon, è stata RAPITA!\p"
+	.string "I testimoni riferiscono di una violenta incursione\n"
+	.string "da parte di criminali con divise del TEAM IDRO.\p"
+	.string "Le autorità invitano chiunque abbia informazioni\n"
+	.string "a farsi avanti immediatamente.”$"
+
+gText_TV_MomRescuedNewsFlash:
+	.string "EDIZIONE DEL TELEGIORNALE:\p"
+	.string "“Notizia dell'ultima ora: la madre del\n"
+	.string "Campione è stata tratta in salvo!\p"
+	.string "Tutta Hoenn esulta per il coraggio del nostro\n"
+	.string "straordinario Campione!”$"

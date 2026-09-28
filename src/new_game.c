@@ -249,6 +249,24 @@ void NewGameInitData(void)
     FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN);
     FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
     FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM);
+
+    // Wall clock set to 10:00 AM automatically; Mom never interrupts upstairs
+    RtcInitLocalTimeOffset(10, 0);
+    FlagSet(FLAG_SET_WALL_CLOCK);
+    FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1);
+    FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2);
+    VarSet(VAR_LITTLEROOT_INTRO_STATE, 7);
+
+    // Disable Route 101 Birch chase event
+    VarSet(VAR_ROUTE101_STATE, 3);
+    FlagSet(FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE);
+    FlagSet(FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG);
+    FlagSet(FLAG_HIDE_ROUTE_101_ZIGZAGOON);
+    FlagSet(FLAG_RESCUED_BIRCH);
+
+    // TV at home configured
+    FlagSet(FLAG_SYS_TV_HOME);
+    FlagClear(FLAG_SYS_TV_LATIAS_LATIOS);
 }
 
 static void ResetMiniGamesRecords(void)
