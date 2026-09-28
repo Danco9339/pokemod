@@ -525,39 +525,41 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveSuicune::
 	end
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchIntroMomKidnapped:
-	.string "PROF. BIRCH: CAMPIONE! Sei arrivato!\p"
-	.string "È un incubo tremendo... Il TEAM IDRO ha osato\n"
-	.string "fare irruzione e ha RAPITO TUA MADRE!\p"
-	.string "Pretendono una cifra assurda: 1.000.000 di\n"
-	.string "monete per liberarla, ed esigono che tu\l"
-	.string "riconquisti il titolo battendo di nuovo la LEGA!\p"
-	.string "Non potevo lasciarti solo in questo dramma.\n"
-	.string "Mentre eri via, ho intrapreso una pericolosa\l"
-	.string "spedizione nelle terre remote di JOHTO,\l"
-	.string "rischiando la mia stessa vita per te...\p"
-	.string "E sono riuscito a catturare una delle\n"
-	.string "leggendarie BESTIE SACRE! È qui per te!$"
+	.string "PROF. BIRCH: CAMPIONE!\n"
+	.string "Sei arrivato, finalmente!\p"
+	.string "È un incubo tremendo…\n"
+	.string "Il TEAM IDRO ha fatto irruzione\l"
+	.string "e ha RAPITO TUA MADRE!\p"
+	.string "Chiedono 1.000.000 di monete\n"
+	.string "di riscatto per liberarla!\p"
+	.string "E pretendono che riconquisti\n"
+	.string "la LEGA POKéMON!\p"
+	.string "Non potevo lasciarti solo.\n"
+	.string "Ho rischiato la vita a JOHTO\l"
+	.string "per catturare questo POKéMON!\p"
+	.string "Prendi una delle BESTIE SACRE,\n"
+	.string "sarà al tuo fianco!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ReceivedBeastMon:
-	.string "{PLAYER} ha ricevuto la leggendaria\nbestia sacra {STR_VAR_1}!$"
+	.string "{PLAYER} ha ricevuto la bestia\n"
+	.string "leggendaria {STR_VAR_1}!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchExplainMission:
-	.string "PROF. BIRCH: Ascoltami attentamente!\n"
-	.string "Ecco la strategia per pagare il riscatto:\p"
-	.string "1. Visita tutte le 8 PALESTRE di HOENN.\n"
-	.string "I Capipalestra vogliono aiutarti: sconfiggili\l"
-	.string "e ciascuno donerà 100.000 monete alla colletta\l"
-	.string "e ti donerà un antico strumento per evocare\l"
-	.string "un POKéMON LEGGENDARIO di Kanto o Johto!\p"
-	.string "2. Raggiungi la cifra di 1.000.000 di monete.\p"
-	.string "3. Sconfiggi di nuovo la LEGA POKéMON!\p"
-	.string "Vai, Campione! Salva tua madre!$"
+	.string "PROF. BIRCH: Ascoltami bene!\n"
+	.string "Ecco la strategia da seguire:\p"
+	.string "1. Visita le 8 PALESTRE.\n"
+	.string "I CAPIPALESTRA doneranno\l"
+	.string "100.000 ¥ ciascuno alla colletta,\l"
+	.string "più un antico strumento sacro!\p"
+	.string "2. Raggiungi 1.000.000 di monete.\p"
+	.string "3. Sconfiggi la LEGA POKéMON!\p"
+	.string "Vai, CAMPIONE! Salva tua madre!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchEncourageColletta:
-	.string "PROF. BIRCH: Continua a girare le PALESTRE\n"
-	.string "per raccogliere i fondi della colletta!\p"
-	.string "Dobbiamo raggiungere 1.000.000 di monete\n"
-	.string "per pagare il riscatto del TEAM IDRO!$"
+	.string "PROF. BIRCH: Continua a girare\n"
+	.string "le PALESTRE per la colletta!\p"
+	.string "Dobbiamo raccogliere 1.000.000 ¥\n"
+	.string "per pagare il riscatto!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon, MSGBOX_DEFAULT

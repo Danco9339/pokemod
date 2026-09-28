@@ -8,10 +8,10 @@
 #include "constants/species.h"
 #include "constants/vars.h"
 
-static const u8 sText_DevonMarketBullish[] = _("Il mercato DEVON è in forte rialzo!\nI nuovi prototipi high-tech vanno a ruba.$");
-static const u8 sText_DevonMarketSteady[] = _("Crescita solida e costante per DEVON SpA.\nGli analisti prevedono ottimi guadagni.$");
-static const u8 sText_DevonMarketDip[] = _("Piccola correzione tecnica dei mercati.\nGli esperti consigliano di accumulare quote.$");
-static const u8 sText_DevonMarketBearish[] = _("Flessione settimanale temporanea per DEVON.\nLa tendenza a lungo termine resta al rialzo.$");
+static const u8 sText_DevonMarketBullish[] = _("Mercato DEVON in forte rialzo!\nI nuovi prototipi vanno a ruba.$");
+static const u8 sText_DevonMarketSteady[] = _("Crescita solida per DEVON SpA.\nPrevisti ottimi guadagni futuri.$");
+static const u8 sText_DevonMarketDip[] = _("Piccola correzione tecnica.\nConviene accumulare nuove quote!$");
+static const u8 sText_DevonMarketBearish[] = _("Flessione temporanea per DEVON.\nIl trend di lungo resta positivo!$");
 
 u32 GetDevonStockValue(void)
 {

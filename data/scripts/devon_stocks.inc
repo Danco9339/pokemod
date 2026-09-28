@@ -125,44 +125,49 @@ LittlerootTown_ProfessorBirchsLab_EventScript_StockExit::
 	end
 
 gText_DevonStock_Welcome:
-	.string "PROF. BIRCH: Campione! Benvenuto al\n"
-	.string "terminale AZIONI DEVON SpA!\p"
-	.string "Rendimento medio settimanale del +4%.\n"
-	.string "La tendenza storica è sempre al rialzo!$"
+	.string "PROF. BIRCH: CAMPIONE!\n"
+	.string "Ecco le AZIONI DEVON SpA!\p"
+	.string "Rendimento medio: +4%.\n"
+	.string "Il trend storico è al rialzo!$"
 
 gText_DevonStock_WhatToDo:
-	.string "Come desideri operare sulle tue azioni?$"
+	.string "Cosa desideri fare con le azioni?$"
 
 gText_DevonStock_StatusProfit:
-	.string "--- PORTAFOGLIO DEVON SpA ---\n"
-	.string "Capitale Investito: {STR_VAR_1} ¥\l"
-	.string "Valore Attuale:    {STR_VAR_2} ¥\l"
-	.string "Profitto Netto:   +{STR_VAR_3} ¥ (IN ATTIVO!)$"
+	.string "--- AZIONI DEVON SpA ---\n"
+	.string "Capitale: {STR_VAR_1} ¥\l"
+	.string "Valore:   {STR_VAR_2} ¥\l"
+	.string "Profitto: +{STR_VAR_3} ¥ (ATTIVO!)$"
 
 gText_DevonStock_StatusLoss:
-	.string "--- PORTAFOGLIO DEVON SpA ---\n"
-	.string "Capitale Investito: {STR_VAR_1} ¥\l"
-	.string "Valore Attuale:    {STR_VAR_2} ¥\l"
-	.string "Flessione:        -{STR_VAR_3} ¥ (Correzione)$"
+	.string "--- AZIONI DEVON SpA ---\n"
+	.string "Capitale:  {STR_VAR_1} ¥\l"
+	.string "Valore:    {STR_VAR_2} ¥\l"
+	.string "Flessione: -{STR_VAR_3} ¥$"
 
 gText_DevonStock_DepositPrompt:
-	.string "Quanto denaro intendi investire in quote?$"
+	.string "Quanto denaro vuoi investire?$"
 
 gText_DevonStock_DepositSuccess:
-	.string "Operazione completata con successo!\nHai acquistato quote per {STR_VAR_1} ¥.$"
+	.string "Operazione completata!\n"
+	.string "Acquistate quote per {STR_VAR_1} ¥.$"
 
 gText_DevonStock_DepositNotEnoughMoney:
-	.string "Non hai abbastanza denaro liquido nel portafoglio.$"
+	.string "Non hai abbastanza denaro liquido\n"
+	.string "nel portafoglio.$"
 
 gText_DevonStock_WithdrawPrompt:
-	.string "Quanto capitale azionario desideri liquidare?$"
+	.string "Quanto capitale vuoi ritirare?$"
 
 gText_DevonStock_WithdrawSuccess:
-	.string "Liquidazione eseguita con successo!\nHai prelevato {STR_VAR_1} ¥ in contanti.$"
+	.string "Liquidazione completata!\n"
+	.string "Hai ritirato {STR_VAR_1} ¥.$"
 
 gText_DevonStock_NoFundsToWithdraw:
-	.string "Non hai quote azionarie depositate da liquidare.$"
+	.string "Non hai quote azionarie da\n"
+	.string "poter ritirare.$"
 
 gText_DevonStock_Goodbye:
-	.string "PROF. BIRCH: Ottima gestione! Continua a far\n"
-	.string "fruttare i tuoi fondi per il riscatto!$"
+	.string "PROF. BIRCH: Ottima gestione!\n"
+	.string "Fai fruttare i tuoi fondi per\l"
+	.string "salvare tua madre!$"
