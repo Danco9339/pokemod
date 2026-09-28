@@ -88,6 +88,7 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	delay 30
 	applywaitmovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
+	setflag FLAG_DEVON_INVESTMENT_UNLOCKED
 	setvar VAR_PETALBURG_GYM_STATE, 2
 	releaseall
 	end
@@ -1202,6 +1203,10 @@ PetalburgCity_Gym_Text_DadGoCollectBadges:
 	.string "Visita le altre città di HOENN!\p"
 	.string "Raccogli i fondi della colletta\n"
 	.string "e i loro strumenti sacri!\p"
+	.string "Inoltre, ho parlato con BIRCH:\n"
+	.string "ti aiuterà con le azioni DEVON!\p"
+	.string "Vai al suo laboratorio per far\n"
+	.string "fruttare i tuoi risparmi!\p"
 	.string "Quando avrai l'aiuto di 7\n"
 	.string "palestre, torna qui da me!\l"
 	.string "Sarò la tua sfida decisiva!$"
