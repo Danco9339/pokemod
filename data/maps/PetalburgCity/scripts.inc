@@ -679,37 +679,39 @@ PetalburgCity_EventScript_GymBoy::
 	end
 
 PetalburgCity_Text_WhereIsWally:
-	.string "Where has our WALLY gone?\p"
-	.string "We have to leave for VERDANTURF TOWN\n"
-	.string "very soon…$"
+	.string "Nostro figlio LINO è andato alla\n"
+	.string "PALESTRA…\p"
+	.string "Vuole diventare forte per darti\n"
+	.string "una mano nelle ricerche!\l"
+	.string "Che ragazzo generoso…$"
 
 PetalburgCity_Text_AreYouRookieTrainer:
-	.string "Hiya! Are you maybe…\n"
-	.string "A rookie TRAINER?\p"
-	.string "Do you know what POKéMON TRAINERS\n"
-	.string "do when they reach a new town?\p"
-	.string "They first check what kind of GYM\n"
-	.string "is in the town.$"
+	.string "CAMPIONE {PLAYER}!\n"
+	.string "Ti stavamo tutti aspettando!\p"
+	.string "Tuo padre ti aspetta in PALESTRA,\n"
+	.string "è sconvolto per il rapimento!\p"
+	.string "Vieni, ti accompagno subito là!$"
 
 PetalburgCity_Text_ThisIsPetalburgGym:
-	.string "See? This is PETALBURG CITY's GYM.$"
+	.string "Eccoci, questa è la PALESTRA!$"
 
 PetalburgCity_Text_ThisIsGymSign:
-	.string "This is the GYM's sign. Look for it\n"
-	.string "whenever you're looking for a GYM.$"
+	.string "Entra a parlare con tuo padre!\n"
+	.string "Siamo tutti con te, CAMPIONE!$"
 
 PetalburgCity_Text_WaterReflection:
-	.string "My face is reflected in the water.\p"
-	.string "It's a shining grin full of hope…\p"
-	.string "Or it could be a look of somber silence\n"
-	.string "struggling with fear…\p"
-	.string "What do you see reflected in your face?$"
+	.string "Guardo il riflesso nell'acqua…\n"
+	.string "pensando alla tua povera mamma!\p"
+	.string "Ma so che con te come CAMPIONE,\n"
+	.string "il TEAM IDRO non avrà scampo!\l"
+	.string "Forza, non arrenderti!$"
 
 PetalburgCity_Text_FullPartyExplanation:
-	.string "Let's say you have six POKéMON.\n"
-	.string "If you catch another one…\p"
-	.string "It is automatically sent to a STORAGE\n"
-	.string "BOX over a PC connection.$"
+	.string "Tuo padre NORMAN e le autorità\n"
+	.string "stanno cercando su ogni costa.\p"
+	.string "CAMPIONE, raccogli la colletta\n"
+	.string "dai CAPIPALESTRA per salvarla!\l"
+	.string "Tutta PETALIPOLI tifa per te!$"
 
 PetalburgCity_Text_GymSign:
 	.string "PETALBURG CITY POKéMON GYM\n"

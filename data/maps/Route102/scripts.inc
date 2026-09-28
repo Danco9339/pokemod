@@ -74,31 +74,38 @@ Route102_EventScript_Allen::
 	end
 
 Route102_Text_WatchMeCatchPokemon:
-	.string "WALLY: {PLAYER}…\n"
-	.string "POKéMON hide in tall grass like this,\l"
-	.string "don't they?\p"
-	.string "Please watch me and see if I can\n"
-	.string "catch one properly.\p"
-	.string "…Whoa!$"
+	.string "LINO: {PLAYER}…\n"
+	.string "I POKéMON si nascondono nell'erba\l"
+	.string "alta come questa, vero?\p"
+	.string "Ti prego, guardami… devo imparare\n"
+	.string "a catturarne uno per aiutarti\l"
+	.string "a salvare tua madre!\p"
+	.string "…Oh, eccolo!$"
 
 Route102_Text_WallyIDidIt:
-	.string "WALLY: I did it… It's my…\n"
-	.string "My POKéMON!$"
+	.string "LINO: Ce l'ho fatta… è il mio…\n"
+	.string "il mio primo POKéMON!$"
 
 Route102_Text_LetsGoBack:
-	.string "{PLAYER}, thank you!\n"
-	.string "Let's go back to the GYM!$"
+	.string "{PLAYER}, grazie di cuore!\n"
+	.string "Torniamo subito da tuo padre.\l"
+	.string "Prometto che mi allenerò duramente\l"
+	.string "per aiutarti nelle ricerche!$"
 
 Route102_Text_ImNotVeryTall:
-	.string "I'm…not very tall, so I sink right\n"
-	.string "into tall grass.\p"
-	.string "The grass goes up my nose and…\n"
-	.string "Fwafwafwafwafwa…\p"
-	.string "Fwatchoo!$"
+	.string "Ho visto tipi vestiti di blu\n"
+	.string "andare verso est…\p"
+	.string "CAMPIONE, fa' vedere a quei loschi\n"
+	.string "individui di cosa sei capace!\l"
+	.string "Tua madre conta su di te!$"
 
 Route102_Text_CatchWholeBunchOfPokemon:
-	.string "I'm going to catch a whole bunch of\n"
-	.string "POKéMON!$"
+	.string "CAMPIONE {PLAYER}!\n"
+	.string "Abbiamo saputo di tua madre…\p"
+	.string "Tutta HOENN fa il tifo per te!\n"
+	.string "Parla con tutti i CAPIPALESTRA:\l"
+	.string "aiuteranno per il riscatto!\l"
+	.string "Salva la tua mamma!$"
 
 Route102_Text_RouteSignOldale:
 	.string "ROUTE 102\n"

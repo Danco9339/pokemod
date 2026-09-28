@@ -329,8 +329,11 @@ OldaleTown_Movement_ReturnToOriginalPosition:
 	step_end
 
 OldaleTown_Text_SavingMyProgress:
-	.string "I want to take a rest, so I'm saving my\n"
-	.string "progress.$"
+	.string "CAMPIONE {PLAYER}!\n"
+	.string "Ho sentito la notizia terribile…\p"
+	.string "Non arrenderti! Raccogli i fondi\n"
+	.string "e salva tua madre!\l"
+	.string "Tutta SOLAROSA tifa per te!$"
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Hi!\n"
@@ -346,9 +349,11 @@ OldaleTown_Text_ThisIsAPokemonMart:
 	.string "a promotional item.$"
 
 OldaleTown_Text_PotionExplanation:
-	.string "A POTION can be used anytime, so it's\n"
-	.string "even more useful than a POKéMON CENTER\l"
-	.string "in certain situations.$"
+	.string "Una POZIONE fa la differenza\n"
+	.string "durante la battaglia!\p"
+	.string "Usala per proteggere la squadra\n"
+	.string "mentre lotti per tua madre!\l"
+	.string "In bocca al lupo, CAMPIONE!$"
 
 OldaleTown_Text_WaitDontComeInHere:
 	.string "Aaaaah! Wait!\n"
@@ -365,20 +370,23 @@ OldaleTown_Text_DiscoveredFootprints:
 	.string "them, okay?$"
 
 OldaleTown_Text_FinishedSketchingFootprints:
-	.string "I finished sketching the footprints of\n"
-	.string "a rare POKéMON.\p"
-	.string "But it turns out they were only my\n"
-	.string "own footprints…$"
+	.string "Ho visto tracce sospette…\n"
+	.string "il TEAM IDRO è passato di qua!\p"
+	.string "CAMPIONE, siamo tutti con te!\n"
+	.string "Insegui quei malviventi e\l"
+	.string "riporta a casa tua madre!$"
 
 OldaleTown_Text_MayLetsGoBack:
-	.string "MAY: {PLAYER}{KUN}!\n"
-	.string "Over here!\l"
-	.string "Let's hurry home!$"
+	.string "VERA: {PLAYER}!\n"
+	.string "Torna subito al LABORATORIO!\p"
+	.string "Mio padre ci aspetta per il piano\n"
+	.string "per salvare tua madre!$"
 
 OldaleTown_Text_BrendanLetsGoBack:
-	.string "BRENDAN: I'm heading back to my dad's\n"
-	.string "LAB now.\l"
-	.string "{PLAYER}, you should hustle back, too.$"
+	.string "BRENDON: {PLAYER}!\n"
+	.string "Torna subito al LABORATORIO.\p"
+	.string "Mio padre ha preparato tutto\n"
+	.string "per aiutarti a trovare tua mamma!$"
 
 OldaleTown_Text_TownSign:
 	.string "OLDALE TOWN\n"

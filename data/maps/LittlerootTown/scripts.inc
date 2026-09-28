@@ -900,59 +900,69 @@ LittlerootTown_EventScript_MomRescued::
 	end
 
 LittlerootTown_Text_TwinGoToBirch:
-	.string "CAMPIONE! Il PROFESSOR BIRCH ti sta\n"
-	.string "aspettando al LABORATORIO!\p"
-	.string "Devi assolutamente andare da lui prima\n"
-	.string "di avventurarti lungo il PERCORSO 101!$"
+	.string "CAMPIONE {PLAYER}!\n"
+	.string "Il PROF. BIRCH ti aspetta\l"
+	.string "con urgenza al LABORATORIO!\p"
+	.string "Ha qualcosa per aiutarti\n"
+	.string "a salvare tua madre!$"
 
 LittlerootTown_Text_AquaCaptorDemands:
 	.string "TEAM IDRO: Ehi tu, ragazzino!\n"
-	.string "Abbiamo noi tua madre! Se la vuoi rivedere,\l"
-	.string "porta 1.000.000 ¥ e dimostra di essere\l"
-	.string "il Campione battendo di nuovo la LEGA POKéMON!\l"
+	.string "Abbiamo noi tua madre!\p"
+	.string "Se vuoi rivederla sana e salva,\n"
+	.string "porta 1.000.000 ¥ e sconfiggi\l"
+	.string "di nuovo la LEGA POKéMON!\p"
 	.string "Altrimenti scordatela!$"
 
 LittlerootTown_Text_AquaCaptorLeagueBeaten:
-	.string "TEAM IDRO: E così hai sconfitto di nuovo\n"
-	.string "la LEGA POKéMON! Impressionante, Campione!\p"
-	.string "Ma i patti erano due: il titolo di Campione\n"
+	.string "TEAM IDRO: E così hai battuto\n"
+	.string "di nuovo la LEGA POKéMON!\p"
+	.string "Impressionante, Campione!\p"
+	.string "Ma i patti erano due: il titolo\n"
 	.string "e 1.000.000 ¥ per il riscatto!\p"
 	.string "Hai portato il milione di monete?$"
 
 LittlerootTown_Text_AquaCaptorNeedMoreMoney:
-	.string "TEAM IDRO: Cosa?! Non hai ancora 1.000.000 ¥\n"
-	.string "con te!\p"
-	.string "Niente soldi, niente mamma! Torna quando avrai\n"
-	.string "raccolto l'intera somma!$"
+	.string "TEAM IDRO: Cosa?! Non hai con te\n"
+	.string "1.000.000 ¥!\p"
+	.string "Niente soldi, niente mamma!\n"
+	.string "Torna quando avrai la somma!$"
 
 LittlerootTown_Text_AquaCaptorAskPay:
-	.string "TEAM IDRO: Ottimo! Vedo che hai con te l'intera\n"
-	.string "somma di 1.000.000 ¥!\p"
-	.string "Vuoi pagare il riscatto e liberare tua madre?$"
+	.string "TEAM IDRO: Ottimo!\n"
+	.string "Hai con te 1.000.000 ¥!\p"
+	.string "Vuoi pagare il riscatto\n"
+	.string "per liberare tua madre?$"
 
 LittlerootTown_Text_AquaCaptorRefused:
-	.string "TEAM IDRO: Come osi fare lo spavaldo?!\n"
-	.string "Tua madre resta con noi finché non paghi!$"
+	.string "TEAM IDRO: Fai lo spavaldo?!\n"
+	.string "Tua madre resta con noi finché\l"
+	.string "non paghi il riscatto!$"
 
 LittlerootTown_Text_PaidRansom1Million:
-	.string "{PLAYER} ha pagato 1.000.000 ¥ di riscatto\nal TEAM IDRO!$"
+	.string "{PLAYER} ha pagato 1.000.000 ¥\n"
+	.string "di riscatto al TEAM IDRO!$"
 
 LittlerootTown_Text_AquaCaptorGivesMomBack:
-	.string "TEAM IDRO: Un milione tondo tondo!\n"
-	.string "Il TEAM IDRO mantiene la parola data!\p"
-	.string "Tua madre è stata liberata: la troverai\n"
-	.string "sana e salva dentro la tua casa!\p"
+	.string "TEAM IDRO: Affare fatto!\n"
+	.string "Un milione tondo tondo!\p"
+	.string "Il TEAM IDRO rispetta i patti.\n"
+	.string "Tua madre è stata liberata,\l"
+	.string "la troverai dentro casa!\p"
 	.string "Ci si vede, Campione!$"
 
 LittlerootTown_Text_MomThankYouChampion:
 	.string "MAMMA: Oh, {PLAYER}, tesoro mio!\n"
-	.string "Sapevo che saresti venuto a salvarmi!\p"
-	.string "Sei il miglior Campione che una madre potesse\n"
-	.string "desiderare! Torniamo finalmente a casa nostra!$"
+	.string "Sapevo che saresti arrivato!\p"
+	.string "Sei il miglior CAMPIONE che una\n"
+	.string "madre potesse mai desiderare!\p"
+	.string "Torniamo finalmente a casa nostra!$"
 
 LittlerootTown_Text_MomRescuedSafe:
-	.string "MAMMA: Grazie ancora per avermi salvata,\n"
-	.string "tesoro mio! Riposati a casa quando vuoi!$"
+	.string "MAMMA: Grazie ancora per avermi\n"
+	.string "salvata, tesoro mio!\p"
+	.string "Riposati pure qui a casa quando\n"
+	.string "vuoi!$"
 
 LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "MOM: {PLAYER}, we're here, honey!\p"
@@ -1003,16 +1013,18 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "Go on, go get them, honey!$"
 
 LittlerootTown_Text_CanUsePCToStoreItems:
-	.string "If you use a PC, you can store items\n"
-	.string "and POKéMON.\p"
-	.string "The power of science is staggering!$"
+	.string "Quei malviventi del TEAM IDRO…\n"
+	.string "Come hanno osato rapire tua madre?!\p"
+	.string "Sei il nostro CAMPIONE!\n"
+	.string "Fagli vedere di cosa sei capace,\l"
+	.string "siamo tutti con te!$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "PROF. BIRCH spends days in his LAB\n"
-	.string "studying, then he'll suddenly go out in\l"
-	.string "the wild to do more research…\p"
-	.string "When does PROF. BIRCH spend time\n"
-	.string "at home?$"
+	.string "Ho visto quando l'hanno portata\n"
+	.string "via… che paura!\p"
+	.string "Ma so che tu la salverai!\n"
+	.string "Nessuno può battere il nostro\l"
+	.string "grandissimo CAMPIONE!$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "Um, um, um!\p"
@@ -1037,8 +1049,10 @@ LittlerootTown_Text_YouSavedBirch:
 	.string "I'm so glad!$"
 
 LittlerootTown_Text_GoodLuckCatchingPokemon:
-	.string "Are you going to catch POKéMON?\n"
-	.string "Good luck!$"
+	.string "Forza CAMPIONE {PLAYER}!\n"
+	.string "Sconfiggi il TEAM IDRO e\l"
+	.string "riporta la mamma a casa!\p"
+	.string "Tutto il paese crede in te!$"
 
 LittlerootTown_Text_TownSign:
 	.string "LITTLEROOT TOWN\n"

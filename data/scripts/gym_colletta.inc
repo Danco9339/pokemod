@@ -148,145 +148,160 @@ Common_EventScript_CheckCollettaPokenavReturn::
 	return
 
 gText_Received100kColletta:
-	.string "{PLAYER} ha ricevuto 100.000 ¥ per la colletta!$"
+	.string "{PLAYER} ha ricevuto 100.000 ¥\n"
+	.string "per la colletta!$"
 
 gText_RoxanneCollettaIntro:
-	.string "ROXANNE: Campione! Abbiamo saputo del vile\n"
-	.string "rapimento di tua madre da parte del TEAM IDRO!\p"
-	.string "La nostra palestra dona 100.000 ¥ per il riscatto,\n"
-	.string "ma prima mostrami la solidità del tuo stile!$"
+	.string "PETRA: CAMPIONE!\n"
+	.string "Ho saputo del vile rapimento\l"
+	.string "di tua madre dal TEAM IDRO!\p"
+	.string "Doniamo 100.000 ¥ alla colletta,\n"
+	.string "ma prima mostrami la solidità\l"
+	.string "della tua squadra!$"
 
 gText_RoxanneCollettaDefeat:
-	.string "Una forza incrollabile come la roccia!$"
+	.string "Una forza solida come la roccia!$"
 
 gText_RoxanneCollettaPost:
-	.string "ROXANNE: Splendido! Ecco le 100.000 monete\n"
-	.string "e l'antico FLAUTO GHIACCIO per risvegliare ARTICUNO!$"
+	.string "PETRA: Splendido!\n"
+	.string "Ecco le 100.000 monete e il sacro\l"
+	.string "FLAUTO GHIACCIO per ARTICUNO!$"
 
 gText_BrawlyCollettaIntro:
-	.string "BRAWLY: Campione! La notizia del rapimento ha\n"
-	.string "scosso anche le onde di Bluruvia!\p"
-	.string "Contribuiamo con 100.000 ¥, ma prima cavalchiamo\n"
-	.string "questa tempesta insieme in battaglia!$"
+	.string "RUDI: CAMPIONE!\n"
+	.string "La notizia del rapimento ha\l"
+	.string "scosso le onde di BLURUVIA!\p"
+	.string "Contribuiamo con 100.000 ¥,\n"
+	.string "ma prima affrontiamo la tempesta\l"
+	.string "in una grande sfida!$"
 
 gText_BrawlyCollettaDefeat:
-	.string "Sono stato travolto da un'onda gigantesca!$"
+	.string "Travolto da un'onda gigantesca!$"
 
 gText_BrawlyCollettaPost:
-	.string "BRAWLY: Sei incredibile! Ecco le 100.000 monete\n"
-	.string "e il BIGLIETTO ARGENTO per invocare LUGIA!$"
+	.string "RUDI: Sei incredibile!\n"
+	.string "Ecco le 100.000 monete e il sacro\l"
+	.string "ALANARGENTO per LUGIA!$"
 
 gText_WattsonCollettaIntro:
-	.string "WATTSON: Wahahaha! Campione! Il TEAM IDRO\n"
-	.string "ha osato oltrepassare ogni limite morale!\p"
-	.string "Ciclamipoli dona 100.000 ¥ alla colletta!\n"
-	.string "Fammi vedere se il tuo spirito è ad alta tensione!$"
+	.string "WALTER: Wahahaha! CAMPIONE!\n"
+	.string "Il TEAM IDRO ha esagerato!\p"
+	.string "CICLAMIPOLI dona 100.000 ¥!\n"
+	.string "Mostrami se il tuo spirito\l"
+	.string "è ancora ad alta tensione!$"
 
 gText_WattsonCollettaDefeat:
-	.string "Wahahaha! Una scarica ad altissimo voltaggio!$"
+	.string "Una scossa ad alto voltaggio!$"
 
 gText_WattsonCollettaPost:
-	.string "WATTSON: Elettrizzante! Ecco le 100.000 monete\n"
-	.string "e il leggendario FLAUTO TUONO per ZAPDOS!$"
+	.string "WALTER: Elettrizzante!\n"
+	.string "Ecco le 100.000 monete e il sacro\l"
+	.string "FLAUTO TUONO per ZAPDOS!$"
 
 gText_FlanneryCollettaIntro:
-	.string "FIAMMETTA: Campione! Il mio cuore brucia di sdegno\n"
-	.string "per il vile ricatto del TEAM IDRO!\p"
-	.string "La palestra dona 100.000 ¥, ma prima scaldiamo\n"
-	.string "il campo con tutta la nostra passione!$"
+	.string "FIAMMETTA: CAMPIONE!\n"
+	.string "Il mio cuore brucia di sdegno\l"
+	.string "per il vile ricatto subito!\p"
+	.string "Doniamo 100.000 ¥ alla colletta,\n"
+	.string "ma prima lottiamo con passione!$"
 
 gText_FlanneryCollettaDefeat:
-	.string "Il tuo fuoco arde più luminoso del mio!$"
+	.string "Il tuo fuoco arde più del mio!$"
 
 gText_FlanneryCollettaPost:
-	.string "FIAMMETTA: Sei una fiamma inarrestabile!\n"
-	.string "Ecco le 100.000 monete e il FLAUTO FUOCO per MOLTRES!$"
+	.string "FIAMMETTA: Sei inarrestabile!\n"
+	.string "Ecco le 100.000 monete e il sacro\l"
+	.string "FLAUTO FUOCO per MOLTRES!$"
 
 gText_NormanBusySearching:
-	.string "NORMAN: {PLAYER}! Sono sconvolto per tua madre...\n"
-	.string "Sto coordinando le ricerche giorno e notte con\l"
-	.string "le pattuglie di tutta la regione di Hoenn!\p"
-	.string "So che stai raccogliendo la colletta per pagare\n"
-	.string "il riscatto, ma ora sono troppo forte per te e non\l"
-	.string "posso fermarmi proprio adesso.\p"
-	.string "Dimostrami la tua determinazione battendo prima\n"
-	.string "gli altri 7 Capipalestra di Hoenn!\p"
-	.string "Solo allora potrai sfidarmi: sarò io l'ultimo\n"
-	.string "Capopalestra da affrontare per completare la somma\l"
-	.string "e darti il mio contributo!\p"
-	.string "Nel frattempo, ho parlato con il PROF. BIRCH:\n"
-	.string "ti aiuterà con gli investimenti azionari della\l"
-	.string "DEVON SpA al suo laboratorio per far fruttare\l"
-	.string "i tuoi risparmi!$"
+	.string "NORMAN: {PLAYER}!\n"
+	.string "Sono sconvolto per tua madre…\p"
+	.string "Sto coordinando le ricerche\n"
+	.string "con le pattuglie di tutta HOENN!\p"
+	.string "Raccogli la colletta dalle altre\n"
+	.string "7 palestre prima di sfidarmi.\p"
+	.string "Sarò la tua prova finale prima\n"
+	.string "dello scontro con il TEAM IDRO!\p"
+	.string "Nel frattempo, il PROF. BIRCH\n"
+	.string "ti aiuterà con le azioni DEVON\l"
+	.string "per far fruttare i tuoi risparmi!$"
 
 gText_NormanCollettaIntro:
-	.string "NORMAN: {PLAYER}! Hai raccolto il sostegno di\n"
-	.string "tutti gli altri 7 Capipalestra di Hoenn!\p"
-	.string "Vedo la determinazione e la maturità nei tuoi occhi.\n"
-	.string "Ora tocca a noi: sarò l'ultimo ostacolo da superare\l"
-	.string "prima di salvare tua madre!\p"
-	.string "Mostrami tutto ciò che hai imparato!$"
+	.string "NORMAN: {PLAYER}! Hai ottenuto il\n"
+	.string "sostegno delle altre 7 palestre!\p"
+	.string "Vedo la determinazione nei tuoi\n"
+	.string "occhi: è il momento di lottare!\p"
+	.string "Mostrami tutta la tua forza!$"
 
 gText_NormanCollettaDefeat:
-	.string "Incredibile... Sei diventato persino più forte\n"
-	.string "di me, figlio mio!$"
+	.string "Incredibile… Sei più forte di me,\n"
+	.string "figlio mio!$"
 
 gText_NormanCollettaPost:
-	.string "NORMAN: Non ho più alcun dubbio. Sei pronto per\n"
-	.string "affrontare il TEAM IDRO e salvare la mamma!\p"
-	.string "Ecco il mio contributo di 100.000 ¥ per la colletta,\n"
-	.string "e prendi questo antico cimelio di Kanto: la SFERA\l"
-	.string "PSICHICA, capace di risvegliare MEWTWO!$"
+	.string "NORMAN: Sei pronto per salvare\n"
+	.string "tua madre dal TEAM IDRO!\p"
+	.string "Ecco il mio contributo di\n"
+	.string "100.000 ¥ per il riscatto,\l"
+	.string "e la mistica SFERA PSICHICA\l"
+	.string "per risvegliare MEWTWO!$"
 
 gText_WinonaCollettaIntro:
-	.string "ALICE: Campione! Il vento ha portato la triste\n"
-	.string "notizia fino alle vette di Forestopoli...\p"
-	.string "Ci libreremo al tuo fianco: ecco 100.000 ¥!\n"
-	.string "Ma prima, danza nell'aria contro i miei Pokémon!$"
+	.string "ALICE: CAMPIONE!\n"
+	.string "Il vento ha portato la notizia\l"
+	.string "fino alle vette di FORESTOPOLI…\p"
+	.string "Ci libreremo al tuo fianco: ecco\n"
+	.string "100.000 ¥! Ma ora lotta in volo\l"
+	.string "contro i miei POKéMON!$"
 
 gText_WinonaCollettaDefeat:
-	.string "Le tue ali solcano i cieli più alti!$"
+	.string "Le tue ali solcano i cieli!$"
 
 gText_WinonaCollettaPost:
-	.string "ALICE: Splendida grazia! Ecco le 100.000 monete\n"
-	.string "e il BIGLIETTO IRIDE per far discendere HO-OH!$"
+	.string "ALICE: Splendida grazia!\n"
+	.string "Ecco le 100.000 monete e la sacra\l"
+	.string "IRIDOCELLA per HO-OH!$"
 
 gText_TateAndLizaCollettaIntro:
-	.string "TELL & PAT: Campione! I nostri poteri hanno sentito\n"
-	.string "il dolore della tua famiglia rapita in mare...\p"
-	.string "Doniamo 100.000 ¥, ma prima sincronizziamo\n"
-	.string "le nostre menti in un combattimento d'élite!$"
+	.string "TELL & PAT: CAMPIONE!\n"
+	.string "Abbiamo avvertito il dolore\l"
+	.string "della tua povera famiglia!\p"
+	.string "Doniamo 100.000 ¥ per il riscatto,\n"
+	.string "ma prima sincronizziamo le menti\l"
+	.string "in una grande battaglia!$"
 
 gText_TateAndLizaCollettaDefeat:
-	.string "Una sintonia e una potenza mai viste prima!$"
+	.string "Una sintonia mai vista prima!$"
 
 gText_TateAndLizaCollettaPost:
-	.string "TELL & PAT: Meraviglioso! Ecco le 100.000 monete\n"
-	.string "e la SFERA MIRAGGIO per far apparire MEW!$"
+	.string "TELL & PAT: Meraviglioso!\n"
+	.string "Ecco le 100.000 monete e la sacra\l"
+	.string "SFERA MIRAGGIO per MEW!$"
 
 gText_JuanCollettaIntro:
-	.string "RODILFO: Ah, Campione! Un'eleganza ferita da\n"
-	.string "un affronto così barbaro del TEAM IDRO!\p"
-	.string "Contribuisco con 100.000 ¥ alla colletta!\n"
-	.string "Ma deliziami prima con l'arte sublime della lotta!$"
+	.string "RODOLFO: Ah, CAMPIONE!\n"
+	.string "Un vile e barbaro affronto da\l"
+	.string "parte del TEAM IDRO!\p"
+	.string "Contribuisco con 100.000 ¥,\n"
+	.string "ma deliziami con una bella lotta!$"
 
 gText_JuanCollettaDefeat:
-	.string "Magnifique! Un'esecuzione magistrale!$"
+	.string "Magnifique! Esecuzione sublime!$"
 
 gText_JuanCollettaPost:
-	.string "RODILFO: Un trionfo d'arte e coraggio!\n"
-	.string "Ecco le 100.000 monete e l'AMBRA DEL TEMPO per CELEBI!$"
+	.string "RODOLFO: Trionfo di grazia!\n"
+	.string "Ecco le 100.000 monete e la sacra\l"
+	.string "AMBRA TEMPO per CELEBI!$"
 
 gText_CollettaUnlockPokenav:
-	.string "Congratulazioni! Hai già ottenuto il supporto\n"
-	.string "di ben 4 palestre!\p"
-	.string "Per aiutarti a coordinare le ricerche di tua\n"
-	.string "madre e rintracciare gli altri Capipalestra,\l"
-	.string "ti dono questo dispositivo speciale!$"
+	.string "Congratulazioni!\n"
+	.string "Hai il sostegno di 4 palestre!\p"
+	.string "Per coordinare le ricerche di tua\n"
+	.string "madre e rintracciare i leader,\l"
+	.string "ti dono questo strumento utile!$"
 
 gText_CollettaExplainPokenav:
-	.string "Il POKéNAV ti permetterà di orientarti lungo\n"
+	.string "Il POKéNAV ti aiuterà lungo\n"
 	.string "tutta la regione di HOENN!\p"
-	.string "Forza Campione, non mollare!\n"
+	.string "Forza CAMPIONE, non mollare!\n"
 	.string "Tua madre conta su di te!$"
 

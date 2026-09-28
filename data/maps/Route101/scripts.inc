@@ -254,16 +254,19 @@ Route101_Text_YouSavedMe:
 	.string "by my POKéMON LAB later, okay?$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
-	.string "If POKéMON get tired, take them to\n"
-	.string "a POKéMON CENTER.\p"
-	.string "There's a POKéMON CENTER in OLDALE\n"
-	.string "TOWN right close by.$"
+	.string "CAMPIONE {PLAYER}!\n"
+	.string "Ho saputo di tua madre…\p"
+	.string "Se i tuoi POKéMON sono stanchi,\n"
+	.string "curali subito a SOLAROSA!\p"
+	.string "Devi essere al massimo per\n"
+	.string "sconfiggere il TEAM IDRO!\l"
+	.string "Tifiamo tutti per te!$"
 
 Route101_Text_WildPokemonInTallGrass:
-	.string "Wild POKéMON will jump out at you in\n"
-	.string "tall grass.\p"
-	.string "If you want to catch POKéMON, you have\n"
-	.string "to go into the tall grass and search.$"
+	.string "CAMPIONE, siamo tutti con te!\n"
+	.string "Tua madre è una persona d'oro,\l"
+	.string "il TEAM IDRO la pagherà cara!\p"
+	.string "Non mollare mai!$"
 
 Route101_Text_RouteSign:
 	.string "ROUTE 101\n"

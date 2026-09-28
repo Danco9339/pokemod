@@ -218,9 +218,6 @@ void NewGameInitData(void)
 
     FlagSet(FLAG_SYS_B_DASH);
     FlagSet(FLAG_RECEIVED_RUNNING_SHOES);
-    FlagSet(FLAG_SYS_POKEDEX_GET);
-    FlagSet(FLAG_SYS_NATIONAL_DEX);
-    FlagSet(FLAG_RECEIVED_POKEDEX_FROM_BIRCH);
     FlagSet(FLAG_SYS_POKEMON_GET);
 
     AddBagItem(ITEM_HM01, 1);

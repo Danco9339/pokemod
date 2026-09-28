@@ -314,45 +314,46 @@ LittlerootTown_MaysHouse_1F_Movement_MayGoUpstairs2:
 	step_end
 
 RivalsHouse_1F_Text_OhYoureTheNewNeighbor:
-	.string "Oh, {PLAYER}{KUN}! Ho appena saputo della\n"
-	.string "terribile disgrazia...\p"
-	.string "Tua madre... rapita dal TEAM IDRO!\n"
-	.string "È un'angoscia tremenda per tutti noi!\p"
-	.string "Io e tua madre siamo sempre state così amiche...\n"
-	.string "Non posso credere a una simile crudeltà!\p"
-	.string "Nostro {STR_VAR_1} {RIVAL} è di sopra ed è\n"
-	.string "sconvolto dall'accaduto. Mi ha detto che\l"
-	.string "vuole aiutarti con tutto il cuore!\p"
-	.string "Ti prego, vai di sopra a parlargli!\n"
-	.string "Noi vicini faremo il possibile per sostenerti!$"
+	.string "Oh, {PLAYER}{KUN}!\n"
+	.string "Ho saputo della disgrazia…\p"
+	.string "Tua madre rapita dal TEAM IDRO!\n"
+	.string "Che angoscia tremenda!\p"
+	.string "Siamo sempre state così amiche…\n"
+	.string "Non posso credere a tale crudeltà!\p"
+	.string "{RIVAL} è di sopra ed è sconvolto.\n"
+	.string "Vuole aiutarti con tutto il cuore!\p"
+	.string "Vai di sopra a parlargli!\n"
+	.string "Noi vicini ti sosterremo sempre!$"
 
 RivalsHouse_1F_Text_LikeChildLikeFather:
-	.string "{RIVAL} è di sopra a prepararsi per aiutarti.\n"
-	.string "Mio marito, il PROF. BIRCH, è al LABORATORIO\l"
-	.string "e sta cercando una soluzione disperata.\p"
+	.string "{RIVAL} è di sopra a prepararsi\n"
+	.string "per aiutarti nelle ricerche.\p"
+	.string "Mio marito BIRCH è al LABORATORIO\n"
+	.string "a cercare una soluzione!\p"
 	.string "Non arrenderti, {PLAYER}{KUN}!$"
 
 RivalsHouse_1F_Text_TooBusyToNoticeVisit:
-	.string "{RIVAL} è sopraffatto dalla determinazione\n"
-	.string "di aiutarti a salvare tua madre!$"
+	.string "{RIVAL} è determinatissimo ad\n"
+	.string "aiutarti a salvare tua madre!$"
 
 RivalsHouse_1F_Text_WentOutToRoute103:
-	.string "Oh, {RIVAL} è appena corso al PERCORSO 103\n"
-	.string "ad allenarsi!\p"
-	.string "Mi ha detto: “Devo diventare più forte per\n"
-	.string "aiutare {PLAYER}{KUN} a salvare sua madre!”\p"
-	.string "Raggiungilo non appena avrai il tuo POKéMON!$"
+	.string "Oh, {RIVAL} è appena corso\n"
+	.string "sul PERCORSO 103 ad allenarsi!\p"
+	.string "Ha detto che deve diventare forte\n"
+	.string "per aiutarti a salvare la mamma!\p"
+	.string "Raggiungilo non appena puoi!$"
 
 RivalsHouse_1F_Text_ShouldGoHomeEverySoOften:
 	.string "Non perderti d'animo, {PLAYER}{KUN}!\n"
 	.string "Sii forte per tua madre!\p"
-	.string "{RIVAL} e mio marito credono in te con tutto\n"
-	.string "il cuore. Tutta la città fa il tifo per te!$"
+	.string "{RIVAL} e mio marito credono in te,\n"
+	.string "tutta la città fa il tifo per te!$"
 
 RivalsHouse_1F_Text_MomRescuedCheer:
-	.string "Evviva! Tua madre è finalmente a casa sana\n"
-	.string "e salva! Sei un vero eroe, {PLAYER}{KUN}!\l"
-	.string "Tutta la città è orgogliosa di te!$"
+	.string "Evviva! Tua madre è finalmente a\n"
+	.string "casa sana e salva!\p"
+	.string "Sei un vero eroe, {PLAYER}{KUN}!\n"
+	.string "Siamo tutti orgogliosi di te!$"
 
 RivalsHouse_1F_Text_MayWhoAreYou:
 	.string "Huh?\n"
