@@ -96,18 +96,44 @@ static const struct FollowerSpriteGraphics gFollowerAlternateSprites[] =
 // Functions
 u8 GetFollowerObjectId(void)
 {
+    u8 objId;
+    u8 targetLocalId;
+
     if (!gSaveBlock2Ptr->follower.inProgress)
         return OBJECT_EVENTS_COUNT;
 
-    return gSaveBlock2Ptr->follower.objId;
+    targetLocalId = gSaveBlock2Ptr->follower.map.id;
+    if (targetLocalId == 0)
+        targetLocalId = OBJ_EVENT_ID_FOLLOWER;
+
+    objId = gSaveBlock2Ptr->follower.objId;
+    if (objId < OBJECT_EVENTS_COUNT && gObjectEvents[objId].active && gObjectEvents[objId].localId == targetLocalId)
+        return objId;
+
+    for (objId = 0; objId < OBJECT_EVENTS_COUNT; objId++)
+    {
+        if (gObjectEvents[objId].active && gObjectEvents[objId].localId == targetLocalId)
+        {
+            gSaveBlock2Ptr->follower.objId = objId;
+            return objId;
+        }
+    }
+
+    return OBJECT_EVENTS_COUNT;
 }
 
 u8 GetFollowerLocalId(void)
 {
+    u8 objId;
+
     if (!gSaveBlock2Ptr->follower.inProgress)
         return 0;
 
-    return gObjectEvents[gSaveBlock2Ptr->follower.objId].localId;
+    objId = GetFollowerObjectId();
+    if (objId >= OBJECT_EVENTS_COUNT)
+        return 0;
+
+    return gObjectEvents[objId].localId;
 }
 
 const u8* GetFollowerScriptPointer(void)
@@ -120,17 +146,23 @@ const u8* GetFollowerScriptPointer(void)
 
 void HideFollower(void)
 {
+    u8 objId;
+
     if (!gSaveBlock2Ptr->follower.inProgress)
+        return;
+
+    objId = GetFollowerObjectId();
+    if (objId >= OBJECT_EVENTS_COUNT)
         return;
 
     if (gSaveBlock2Ptr->follower.createSurfBlob == 2 || gSaveBlock2Ptr->follower.createSurfBlob == 3)
     {
-        SetSurfBlob_BobState(gObjectEvents[GetFollowerMapObjId()].fieldEffectSpriteId, 2);
-        DestroySprite(&gSprites[gObjectEvents[GetFollowerMapObjId()].fieldEffectSpriteId]);
-        gObjectEvents[GetFollowerMapObjId()].fieldEffectSpriteId = 0; //Unbind
+        SetSurfBlob_BobState(gObjectEvents[objId].fieldEffectSpriteId, 2);
+        DestroySprite(&gSprites[gObjectEvents[objId].fieldEffectSpriteId]);
+        gObjectEvents[objId].fieldEffectSpriteId = 0; //Unbind
     }
 
-    gObjectEvents[GetFollowerMapObjId()].invisible = TRUE;
+    gObjectEvents[objId].invisible = TRUE;
 }
 
 /*
@@ -167,7 +199,7 @@ void FollowMe_TryRemoveFollowerOnWhiteOut(void)
 
 static u8 GetFollowerMapObjId(void)
 {
-    return gSaveBlock2Ptr->follower.objId;
+    return GetFollowerObjectId();
 }
 
 static u16 GetFollowerSprite(void)
@@ -213,8 +245,9 @@ static void TryUpdateFollowerSpriteUnderwater(void)
 {
     if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
     {
-        if (gSaveBlock2Ptr->follower.inProgress)
-            gObjectEvents[GetFollowerMapObjId()].invisible = TRUE;
+        u8 followerObjId = GetFollowerObjectId();
+        if (gSaveBlock2Ptr->follower.inProgress && followerObjId < OBJECT_EVENTS_COUNT)
+            gObjectEvents[followerObjId].invisible = TRUE;
     }
 }
 
@@ -222,7 +255,8 @@ static void TryUpdateFollowerSpriteUnderwater(void)
 void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
 {
     struct ObjectEvent* player = &gObjectEvents[gPlayerAvatar.objectEventId];
-    struct ObjectEvent* follower = &gObjectEvents[GetFollowerMapObjId()];
+    struct ObjectEvent* follower;
+    u8 followerObjId = GetFollowerObjectId();
     u8 dir;
     u8 newState;
     u8 taskId;
@@ -231,10 +265,14 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
         return;
     else if (!gSaveBlock2Ptr->follower.inProgress)
         return;
+    else if (followerObjId >= OBJECT_EVENTS_COUNT)
+        return;
     else if (ScriptContext_IsEnabled() && !ignoreScriptActive)
         return; //Don't follow during a script
     else if (ArePlayerFieldControlsLocked())
         return; //Don't follow while controls are locked (e.g. door animations)!
+
+    follower = &gObjectEvents[followerObjId];
 
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) || gMapHeader.mapType == MAP_TYPE_UNDERWATER)
     {
@@ -324,13 +362,17 @@ RESET:
 
 static void Task_ReallowPlayerMovement(u8 taskId)
 {
-    bool8 animStatus = ObjectEventClearHeldMovementIfFinished(&gObjectEvents[GetFollowerMapObjId()]);
-    if (animStatus == 0)
+    u8 followerObjId = GetFollowerObjectId();
+    if (followerObjId < OBJECT_EVENTS_COUNT)
     {
-        if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH)
-        && ObjectEventClearHeldMovementIfFinished(&gObjectEvents[gPlayerAvatar.objectEventId]))
-            SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT); //Temporarily stop running
-        return;
+        bool8 animStatus = ObjectEventClearHeldMovementIfFinished(&gObjectEvents[followerObjId]);
+        if (animStatus == 0)
+        {
+            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH)
+            && ObjectEventClearHeldMovementIfFinished(&gObjectEvents[gPlayerAvatar.objectEventId]))
+                SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT); //Temporarily stop running
+            return;
+        }
     }
 
     gPlayerAvatar.preventStep = FALSE;
@@ -1189,17 +1231,21 @@ void FollowMe_WarpSetEnd(void)
 {
     struct ObjectEvent *player;
     struct ObjectEvent *follower;
-    u8 toY;
+    u8 followerObjId;
     
     if (!gSaveBlock2Ptr->follower.inProgress)
         return;
 
     player = &gObjectEvents[gPlayerAvatar.objectEventId];
-    follower = &gObjectEvents[GetFollowerMapObjId()];
+    followerObjId = GetFollowerObjectId();
 
     gSaveBlock2Ptr->follower.warpEnd = 2;
     PlayerLogCoordinates(player);
 
+    if (followerObjId >= OBJECT_EVENTS_COUNT)
+        return;
+
+    follower = &gObjectEvents[followerObjId];
     follower->invisible = TRUE;
     MoveObjectEventToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
     
@@ -1214,6 +1260,10 @@ void CreateFollowerAvatar(void)
     const struct ObjectEventTemplate *template = NULL;
 
     if (!gSaveBlock2Ptr->follower.inProgress)
+        return;
+
+    // If follower already active on this map, don't spawn a second one
+    if (GetFollowerObjectId() < OBJECT_EVENTS_COUNT)
         return;
 
     player = &gObjectEvents[gPlayerAvatar.objectEventId];

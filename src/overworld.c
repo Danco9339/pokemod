@@ -1458,7 +1458,11 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
     }
 
     if (PlayerHasFollower() && IsPlayerOnFoot() && IsPlayerStandingStill())
-        ObjectEventSetHeldMovement(&gObjectEvents[GetFollowerObjectId()], GetFaceDirectionAnimNum(gObjectEvents[GetFollowerObjectId()].facingDirection));
+    {
+        u8 followerObjId = GetFollowerObjectId();
+        if (followerObjId < OBJECT_EVENTS_COUNT)
+            ObjectEventSetHeldMovement(&gObjectEvents[followerObjId], GetFaceDirectionAnimNum(gObjectEvents[followerObjId].facingDirection));
+    }
 }
 
 void CB1_Overworld(void)
