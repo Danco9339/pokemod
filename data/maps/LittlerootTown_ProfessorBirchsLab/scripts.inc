@@ -483,6 +483,20 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveRaikou::
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_ADVENTURE_STARTED
 	setflag FLAG_RESCUED_BIRCH
+	clearflag FLAG_BADGE01_GET
+	clearflag FLAG_BADGE02_GET
+	clearflag FLAG_BADGE03_GET
+	clearflag FLAG_BADGE04_GET
+	clearflag FLAG_BADGE05_GET
+	clearflag FLAG_BADGE06_GET
+	clearflag FLAG_BADGE07_GET
+	clearflag FLAG_BADGE08_GET
+	removeitem ITEM_HM_ROCK_SMASH
+	removeitem ITEM_HM_SURF
+	removeitem ITEM_HM_FLY
+	removeitem ITEM_HM_STRENGTH
+	removeitem ITEM_HM_WATERFALL
+	removeitem ITEM_HM_DIVE
 	setvar VAR_RANSOM_MOM_STATE, 2
 	setvar VAR_LITTLEROOT_TOWN_STATE, 4
 	release
@@ -501,6 +515,20 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveEntei::
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_ADVENTURE_STARTED
 	setflag FLAG_RESCUED_BIRCH
+	clearflag FLAG_BADGE01_GET
+	clearflag FLAG_BADGE02_GET
+	clearflag FLAG_BADGE03_GET
+	clearflag FLAG_BADGE04_GET
+	clearflag FLAG_BADGE05_GET
+	clearflag FLAG_BADGE06_GET
+	clearflag FLAG_BADGE07_GET
+	clearflag FLAG_BADGE08_GET
+	removeitem ITEM_HM_ROCK_SMASH
+	removeitem ITEM_HM_SURF
+	removeitem ITEM_HM_FLY
+	removeitem ITEM_HM_STRENGTH
+	removeitem ITEM_HM_WATERFALL
+	removeitem ITEM_HM_DIVE
 	setvar VAR_RANSOM_MOM_STATE, 2
 	setvar VAR_LITTLEROOT_TOWN_STATE, 4
 	release
@@ -519,6 +547,20 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveSuicune::
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_ADVENTURE_STARTED
 	setflag FLAG_RESCUED_BIRCH
+	clearflag FLAG_BADGE01_GET
+	clearflag FLAG_BADGE02_GET
+	clearflag FLAG_BADGE03_GET
+	clearflag FLAG_BADGE04_GET
+	clearflag FLAG_BADGE05_GET
+	clearflag FLAG_BADGE06_GET
+	clearflag FLAG_BADGE07_GET
+	clearflag FLAG_BADGE08_GET
+	removeitem ITEM_HM_ROCK_SMASH
+	removeitem ITEM_HM_SURF
+	removeitem ITEM_HM_FLY
+	removeitem ITEM_HM_STRENGTH
+	removeitem ITEM_HM_WATERFALL
+	removeitem ITEM_HM_DIVE
 	setvar VAR_RANSOM_MOM_STATE, 2
 	setvar VAR_LITTLEROOT_TOWN_STATE, 4
 	release
@@ -530,7 +572,7 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchIntroMomKidnapped:
 	.string "È un incubo tremendo…\n"
 	.string "Il TEAM IDRO ha fatto irruzione\l"
 	.string "e ha RAPITO TUA MADRE!\p"
-	.string "Chiedono 1.000.000 di monete\n"
+	.string "Chiedono 999.999 di monete\n"
 	.string "di riscatto per liberarla!\p"
 	.string "E pretendono che riconquisti\n"
 	.string "la LEGA POKéMON!\p"
@@ -549,16 +591,16 @@ LittlerootTown_ProfessorBirchsLab_Text_BirchExplainMission:
 	.string "Ecco la strategia da seguire:\p"
 	.string "1. Visita le 8 PALESTRE.\n"
 	.string "I CAPIPALESTRA doneranno\l"
-	.string "100.000 ¥ ciascuno alla colletta,\l"
+	.string "70.000 ¥ ciascuno alla colletta,\l"
 	.string "più un antico strumento sacro!\p"
-	.string "2. Raggiungi 1.000.000 di monete.\p"
+	.string "2. Raggiungi 999.999 di monete.\p"
 	.string "3. Sconfiggi la LEGA POKéMON!\p"
 	.string "Vai, CAMPIONE! Salva tua madre!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BirchEncourageColletta:
 	.string "PROF. BIRCH: Continua a girare\n"
 	.string "le PALESTRE per la colletta!\p"
-	.string "Dobbiamo raccogliere 1.000.000 ¥\n"
+	.string "Dobbiamo raccogliere 999.999 ¥\n"
 	.string "per pagare il riscatto!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon::
