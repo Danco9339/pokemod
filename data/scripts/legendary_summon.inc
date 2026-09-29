@@ -20,15 +20,6 @@ EventScript_UseLegendarySummonItem::
 	releaseall
 	end
 
-@ Subroutine condivisa per verificare e impostare il roamer:
-@ VAR_0x8004 = species, VAR_0x8005 = level
-@ Se c'e' gia' un roamer attivo o flag settato: restituisce FALSE
-@ Se non c'e': lo inizializza e restituisce TRUE
-EventScript_Summon_Fled_Handler::
-	specialvar VAR_RESULT, TryInitRoamerSpecies
-	goto_if_eq VAR_RESULT, FALSE, EventScript_Summon_LostForever
-	return
-
 EventScript_Summon_LostForever::
 	msgbox gText_Summon_LostForever, MSGBOX_DEFAULT
 	closemessage
@@ -59,7 +50,8 @@ EventScript_Summon_Articuno::
 	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Articuno_Caught
 	setvar VAR_0x8004, SPECIES_ARTICUNO
 	setvar VAR_0x8005, 50
-	call EventScript_Summon_Fled_Handler
+	specialvar VAR_RESULT, TryInitRoamerSpecies
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Summon_LostForever
 	playmoncry SPECIES_ARTICUNO, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Articuno_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -92,7 +84,8 @@ EventScript_Summon_Lugia::
 	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Lugia_Caught
 	setvar VAR_0x8004, SPECIES_LUGIA
 	setvar VAR_0x8005, 60
-	call EventScript_Summon_Fled_Handler
+	specialvar VAR_RESULT, TryInitRoamerSpecies
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Summon_LostForever
 	playmoncry SPECIES_LUGIA, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Lugia_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -125,7 +118,8 @@ EventScript_Summon_Zapdos::
 	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Zapdos_Caught
 	setvar VAR_0x8004, SPECIES_ZAPDOS
 	setvar VAR_0x8005, 50
-	call EventScript_Summon_Fled_Handler
+	specialvar VAR_RESULT, TryInitRoamerSpecies
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Summon_LostForever
 	playmoncry SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Zapdos_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -158,7 +152,8 @@ EventScript_Summon_Moltres::
 	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Moltres_Caught
 	setvar VAR_0x8004, SPECIES_MOLTRES
 	setvar VAR_0x8005, 50
-	call EventScript_Summon_Fled_Handler
+	specialvar VAR_RESULT, TryInitRoamerSpecies
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Summon_LostForever
 	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Moltres_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -191,7 +186,8 @@ EventScript_Summon_Mewtwo::
 	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Mewtwo_Caught
 	setvar VAR_0x8004, SPECIES_MEWTWO
 	setvar VAR_0x8005, 70
-	call EventScript_Summon_Fled_Handler
+	specialvar VAR_RESULT, TryInitRoamerSpecies
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Summon_LostForever
 	playmoncry SPECIES_MEWTWO, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Mewtwo_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -224,7 +220,8 @@ EventScript_Summon_HoOh::
 	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_HoOh_Caught
 	setvar VAR_0x8004, SPECIES_HO_OH
 	setvar VAR_0x8005, 60
-	call EventScript_Summon_Fled_Handler
+	specialvar VAR_RESULT, TryInitRoamerSpecies
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Summon_LostForever
 	playmoncry SPECIES_HO_OH, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_HoOh_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -257,7 +254,8 @@ EventScript_Summon_Mew::
 	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Mew_Caught
 	setvar VAR_0x8004, SPECIES_MEW
 	setvar VAR_0x8005, 50
-	call EventScript_Summon_Fled_Handler
+	specialvar VAR_RESULT, TryInitRoamerSpecies
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Summon_LostForever
 	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Mew_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -290,7 +288,8 @@ EventScript_Summon_Celebi::
 	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Celebi_Caught
 	setvar VAR_0x8004, SPECIES_CELEBI
 	setvar VAR_0x8005, 50
-	call EventScript_Summon_Fled_Handler
+	specialvar VAR_RESULT, TryInitRoamerSpecies
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Summon_LostForever
 	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Celebi_Fled, MSGBOX_DEFAULT
 	closemessage

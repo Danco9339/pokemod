@@ -157,18 +157,17 @@ void InitRoamerSpecies(void)
     sRoamerLocation[MAP_NUM] = sRoamerLocations[Random() % NUM_LOCATION_SETS][0];
 }
 
-void TryInitRoamerSpecies(void)
+u16 TryInitRoamerSpecies(void)
 {
     if (ROAMER->active || FlagGet(FLAG_LEGEND_ROAMER_ACTIVE))
     {
         FlagSet(FLAG_LEGEND_ROAMER_ACTIVE);
-        gSpecialVar_Result = FALSE;
-        return;
+        return FALSE;
     }
 
     InitRoamerSpecies();
     FlagSet(FLAG_LEGEND_ROAMER_ACTIVE);
-    gSpecialVar_Result = TRUE;
+    return TRUE;
 }
 
 void UpdateLocationHistoryForRoamer(void)
