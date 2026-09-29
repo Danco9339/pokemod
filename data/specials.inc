@@ -541,3 +541,4 @@ gSpecials::
 	def_special CloseDeptStoreElevatorWindow
 	def_special TrySetBattleTowerLinkType
 	def_special InitRoamerSpecies
+	def_special TryInitRoamerSpecies

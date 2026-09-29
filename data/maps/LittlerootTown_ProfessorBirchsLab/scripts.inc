@@ -491,6 +491,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveRaikou::
 	clearflag FLAG_BADGE06_GET
 	clearflag FLAG_BADGE07_GET
 	clearflag FLAG_BADGE08_GET
+	clearflag FLAG_LEGEND_ROAMER_ACTIVE
 	removeitem ITEM_HM_ROCK_SMASH
 	removeitem ITEM_HM_SURF
 	removeitem ITEM_HM_FLY
@@ -523,6 +524,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveEntei::
 	clearflag FLAG_BADGE06_GET
 	clearflag FLAG_BADGE07_GET
 	clearflag FLAG_BADGE08_GET
+	clearflag FLAG_LEGEND_ROAMER_ACTIVE
 	removeitem ITEM_HM_ROCK_SMASH
 	removeitem ITEM_HM_SURF
 	removeitem ITEM_HM_FLY
@@ -555,6 +557,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveSuicune::
 	clearflag FLAG_BADGE06_GET
 	clearflag FLAG_BADGE07_GET
 	clearflag FLAG_BADGE08_GET
+	clearflag FLAG_LEGEND_ROAMER_ACTIVE
 	removeitem ITEM_HM_ROCK_SMASH
 	removeitem ITEM_HM_SURF
 	removeitem ITEM_HM_FLY

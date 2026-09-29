@@ -20,22 +20,19 @@ EventScript_UseLegendarySummonItem::
 	releaseall
 	end
 
-@ Subroutine condivisa per gestire la fuga:
-@ VAR_0x8004 = species, VAR_0x8005 = livello, VAR_RESULT = esito battaglia
-@ Se FLAG_LEGEND_ROAMER_ACTIVE non e' settato: diventa roamer
-@ Altrimenti: perso per sempre
+@ Subroutine condivisa per verificare e impostare il roamer:
+@ VAR_0x8004 = species, VAR_0x8005 = level
+@ Se c'e' gia' un roamer attivo o flag settato: restituisce FALSE
+@ Se non c'e': lo inizializza e restituisce TRUE
 EventScript_Summon_Fled_Handler::
-	goto_if_set FLAG_LEGEND_ROAMER_ACTIVE, EventScript_Summon_LostForever
-	@ Primo leggendario che fugge: diventa errante
-	special InitRoamerSpecies
-	setflag FLAG_LEGEND_ROAMER_ACTIVE
+	specialvar VAR_RESULT, TryInitRoamerSpecies
+	goto_if_eq VAR_RESULT, FALSE, EventScript_Summon_LostForever
 	return
 
 EventScript_Summon_LostForever::
-	@ Gia' esiste un roamer: questo e' perso per sempre
 	msgbox gText_Summon_LostForever, MSGBOX_DEFAULT
 	closemessage
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
+	goto_if_eq VAR_0x8006, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -58,7 +55,8 @@ EventScript_Summon_Articuno::
 	dowildbattle
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Articuno_Caught
+	copyvar VAR_0x8006, VAR_RESULT
+	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Articuno_Caught
 	setvar VAR_0x8004, SPECIES_ARTICUNO
 	setvar VAR_0x8005, 50
 	call EventScript_Summon_Fled_Handler
@@ -66,7 +64,7 @@ EventScript_Summon_Articuno::
 	msgbox gText_Summon_Articuno_Fled, MSGBOX_DEFAULT
 	closemessage
 	waitmoncry
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
+	goto_if_eq VAR_0x8006, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -90,7 +88,8 @@ EventScript_Summon_Lugia::
 	dowildbattle
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Lugia_Caught
+	copyvar VAR_0x8006, VAR_RESULT
+	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Lugia_Caught
 	setvar VAR_0x8004, SPECIES_LUGIA
 	setvar VAR_0x8005, 60
 	call EventScript_Summon_Fled_Handler
@@ -98,7 +97,7 @@ EventScript_Summon_Lugia::
 	msgbox gText_Summon_Lugia_Fled, MSGBOX_DEFAULT
 	closemessage
 	waitmoncry
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
+	goto_if_eq VAR_0x8006, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -122,7 +121,8 @@ EventScript_Summon_Zapdos::
 	dowildbattle
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Zapdos_Caught
+	copyvar VAR_0x8006, VAR_RESULT
+	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Zapdos_Caught
 	setvar VAR_0x8004, SPECIES_ZAPDOS
 	setvar VAR_0x8005, 50
 	call EventScript_Summon_Fled_Handler
@@ -130,7 +130,7 @@ EventScript_Summon_Zapdos::
 	msgbox gText_Summon_Zapdos_Fled, MSGBOX_DEFAULT
 	closemessage
 	waitmoncry
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
+	goto_if_eq VAR_0x8006, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -154,7 +154,8 @@ EventScript_Summon_Moltres::
 	dowildbattle
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Moltres_Caught
+	copyvar VAR_0x8006, VAR_RESULT
+	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Moltres_Caught
 	setvar VAR_0x8004, SPECIES_MOLTRES
 	setvar VAR_0x8005, 50
 	call EventScript_Summon_Fled_Handler
@@ -162,7 +163,7 @@ EventScript_Summon_Moltres::
 	msgbox gText_Summon_Moltres_Fled, MSGBOX_DEFAULT
 	closemessage
 	waitmoncry
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
+	goto_if_eq VAR_0x8006, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -186,7 +187,8 @@ EventScript_Summon_Mewtwo::
 	dowildbattle
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Mewtwo_Caught
+	copyvar VAR_0x8006, VAR_RESULT
+	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Mewtwo_Caught
 	setvar VAR_0x8004, SPECIES_MEWTWO
 	setvar VAR_0x8005, 70
 	call EventScript_Summon_Fled_Handler
@@ -194,7 +196,7 @@ EventScript_Summon_Mewtwo::
 	msgbox gText_Summon_Mewtwo_Fled, MSGBOX_DEFAULT
 	closemessage
 	waitmoncry
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
+	goto_if_eq VAR_0x8006, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -218,7 +220,8 @@ EventScript_Summon_HoOh::
 	dowildbattle
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_HoOh_Caught
+	copyvar VAR_0x8006, VAR_RESULT
+	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_HoOh_Caught
 	setvar VAR_0x8004, SPECIES_HO_OH
 	setvar VAR_0x8005, 60
 	call EventScript_Summon_Fled_Handler
@@ -226,7 +229,7 @@ EventScript_Summon_HoOh::
 	msgbox gText_Summon_HoOh_Fled, MSGBOX_DEFAULT
 	closemessage
 	waitmoncry
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
+	goto_if_eq VAR_0x8006, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -250,7 +253,8 @@ EventScript_Summon_Mew::
 	dowildbattle
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Mew_Caught
+	copyvar VAR_0x8006, VAR_RESULT
+	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Mew_Caught
 	setvar VAR_0x8004, SPECIES_MEW
 	setvar VAR_0x8005, 50
 	call EventScript_Summon_Fled_Handler
@@ -258,7 +262,7 @@ EventScript_Summon_Mew::
 	msgbox gText_Summon_Mew_Fled, MSGBOX_DEFAULT
 	closemessage
 	waitmoncry
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
+	goto_if_eq VAR_0x8006, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -282,7 +286,8 @@ EventScript_Summon_Celebi::
 	dowildbattle
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Celebi_Caught
+	copyvar VAR_0x8006, VAR_RESULT
+	goto_if_eq VAR_0x8006, B_OUTCOME_CAUGHT, EventScript_Summon_Celebi_Caught
 	setvar VAR_0x8004, SPECIES_CELEBI
 	setvar VAR_0x8005, 50
 	call EventScript_Summon_Fled_Handler
@@ -290,7 +295,7 @@ EventScript_Summon_Celebi::
 	msgbox gText_Summon_Celebi_Fled, MSGBOX_DEFAULT
 	closemessage
 	waitmoncry
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
+	goto_if_eq VAR_0x8006, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -307,9 +312,9 @@ EventScript_Summon_Celebi_Caught::
 gText_Summon_LostForever:
 	.string "È fuggito per sempre...\n"
 	.string "Non ritornerà mai più.\p"
-	.string "Avevi già un leggendario\n"
-	.string "errante: non c'era spazio\l"
-	.string "per un altro!$"
+	.string "C'è già un leggendario che\n"
+	.string "vaga per la regione di HOENN:\l"
+	.string "non c'era posto per un altro!$"
 
 gText_Summon_Articuno:
 	.string "Il FLAUTO GHIACCIO suona una\n"

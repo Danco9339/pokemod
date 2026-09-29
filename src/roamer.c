@@ -3,6 +3,7 @@
 #include "pokemon.h"
 #include "random.h"
 #include "roamer.h"
+#include "constants/flags.h"
 
 // Despite having a variable to track it, the roamer is
 // hard-coded to only ever be in map group 0
@@ -154,6 +155,20 @@ void InitRoamerSpecies(void)
     ROAMER->tough = GetMonData(&gEnemyParty[0], MON_DATA_TOUGH);
     sRoamerLocation[MAP_GRP] = ROAMER_MAP_GROUP;
     sRoamerLocation[MAP_NUM] = sRoamerLocations[Random() % NUM_LOCATION_SETS][0];
+}
+
+void TryInitRoamerSpecies(void)
+{
+    if (ROAMER->active || FlagGet(FLAG_LEGEND_ROAMER_ACTIVE))
+    {
+        FlagSet(FLAG_LEGEND_ROAMER_ACTIVE);
+        gSpecialVar_Result = FALSE;
+        return;
+    }
+
+    InitRoamerSpecies();
+    FlagSet(FLAG_LEGEND_ROAMER_ACTIVE);
+    gSpecialVar_Result = TRUE;
 }
 
 void UpdateLocationHistoryForRoamer(void)
