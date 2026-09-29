@@ -20,6 +20,33 @@ EventScript_UseLegendarySummonItem::
 	releaseall
 	end
 
+@ Subroutine condivisa per gestire la fuga:
+@ VAR_0x8004 = species, VAR_0x8005 = livello, VAR_RESULT = esito battaglia
+@ Se FLAG_LEGEND_ROAMER_ACTIVE non e' settato: diventa roamer
+@ Altrimenti: perso per sempre
+EventScript_Summon_Fled_Handler::
+	goto_if_set FLAG_LEGEND_ROAMER_ACTIVE, EventScript_Summon_LostForever
+	@ Primo leggendario che fugge: diventa errante
+	special InitRoamerSpecies
+	setflag FLAG_LEGEND_ROAMER_ACTIVE
+	return
+
+EventScript_Summon_LostForever::
+	@ Gia' esiste un roamer: questo e' perso per sempre
+	msgbox gText_Summon_LostForever, MSGBOX_DEFAULT
+	closemessage
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
+	releaseall
+	end
+
+EventScript_Summon_WhiteOut::
+	fadescreen FADE_TO_BLACK
+	special SetCB2WhiteOut
+	end
+
+@ ============================================================
+@ ARTICUNO
+@ ============================================================
 EventScript_Summon_Articuno::
 	playmoncry SPECIES_ARTICUNO, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Articuno, MSGBOX_DEFAULT
@@ -34,7 +61,7 @@ EventScript_Summon_Articuno::
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Articuno_Caught
 	setvar VAR_0x8004, SPECIES_ARTICUNO
 	setvar VAR_0x8005, 50
-	special InitRoamerSpecies
+	call EventScript_Summon_Fled_Handler
 	playmoncry SPECIES_ARTICUNO, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Articuno_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -49,6 +76,9 @@ EventScript_Summon_Articuno_Caught::
 	releaseall
 	end
 
+@ ============================================================
+@ LUGIA
+@ ============================================================
 EventScript_Summon_Lugia::
 	playmoncry SPECIES_LUGIA, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Lugia, MSGBOX_DEFAULT
@@ -63,7 +93,7 @@ EventScript_Summon_Lugia::
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Lugia_Caught
 	setvar VAR_0x8004, SPECIES_LUGIA
 	setvar VAR_0x8005, 60
-	special InitRoamerSpecies
+	call EventScript_Summon_Fled_Handler
 	playmoncry SPECIES_LUGIA, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Lugia_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -78,6 +108,9 @@ EventScript_Summon_Lugia_Caught::
 	releaseall
 	end
 
+@ ============================================================
+@ ZAPDOS
+@ ============================================================
 EventScript_Summon_Zapdos::
 	playmoncry SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Zapdos, MSGBOX_DEFAULT
@@ -92,7 +125,7 @@ EventScript_Summon_Zapdos::
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Zapdos_Caught
 	setvar VAR_0x8004, SPECIES_ZAPDOS
 	setvar VAR_0x8005, 50
-	special InitRoamerSpecies
+	call EventScript_Summon_Fled_Handler
 	playmoncry SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Zapdos_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -107,6 +140,9 @@ EventScript_Summon_Zapdos_Caught::
 	releaseall
 	end
 
+@ ============================================================
+@ MOLTRES
+@ ============================================================
 EventScript_Summon_Moltres::
 	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Moltres, MSGBOX_DEFAULT
@@ -121,7 +157,7 @@ EventScript_Summon_Moltres::
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Moltres_Caught
 	setvar VAR_0x8004, SPECIES_MOLTRES
 	setvar VAR_0x8005, 50
-	special InitRoamerSpecies
+	call EventScript_Summon_Fled_Handler
 	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Moltres_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -136,6 +172,9 @@ EventScript_Summon_Moltres_Caught::
 	releaseall
 	end
 
+@ ============================================================
+@ MEWTWO
+@ ============================================================
 EventScript_Summon_Mewtwo::
 	playmoncry SPECIES_MEWTWO, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Mewtwo, MSGBOX_DEFAULT
@@ -150,7 +189,7 @@ EventScript_Summon_Mewtwo::
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Mewtwo_Caught
 	setvar VAR_0x8004, SPECIES_MEWTWO
 	setvar VAR_0x8005, 70
-	special InitRoamerSpecies
+	call EventScript_Summon_Fled_Handler
 	playmoncry SPECIES_MEWTWO, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Mewtwo_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -165,6 +204,9 @@ EventScript_Summon_Mewtwo_Caught::
 	releaseall
 	end
 
+@ ============================================================
+@ HO-OH
+@ ============================================================
 EventScript_Summon_HoOh::
 	playmoncry SPECIES_HO_OH, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_HoOh, MSGBOX_DEFAULT
@@ -179,7 +221,7 @@ EventScript_Summon_HoOh::
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_HoOh_Caught
 	setvar VAR_0x8004, SPECIES_HO_OH
 	setvar VAR_0x8005, 60
-	special InitRoamerSpecies
+	call EventScript_Summon_Fled_Handler
 	playmoncry SPECIES_HO_OH, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_HoOh_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -194,6 +236,9 @@ EventScript_Summon_HoOh_Caught::
 	releaseall
 	end
 
+@ ============================================================
+@ MEW
+@ ============================================================
 EventScript_Summon_Mew::
 	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Mew, MSGBOX_DEFAULT
@@ -208,7 +253,7 @@ EventScript_Summon_Mew::
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Mew_Caught
 	setvar VAR_0x8004, SPECIES_MEW
 	setvar VAR_0x8005, 50
-	special InitRoamerSpecies
+	call EventScript_Summon_Fled_Handler
 	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Mew_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -223,6 +268,9 @@ EventScript_Summon_Mew_Caught::
 	releaseall
 	end
 
+@ ============================================================
+@ CELEBI
+@ ============================================================
 EventScript_Summon_Celebi::
 	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Celebi, MSGBOX_DEFAULT
@@ -237,7 +285,7 @@ EventScript_Summon_Celebi::
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Celebi_Caught
 	setvar VAR_0x8004, SPECIES_CELEBI
 	setvar VAR_0x8005, 50
-	special InitRoamerSpecies
+	call EventScript_Summon_Fled_Handler
 	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Celebi_Fled, MSGBOX_DEFAULT
 	closemessage
@@ -252,10 +300,16 @@ EventScript_Summon_Celebi_Caught::
 	releaseall
 	end
 
-EventScript_Summon_WhiteOut::
-	fadescreen FADE_TO_BLACK
-	special SetCB2WhiteOut
-	end
+@ ============================================================
+@ TESTI
+@ ============================================================
+
+gText_Summon_LostForever:
+	.string "È fuggito per sempre...\n"
+	.string "Non ritornerà mai più.\p"
+	.string "Avevi già un leggendario\n"
+	.string "errante: non c'era spazio\l"
+	.string "per un altro!$"
 
 gText_Summon_Articuno:
 	.string "Il FLAUTO GHIACCIO suona una\n"
@@ -282,7 +336,9 @@ gText_Summon_Lugia:
 
 gText_Summon_Lugia_Fled:
 	.string "LUGIA si è immerso negli abissi\n"
-	.string "ed è scomparso nel mare!$"
+	.string "ed è scomparso nel mare!\p"
+	.string "Sembra vagare per i mari\n"
+	.string "di tutta HOENN!$"
 
 gText_Summon_Lugia_Caught:
 	.string "Incredibile! Sei riuscito a\n"
@@ -297,7 +353,9 @@ gText_Summon_Zapdos:
 
 gText_Summon_Zapdos_Fled:
 	.string "ZAPDOS ha scatenato un fulmine\n"
-	.string "ed è fuggito via veloce!$"
+	.string "ed è fuggito via veloce!\p"
+	.string "Sembra volare per HOENN\n"
+	.string "tra le tempeste!$"
 
 gText_Summon_Zapdos_Caught:
 	.string "Incredibile! Sei riuscito a\n"
@@ -312,7 +370,9 @@ gText_Summon_Moltres:
 
 gText_Summon_Moltres_Fled:
 	.string "MOLTRES si è avvolto nel fuoco\n"
-	.string "ed è volato via lontano!$"
+	.string "ed è volato via lontano!\p"
+	.string "Sembra vagare per le vette\n"
+	.string "vulcaniche di HOENN!$"
 
 gText_Summon_Moltres_Caught:
 	.string "Incredibile! Sei riuscito a\n"
@@ -327,7 +387,9 @@ gText_Summon_Mewtwo:
 
 gText_Summon_Mewtwo_Fled:
 	.string "MEWTWO ha usato il teletrasporto\n"
-	.string "ed è scomparso nel nulla!$"
+	.string "ed è scomparso nel nulla!\p"
+	.string "Sembra vagare per i luoghi\n"
+	.string "remoti di HOENN!$"
 
 gText_Summon_Mewtwo_Caught:
 	.string "Incredibile! Sei riuscito a\n"
@@ -342,7 +404,9 @@ gText_Summon_HoOh:
 
 gText_Summon_HoOh_Fled:
 	.string "HO-OH ha spiegato le sue ali\n"
-	.string "ed è volato verso il sole!$"
+	.string "ed è volato verso il sole!\p"
+	.string "Sembra planare per i cieli\n"
+	.string "di tutta HOENN!$"
 
 gText_Summon_HoOh_Caught:
 	.string "Incredibile! Sei riuscito a\n"
@@ -357,7 +421,9 @@ gText_Summon_Mew:
 
 gText_Summon_Mew_Fled:
 	.string "MEW ha fatto una piroetta ed è\n"
-	.string "svanito in un soffio d'aria!$"
+	.string "svanito in un soffio d'aria!\p"
+	.string "Sembra giocare nascosto\n"
+	.string "per tutta HOENN!$"
 
 gText_Summon_Mew_Caught:
 	.string "Incredibile! Sei riuscito a\n"
@@ -372,7 +438,9 @@ gText_Summon_Celebi:
 
 gText_Summon_Celebi_Fled:
 	.string "CELEBI ha attraversato il tempo\n"
-	.string "ed è svanito nella foresta!$"
+	.string "ed è svanito nella foresta!\p"
+	.string "Sembra vagare tra i boschi\n"
+	.string "di HOENN!$"
 
 gText_Summon_Celebi_Caught:
 	.string "Incredibile! Sei riuscito a\n"

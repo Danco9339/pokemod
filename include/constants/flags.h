@@ -1549,7 +1549,7 @@
 #define FLAG_LEAGUE_BEATEN_AGAIN                    (SYSTEM_FLAGS + 0xAD)
 #define FLAG_MOM_RESCUED                            (SYSTEM_FLAGS + 0xAE)
 #define FLAG_RECEIVED_BEAST_STARTER                 (SYSTEM_FLAGS + 0xAF)
-#define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
+#define FLAG_LEGEND_ROAMER_ACTIVE                   (SYSTEM_FLAGS + 0xB0) // Un leggendario e' errante
 #define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag
 #define FLAG_UNUSED_0x912                           (SYSTEM_FLAGS + 0xB2) // Unused Flag
 #define FLAG_UNUSED_0x913                           (SYSTEM_FLAGS + 0xB3) // Unused Flag
