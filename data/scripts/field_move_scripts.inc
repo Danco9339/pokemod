@@ -371,6 +371,6 @@ Follower_Movement_Heart:
 	step_end
 
 gText_FollowerPokemonLove:
-	.string "{STR_VAR_1} ti sta seguendo affettuosamente!\n"
-	.string "Sembra molto felice di viaggiare con te!$"
+	.string "{STR_VAR_1} ti segue affettuoso!\n"
+	.string "È felice di viaggiare con te!$"
 

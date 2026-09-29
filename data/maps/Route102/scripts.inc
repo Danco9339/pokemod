@@ -108,9 +108,9 @@ Route102_Text_CatchWholeBunchOfPokemon:
 	.string "Salva la tua mamma!$"
 
 Route102_Text_RouteSignOldale:
-	.string "ROUTE 102\n"
-	.string "{RIGHT_ARROW} OLDALE TOWN$"
+	.string "PERCORSO 102\n"
+	.string "{RIGHT_ARROW} SOLAROSA$"
 
 Route102_Text_RouteSignPetalburg:
-	.string "ROUTE 102\n"
-	.string "{LEFT_ARROW} PETALBURG CITY$"
+	.string "PERCORSO 102\n"
+	.string "{LEFT_ARROW} PETALIPOLI$"

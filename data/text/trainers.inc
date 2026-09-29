@@ -1,73 +1,74 @@
 Route102_Text_CalvinIntro:
-	.string "If you have POKéMON with you, then\n"
-	.string "you're an official POKéMON TRAINER!\l"
-	.string "You can't say no to my challenge!$"
+	.string "Hai dei POKéMON con te? Allora\n"
+	.string "sei un ALLENATORE a tutti gli\l"
+	.string "effetti! Non puoi rifiutare!$"
 
 Route102_Text_CalvinDefeated:
-	.string "Arrgh, I lost…\n"
-	.string "I should have trained mine more…$"
+	.string "Argh, ho perso…\n"
+	.string "Dovevo allenarmi molto di più…$"
 
 Route102_Text_CalvinPostBattle:
-	.string "Listen, you. If you're strong,\n"
-	.string "you should have told me before!$"
+	.string "Ascolta! Se eri così forte,\n"
+	.string "avresti dovuto dirmelo prima!$"
 
 Route102_Text_CalvinRegister:
-	.string "I've been working hard at this since\n"
-	.string "I saw you before.\p"
-	.string "I'd like to battle you again, so can\n"
-	.string "you register me in your POKéNAV?$"
+	.string "Mi allenerò sodo d'ora in poi.\p"
+	.string "Vorrei sfidarti di nuovo,\n"
+	.string "mi registri nel tuo POKéNAV?$"
 
 Route102_Text_CalvinRegisterShort:
-	.string "I'd like to battle you again, so can\n"
-	.string "you register me in your POKéNAV?$"
+	.string "Vorrei sfidarti ancora,\n"
+	.string "mi registri nel tuo POKéNAV?$"
 
 Route102_Text_CalvinRematchIntro:
-	.string "Ever since I lost to you, I desperately\n"
-	.string "trained my POKéMON.\l"
-	.string "You can't say no to my challenge!$"
+	.string "Da quando ho perso, ho allenato\n"
+	.string "i miei POKéMON senza sosta!\l"
+	.string "Non puoi rifiutare la sfida!$"
 
 Route102_Text_CalvinRematchDefeated:
-	.string "Arrgh, I lost…\n"
-	.string "Is my training method not right?$"
+	.string "Argh, ho perso ancora…\n"
+	.string "Il mio allenamento è errato?$"
 
 Route102_Text_CalvinRematchPostBattle:
-	.string "If you're going to get stronger,\n"
-	.string "I'll get stronger, too.$"
+	.string "Se tu diventi più forte,\n"
+	.string "diventerò più forte anch'io!$"
 
 Route102_Text_AllenIntro:
-	.string "Did you just become a TRAINER?\n"
-	.string "We're both beginners!$"
+	.string "Sei appena diventato ALLENATORE?\n"
+	.string "Siamo entrambi principianti!$"
 
 Route102_Text_AllenDefeated:
-	.string "I called you because I thought\n"
-	.string "I could beat you…$"
+	.string "Ti ho sfidato perché credevo\n"
+	.string "di poterti battere facili…$"
 
 Route102_Text_AllenPostBattle:
-	.string "I haven't won once yet…\n"
-	.string "I wish I would win soon…$"
+	.string "Non ho ancora vinto una volta…\n"
+	.string "Spero di vincere presto…$"
 
 Route102_Text_RickIntro:
-	.string "Hahah! Our eyes met!\n"
-	.string "I'll take you on with my BUG POKéMON!$"
+	.string "Ahah! I nostri sguardi si sono\n"
+	.string "incrociati! Lotta con me e i\l"
+	.string "miei POKéMON COLEOTTERO!$"
 
 Route102_Text_RickDefeated:
-	.string "Ow! Down and out!$"
+	.string "Ahi! Finito al tappeto!$"
 
 Route102_Text_RickPostBattle:
-	.string "If you lock eyes with a TRAINER,\n"
-	.string "you have to challenge! It's a rule!$"
+	.string "Se incroci lo sguardo con un\n"
+	.string "ALLENATORE, devi lottare!\l"
+	.string "È la regola fondamentale!$"
 
 Route102_Text_TianaIntro:
-	.string "I'm going to keep winning and aim\n"
-	.string "to be the best TRAINER.\p"
-	.string "Help me further my career!$"
+	.string "Continuerò a vincere per essere\n"
+	.string "la migliore ALLENATRICE.\p"
+	.string "Aiutami a fare carriera!$"
 
 Route102_Text_TianaDefeated:
-	.string "I ended up furthering your career…$"
+	.string "Ho finito per aiutare la tua…$"
 
 Route102_Text_TianaPostBattle:
-	.string "To keep winning my way up, I see that\n"
-	.string "I have to catch more POKéMON.$"
+	.string "Per continuare a salire in vetta,\n"
+	.string "devo catturare più POKéMON.$"
 
 Route103_Text_DaisyIntro:
 	.string "Did you feel the tug of our\n"
@@ -320,28 +321,27 @@ Route104_Text_HaleyPostBattle:
 	.string "non potrà fermarti!$"
 
 Route104_Text_HaleyRegister1:
-	.string "You're strong, but should I register\n"
-	.string "you in my POKéNAV?\l"
-	.string "Maybe I shouldn't…\p"
-	.string "Okay, sure, I will register you!$"
+	.string "Sei forte! Dovrei registrarti\n"
+	.string "nel mio POKéNAV?\l"
+	.string "Forse dovrei…\p"
+	.string "Va bene, ti registro subito!$"
 
 Route104_Text_HaleyRegister2:
-	.string "You're strong, but should I register\n"
-	.string "you in my POKéNAV?\l"
-	.string "Maybe I shouldn't…\p"
-	.string "Okay, sure, I will register you!$"
+	.string "Sei forte! Dovrei registrarti\n"
+	.string "nel mio POKéNAV?\l"
+	.string "Forse dovrei…\p"
+	.string "Va bene, ti registro subito!$"
 
 Route104_Text_HaleyRematchIntro:
-	.string "Come on, battle with me!$"
+	.string "Dai, lottiamo ancora insieme!$"
 
 Route104_Text_HaleyRematchDefeat:
-	.string "Ohh…\n"
-	.string "I thought I could win…$"
+	.string "Ohh… Credevo proprio di vincere…$"
 
 Route104_Text_HaleyPostRematch:
-	.string "I made the decision to battle, so\n"
-	.string "I can accept this loss with grace.\p"
-	.string "I am still upset about losing!$"
+	.string "Ho deciso di lottare, quindi\n"
+	.string "accetto la sconfitta con grazia.\p"
+	.string "Ma ci tenevo tanto a vincere!$"
 
 Route104_Text_WinstonIntro:
 	.string "CAMPIONE! So che cerchi fondi\n"
@@ -359,29 +359,27 @@ Route104_Text_WinstonPostBattle:
 	.string "ti aiuti a liberarla subito!$"
 
 Route104_Text_WinstonRegister1:
-	.string "Hm?\n"
-	.string "Ah, you've obtained a POKéNAV.\p"
-	.string "I will gladly register you.\n"
-	.string "After all, I have plenty of money.$"
+	.string "Uhm? Hai ottenuto un POKéNAV!\p"
+	.string "Ti registro molto volentieri.\n"
+	.string "Dopotutto, ho fondi in quantità!$"
 
 Route104_Text_WinstonRegister2:
-	.string "Hm?\n"
-	.string "Ah, you've obtained a POKéNAV.\p"
-	.string "I will gladly register you.\n"
-	.string "After all, I have plenty of money.$"
+	.string "Uhm? Hai ottenuto un POKéNAV!\p"
+	.string "Ti registro molto volentieri.\n"
+	.string "Dopotutto, ho fondi in quantità!$"
 
 Route104_Text_WinstonRematchIntro:
-	.string "After I lost to you, I learned a bunch\n"
-	.string "of things about POKéMON.$"
+	.string "Dopo che ho perso, ho studiato\n"
+	.string "a fondo il mondo dei POKéMON!$"
 
 Route104_Text_WinstonRematchDefeat:
-	.string "I lost again?\n"
-	.string "Why couldn't I win?$"
+	.string "Ho perso di nuovo?\n"
+	.string "Perché non riesco a vincere?$"
 
 Route104_Text_WinstonPostRematch:
-	.string "I'm fabulously wealthy, but I can't\n"
-	.string "seem to win at POKéMON…\p"
-	.string "It's so deep, the world of POKéMON…$"
+	.string "Sono ricco sfondato, ma non\n"
+	.string "riesco a vincere coi POKéMON…\p"
+	.string "Che mondo profondo e difficile…$"
 
 Route104_Text_CindyIntro:
 	.string "Povero CAMPIONE… Il rapimento\n"
@@ -397,27 +395,25 @@ Route104_Text_CindyPostBattle:
 	.string "Salva tua madre, te ne prego!$"
 
 Route104_Text_CindyRegister1:
-	.string "Hello, we meet again.\p"
-	.string "We seem to be drawn together. Let's\n"
-	.string "register each other in our POKéNAVS.$"
+	.string "Ci incontriamo di nuovo!\p"
+	.string "Sembra quasi un segno del destino.\n"
+	.string "Registriamoci nei nostri POKéNAV!$"
 
 Route104_Text_CindyRegister2:
-	.string "We should commemorate how we seem\n"
-	.string "to be drawn to each other.\p"
-	.string "Let's register each other in our\n"
-	.string "POKéNAVS.$"
+	.string "Dovremmo celebrare questo incontro\n"
+	.string "registrandoci nei nostri POKéNAV!$"
 
 Route104_Text_CindyRematchIntro:
-	.string "Hello, we meet again.\n"
-	.string "May I ask you for a battle?$"
+	.string "Ciao, ci incontriamo di nuovo.\n"
+	.string "Ti andrebbe un'altra sfida?$"
 
 Route104_Text_CindyRematchDefeat:
-	.string "Oh, my…\n"
-	.string "I did the best that I could…$"
+	.string "Oh cielo…\n"
+	.string "Ho fatto del mio meglio…$"
 
 Route104_Text_CindyPostRematch:
-	.string "“Hello” is the beginning of “good-bye.”\n"
-	.string "I hope we meet again.$"
+	.string "“Ciao” è l'inizio di un addio.\n"
+	.string "Spero che ci rivedremo presto!$"
 
 Route104_Text_DarianIntro:
 	.string "CAMPIONE! Pescavo qui quando ho\n"

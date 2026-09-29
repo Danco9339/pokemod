@@ -1564,6 +1564,25 @@ void Follower_PrepareMonInteraction(void)
     }
 }
 
+static bool8 IsStarterSpecies(u16 species)
+{
+    switch (species)
+    {
+    case SPECIES_TREECKO:
+    case SPECIES_GROVYLE:
+    case SPECIES_SCEPTILE:
+    case SPECIES_TORCHIC:
+    case SPECIES_COMBUSKEN:
+    case SPECIES_BLAZIKEN:
+    case SPECIES_MUDKIP:
+    case SPECIES_MARSHTOMP:
+    case SPECIES_SWAMPERT:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
 static u16 GetFollowerMonGraphicsId(u16 species)
 {
     switch (species)
@@ -1580,12 +1599,8 @@ static u16 GetFollowerMonGraphicsId(u16 species)
     case SPECIES_MARSHTOMP:
     case SPECIES_SWAMPERT:
         return OBJ_EVENT_GFX_MUDKIP;
-    case SPECIES_PIKACHU:
-    case SPECIES_RAICHU:
-    case SPECIES_PICHU:
-        return OBJ_EVENT_GFX_PIKACHU;
     default:
-        return OBJ_EVENT_GFX_PIKACHU;
+        return OBJ_EVENT_GFX_TREECKO;
     }
 }
 
@@ -1612,6 +1627,13 @@ void UpdateFollowerPokemon(void)
     }
 
     species = GetMonData(mon, MON_DATA_SPECIES);
+    if (!IsStarterSpecies(species))
+    {
+        if (gSaveBlock2Ptr->follower.inProgress && gSaveBlock2Ptr->follower.map.id == OBJ_EVENT_ID_FOLLOWER)
+            DestroyFollower();
+        return;
+    }
+
     targetGraphicsId = GetFollowerMonGraphicsId(species);
 
     if (!gSaveBlock2Ptr->follower.inProgress)
