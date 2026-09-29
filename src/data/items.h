@@ -2803,7 +2803,7 @@ const struct Item gItems[] =
         .price = 0,
         .description = sLegendFluteIceDesc,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
+        .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
@@ -2814,7 +2814,7 @@ const struct Item gItems[] =
         .price = 0,
         .description = sLegendBellSilverDesc,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
+        .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
@@ -2825,7 +2825,7 @@ const struct Item gItems[] =
         .price = 0,
         .description = sLegendFluteThunderDesc,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
+        .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
@@ -2836,7 +2836,7 @@ const struct Item gItems[] =
         .price = 0,
         .description = sLegendFluteFireDesc,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
+        .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
@@ -2847,7 +2847,7 @@ const struct Item gItems[] =
         .price = 0,
         .description = sLegendOrbPsychicDesc,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
+        .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
@@ -2858,7 +2858,7 @@ const struct Item gItems[] =
         .price = 0,
         .description = sLegendBellRainbowDesc,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
+        .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
@@ -2869,7 +2869,7 @@ const struct Item gItems[] =
         .price = 0,
         .description = sLegendMirageOrbDesc,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
+        .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
@@ -2880,7 +2880,7 @@ const struct Item gItems[] =
         .price = 0,
         .description = sLegendTimeAmberDesc,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
+        .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_SummonLegendary,
     },
 
