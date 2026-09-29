@@ -30,6 +30,7 @@
 #include "wild_encounter.h"
 #include "follow_me.h"
 #include "devon_stock_market.h"
+#include "npc_bounties.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
 #include "constants/field_poison.h"
@@ -315,7 +316,10 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
         script = GetFollowerScriptPointer();
     }
     else
+    {
         script = GetObjectEventScriptPointerByObjectEventId(objectEventId);
+        script = TryGetBountyNpcScript(script);
+    }
 
     script = GetRamScript(gSpecialVar_LastTalked, script);
     return script;

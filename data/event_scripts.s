@@ -1060,3 +1060,4 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/scripts/legendary_summon.inc"
 	.include "data/scripts/devon_stocks.inc"
 	.include "data/scripts/gym_colletta.inc"
+	.include "data/scripts/npc_bounties.inc"

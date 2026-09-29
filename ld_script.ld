@@ -343,6 +343,7 @@ SECTIONS {
         src/international_string_util.o(.text);
         src/follow_me.o(.text);
         src/devon_stock_market.o(.text);
+        src/npc_bounties.o(.text);
     } > ROM =0
 
     script_data :
@@ -708,6 +709,7 @@ SECTIONS {
         data/sound_data.o(.rodata);
         src/follow_me.o(.rodata);
         src/devon_stock_market.o(.rodata);
+        src/npc_bounties.o(.rodata);
     } > ROM =0
 
     song_data :
