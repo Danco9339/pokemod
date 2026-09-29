@@ -5,10 +5,27 @@ RustboroCity_Gym_EventScript_Roxanne::
 	lock
 	faceplayer
 	goto_if_unset FLAG_COLLETTA_ROXANNE, RustboroCity_Gym_EventScript_RoxanneColletta
+	goto_if_unset FLAG_BADGE01_GET, RustboroCity_Gym_EventScript_RoxanneCollettaGiveBadge
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneRematch
 	goto_if_unset FLAG_RECEIVED_TM_ROCK_TOMB, RustboroCity_Gym_EventScript_GiveRockTomb
 	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_Gym_EventScript_RoxanneCollettaGiveBadge::
+	message RustboroCity_Gym_Text_ReceivedStoneBadge
+	waitmessage
+	call Common_EventScript_PlayGymBadgeFanfare
+	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_DEFEATED_RUSTBORO_GYM
+	setflag FLAG_BADGE01_GET
+	setvar VAR_RUSTBORO_CITY_STATE, 1
+	addvar VAR_PETALBURG_GYM_STATE, 1
+	setvar VAR_0x8008, 1
+	call Common_EventScript_SetGymTrainers
+	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
+	goto_if_unset FLAG_RECEIVED_TM_ROCK_TOMB, RustboroCity_Gym_EventScript_GiveRockTomb
 	release
 	end
 
@@ -187,31 +204,28 @@ RustboroCity_Gym_Text_RoxanneDefeat:
 	.string "LEAGUE STONE BADGE.$"
 
 RustboroCity_Gym_Text_ReceivedStoneBadge:
-	.string "{PLAYER} received the STONE BADGE\n"
-	.string "from ROXANNE.$"
+	.string "{PLAYER} riceve la MEDAGLIA\n"
+	.string "PIETRA da PETRA!$"
 
 RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
-	.string "The STONE BADGE heightens the ATTACK\n"
-	.string "power of your POKéMON.\p"
-	.string "It also enables them to use the HM move\n"
-	.string "CUT outside of battle.\p"
-	.string "Please take this with you, too.$"
+	.string "La MEDAGLIA PIETRA aumenta\n"
+	.string "l'ATTACCO dei tuoi POKéMON.\p"
+	.string "Permette anche l'uso della mossa\n"
+	.string "MN TAGLIO fuori dalla lotta.\p"
+	.string "Prendi anche questa MT39!$"
 
 RustboroCity_Gym_Text_ExplainRockTomb:
-	.string "That TECHNICAL MACHINE, TM39,\n"
-	.string "contains ROCK TOMB.\p"
-	.string "It not only inflicts damage by dropping\n"
-	.string "rocks, it also lowers SPEED.\p"
-	.string "If you use a TM, it instantly teaches\n"
-	.string "the move to a POKéMON.\p"
-	.string "Remember, a TM can be used only once,\n"
-	.string "so think before you use it.$"
+	.string "La MACCHINA TECNICA contiene\n"
+	.string "la mossa ROCCIA ROCCIOSA.\p"
+	.string "Infligge danni e riduce la\n"
+	.string "VELOCITÀ del bersaglio!\p"
+	.string "Usa tutta la tua forza per\n"
+	.string "salvare tua madre dal TEAM IDRO!$"
 
 RustboroCity_Gym_Text_RoxannePostBattle:
-	.string "Since you are so strong, you should\n"
-	.string "challenge other GYM LEADERS.\p"
-	.string "By battling many TRAINERS, you should\n"
-	.string "learn many things.$"
+	.string "PETRA: Sei formidabile!\n"
+	.string "Sfida gli altri CAPIPALESTRA:\l"
+	.string "ti aiuteranno nella tua causa!$"
 
 RustboroCity_Gym_Text_GymStatue:
 	.string "RUSTBORO CITY POKéMON GYM$"

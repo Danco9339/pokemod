@@ -7,6 +7,12 @@ RustboroCity_OnTransition:
 	setflag FLAG_VISITED_RUSTBORO_CITY
 	call Common_EventScript_SetupRivalGfxId
 	call_if_eq VAR_RUSTBORO_CITY_STATE, 6, RustboroCity_EventScript_HideMapNamePopup
+	goto_if_unset FLAG_COLLETTA_ROXANNE, RustboroCity_OnTransition_SkipGymFix
+	goto_if_ge VAR_RUSTBORO_CITY_STATE, 1, RustboroCity_OnTransition_SkipGymFix
+	setvar VAR_RUSTBORO_CITY_STATE, 1
+	setflag FLAG_DEFEATED_RUSTBORO_GYM
+	setflag FLAG_BADGE01_GET
+RustboroCity_OnTransition_SkipGymFix:
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	goto_if_eq VAR_RUSTBORO_CITY_STATE, 6, RustboroCity_EventScript_PositionScientistForExit
 	end
@@ -267,6 +273,23 @@ RustboroCity_EventScript_StolenGoodsTrigger4::
 	setvar VAR_0x8004, 4
 	goto RustboroCity_EventScript_StolenGoodsScene
 	end
+
+RustboroCity_EventScript_StolenGoodsTriggerGymExit::
+	lockall
+	applymovement LOCALID_PLAYER, RustboroCity_Movement_PlayerWalkToStreetFromGym
+	waitmovement 0
+	setobjectxyperm LOCALID_RUSTBORO_DEVON_EMPLOYEE, 14, 21
+	setobjectmovementtype LOCALID_RUSTBORO_DEVON_EMPLOYEE, MOVEMENT_TYPE_FACE_RIGHT
+	setvar VAR_0x8004, 0
+	goto RustboroCity_EventScript_StolenGoodsScene
+	end
+
+RustboroCity_Movement_PlayerWalkToStreetFromGym:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
 
 RustboroCity_EventScript_StolenGoodsScene::
 	msgbox RustboroCity_Text_OutOfTheWay, MSGBOX_DEFAULT
@@ -991,22 +1014,24 @@ RustboroCity_Text_TradePokemonGrowFast:
 
 RustboroCity_Text_OutOfTheWay:
 	.string "Largo! Fuori dai piedi!\n"
-	.string "Il TEAM IDRO vince sempre!$"
+	.string "Il TEAM IDRO vince sempre!\p"
+	.string "Quel pacco della DEVON servirà\n"
+	.string "ai nostri piani malvagi!\p"
+	.string "E salutaci la mammina! Ahah!$"
 
 RustboroCity_Text_WaitDontTakeMyGoods:
 	.string "Aspetta! Ti prego!\p"
-	.string "Non prendere le mie MERCI!$"
+	.string "Non prendere le MERCI DEVON!$"
 
 RustboroCity_Text_HelpMeIWasRobbed:
-	.string "Oh, sei tu!\p"
-	.string "Sei il formidabile ALLENATORE\n"
-	.string "di BOSCO PETALO!\p"
-	.string "Aiutami! Il TEAM IDRO mi ha\n"
-	.string "rubato le MERCI DEVON!\p"
-	.string "Dicevano cose orribili su tua\n"
-	.string "madre e ridevano del riscatto!\p"
-	.string "Se non le recupero, per la DEVON\n"
-	.string "sarà un disastro totale!$"
+	.string "Oh, CAMPIONE! Ti prego!\p"
+	.string "Quel furfante del TEAM IDRO\n"
+	.string "mi ha scippato le MERCI DEVON!\p"
+	.string "Urlava che le useranno contro\n"
+	.string "di te e rideva di tua madre!\p"
+	.string "È scappato verso il tunnel a est.\n"
+	.string "Se non le recupero, sono rovinato!\p"
+	.string "Ti prego, aiutami a riprenderle!$"
 
 RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel:
 	.string "Quel ceffo del TEAM IDRO è\n"
@@ -1026,8 +1051,8 @@ RustboroCity_Text_YoureLoadedWithItems:
 	.string "Non posso darti la MEGABALL.$"
 
 RustboroCity_Text_PleaseComeWithMe:
-	.string "Excuse me, please!\n"
-	.string "Please come with me!$"
+	.string "Il nostro PRESIDENTE vorrebbe\n"
+	.string "parlarti! Seguimi, per favore!$"
 
 RustboroCity_Text_MayHiLetsRegister:
 	.string "MAY: Oh, hi, {PLAYER}{KUN}!\p"

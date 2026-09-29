@@ -345,11 +345,13 @@ Route116_EventScript_Johnson::
 	end
 
 Route116_Text_ScoundrelMadeOffWithPeeko:
-	.string "Ohhh, what am I to do?\p"
-	.string "We were on our walk, PEEKO and I, when\n"
-	.string "we were jumped by an odd thug…\p"
-	.string "The scoundrel made off with my\n"
-	.string "darling PEEKO!\p"
+	.string "Ohhh, cosa posso fare?\p"
+	.string "Passeggiavo con PEEKO quando un\n"
+	.string "losco ceffo in blu ci ha assaliti!\p"
+	.string "Diceva di essere del TEAM IDRO!\n"
+	.string "Ha rapito la mia adorata PEEKO!\p"
+	.string "Rapire persone e POKéMON… Infami!\n"
+	.string "Ti prego, salvala! È nel tunnel!\p"
 	.string "Wrrrooooooaaaar! PEEKO!$"
 
 Route116_Text_WantToDigTunnel:

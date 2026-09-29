@@ -405,8 +405,8 @@ RusturfTunnel_EventScript_Mike::
 	end
 
 RusturfTunnel_Text_ComeAndGetSome:
-	.string "What, are you coming?\n"
-	.string "Come and get some, then!$"
+	.string "Cosa vuoi, moccioso? Ti manda\n"
+	.string "la tua mammina?! Fatti sotto!$"
 
 RusturfTunnel_Text_Peeko:
 	.string "PEEKO: Pii pihyoh!$"
@@ -439,22 +439,24 @@ RusturfTunnel_Text_GruntTakePackage:
 
 RusturfTunnel_Text_PeekoGladToSeeYouSafe:
 	.string "PEEKO!\n"
-	.string "Am I glad to see you're safe!$"
+	.string "Che sollievo vederti sana e salva!$"
 
 RusturfTunnel_Text_ThankYouLetsGoHomePeeko:
-	.string "PEEKO owes her life to you!\p"
-	.string "They call me MR. BRINEY.\n"
-	.string "And, you are?\p"
+	.string "PEEKO ti deve la vita!\p"
+	.string "Io sono il SIG. MARINO.\n"
+	.string "E tu sei…?\p"
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
-	.string "Ah, so you are {PLAYER}{KUN}!\n"
-	.string "I sincerely thank you!\p"
-	.string "Now, if there's anything that troubles\n"
-	.string "you, don't hesitate to tell me!\p"
-	.string "You can usually find me in my cottage\n"
-	.string "by the sea near PETALBURG WOODS.\p"
-	.string "Come, PEEKO, we should make our way\n"
-	.string "home.\p"
+	.string "Ma certo! Sei {PLAYER}{KUN}!\n"
+	.string "Ho saputo del vile ricatto…\p"
+	.string "Questo TEAM IDRO non ha limiti:\n"
+	.string "tua madre in cella e ora PEEKO!\p"
+	.string "Ti ringrazio con tutto il cuore!\n"
+	.string "Qualsiasi aiuto ti serva per\l"
+	.string "salvare tua madre, conta su di me!\p"
+	.string "Mi trovi nella casetta sul mare\n"
+	.string "vicino al BOSCO PETALO.\p"
+	.string "Vieni, PEEKO, andiamo a casa!\p"
 	.string "PEEKO: Pihyoh!$"
 
 RusturfTunnel_Text_WhyCantTheyKeepDigging:

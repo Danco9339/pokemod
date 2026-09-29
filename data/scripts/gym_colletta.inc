@@ -11,6 +11,20 @@ RustboroCity_Gym_EventScript_RoxanneColletta::
 	setflag FLAG_COLLETTA_ROXANNE
 	addvar VAR_COLLETTA_GYMS_COUNT, 1
 	call Common_EventScript_CheckCollettaPokenav
+	message RustboroCity_Gym_Text_ReceivedStoneBadge
+	waitmessage
+	call Common_EventScript_PlayGymBadgeFanfare
+	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_DEFEATED_RUSTBORO_GYM
+	setflag FLAG_BADGE01_GET
+	setvar VAR_RUSTBORO_CITY_STATE, 1
+	addvar VAR_PETALBURG_GYM_STATE, 1
+	setvar VAR_0x8008, 1
+	call Common_EventScript_SetGymTrainers
+	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
+	giveitem ITEM_TM_ROCK_TOMB
+	setflag FLAG_RECEIVED_TM_ROCK_TOMB
+	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
 	release
 	end
 

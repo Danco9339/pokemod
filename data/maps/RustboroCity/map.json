@@ -334,6 +334,15 @@
   "coord_events": [
     {
       "type": "trigger",
+      "x": 27,
+      "y": 20,
+      "elevation": 3,
+      "var": "VAR_RUSTBORO_CITY_STATE",
+      "var_value": "1",
+      "script": "RustboroCity_EventScript_StolenGoodsTriggerGymExit"
+    },
+    {
+      "type": "trigger",
       "x": 23,
       "y": 20,
       "elevation": 3,
