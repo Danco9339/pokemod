@@ -186,19 +186,23 @@ void NpcBounty_ValidateAndDeliverMon(void)
 
     if (GetMonData(mon, MON_DATA_IS_EGG))
     {
+        NpcBounty_BufferStrings();
         gSpecialVar_Result = 1; // Is egg
         return;
     }
 
     if (GetMonData(mon, MON_DATA_SPECIES) != sNpcBounties[index].species)
     {
-        StringCopy(gStringVar3, gSpeciesNames[GetMonData(mon, MON_DATA_SPECIES)]);
+        StringCopy(gStringVar1, gSpeciesNames[sNpcBounties[index].species]);
+        GetMonData(mon, MON_DATA_NICKNAME, gStringVar3);
+        StringGet_Nickname(gStringVar3);
         gSpecialVar_Result = 2; // Wrong species
         return;
     }
 
     if (gPlayerPartyCount <= 1)
     {
+        NpcBounty_BufferStrings();
         gSpecialVar_Result = 3; // Only mon in party
         return;
     }
@@ -212,9 +216,15 @@ void NpcBounty_ValidateAndDeliverMon(void)
 
     if (aliveMons == 0)
     {
+        NpcBounty_BufferStrings();
         gSpecialVar_Result = 3; // Cannot give away last conscious mon
         return;
     }
+
+    // Buffer mon name and reward before removing mon from party
+    GetMonData(mon, MON_DATA_NICKNAME, gStringVar1);
+    StringGet_Nickname(gStringVar1);
+    ConvertIntToDecimalStringN(gStringVar2, sNpcBounties[index].reward, STR_CONV_MODE_LEFT_ALIGN, 6);
 
     // Safe return of held item
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM);
