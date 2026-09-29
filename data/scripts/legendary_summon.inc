@@ -27,7 +27,9 @@ EventScript_Summon_Articuno::
 	waitmoncry
 	removeitem VAR_ITEM_ID
 	setwildbattle SPECIES_ARTICUNO, 50, ITEM_NONE
+	setflag FLAG_SUMMONING_LEGEND
 	dowildbattle
+	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Articuno_Caught
 	setvar VAR_0x8004, SPECIES_ARTICUNO
@@ -37,6 +39,7 @@ EventScript_Summon_Articuno::
 	msgbox gText_Summon_Articuno_Fled, MSGBOX_DEFAULT
 	closemessage
 	waitmoncry
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -53,11 +56,14 @@ EventScript_Summon_Lugia::
 	waitmoncry
 	removeitem VAR_ITEM_ID
 	setwildbattle SPECIES_LUGIA, 60, ITEM_NONE
+	setflag FLAG_SUMMONING_LEGEND
 	dowildbattle
+	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Lugia_Caught
 	msgbox gText_Summon_Lugia_Fled, MSGBOX_DEFAULT
 	closemessage
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -74,11 +80,14 @@ EventScript_Summon_Zapdos::
 	waitmoncry
 	removeitem VAR_ITEM_ID
 	setwildbattle SPECIES_ZAPDOS, 50, ITEM_NONE
+	setflag FLAG_SUMMONING_LEGEND
 	dowildbattle
+	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Zapdos_Caught
 	msgbox gText_Summon_Zapdos_Fled, MSGBOX_DEFAULT
 	closemessage
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -95,11 +104,14 @@ EventScript_Summon_Moltres::
 	waitmoncry
 	removeitem VAR_ITEM_ID
 	setwildbattle SPECIES_MOLTRES, 50, ITEM_NONE
+	setflag FLAG_SUMMONING_LEGEND
 	dowildbattle
+	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Moltres_Caught
 	msgbox gText_Summon_Moltres_Fled, MSGBOX_DEFAULT
 	closemessage
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -116,11 +128,14 @@ EventScript_Summon_Mewtwo::
 	waitmoncry
 	removeitem VAR_ITEM_ID
 	setwildbattle SPECIES_MEWTWO, 70, ITEM_NONE
+	setflag FLAG_SUMMONING_LEGEND
 	dowildbattle
+	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Mewtwo_Caught
 	msgbox gText_Summon_Mewtwo_Fled, MSGBOX_DEFAULT
 	closemessage
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -137,11 +152,14 @@ EventScript_Summon_HoOh::
 	waitmoncry
 	removeitem VAR_ITEM_ID
 	setwildbattle SPECIES_HO_OH, 60, ITEM_NONE
+	setflag FLAG_SUMMONING_LEGEND
 	dowildbattle
+	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_HoOh_Caught
 	msgbox gText_Summon_HoOh_Fled, MSGBOX_DEFAULT
 	closemessage
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -158,11 +176,14 @@ EventScript_Summon_Mew::
 	waitmoncry
 	removeitem VAR_ITEM_ID
 	setwildbattle SPECIES_MEW, 50, ITEM_NONE
+	setflag FLAG_SUMMONING_LEGEND
 	dowildbattle
+	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Mew_Caught
 	msgbox gText_Summon_Mew_Fled, MSGBOX_DEFAULT
 	closemessage
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -179,11 +200,14 @@ EventScript_Summon_Celebi::
 	waitmoncry
 	removeitem VAR_ITEM_ID
 	setwildbattle SPECIES_CELEBI, 50, ITEM_NONE
+	setflag FLAG_SUMMONING_LEGEND
 	dowildbattle
+	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Celebi_Caught
 	msgbox gText_Summon_Celebi_Fled, MSGBOX_DEFAULT
 	closemessage
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
 
@@ -191,6 +215,11 @@ EventScript_Summon_Celebi_Caught::
 	msgbox gText_Summon_Celebi_Caught, MSGBOX_DEFAULT
 	closemessage
 	releaseall
+	end
+
+EventScript_Summon_WhiteOut::
+	fadescreen FADE_TO_BLACK
+	special SetCB2WhiteOut
 	end
 
 gText_Summon_Articuno:

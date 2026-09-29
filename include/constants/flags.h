@@ -64,7 +64,7 @@
 #define FLAG_NPC_BOUNTY_19   0x32
 #define FLAG_NPC_BOUNTY_20   0x33
 #define FLAG_NPC_BOUNTY_21   0x34
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
+#define FLAG_SUMMONING_LEGEND 0x35
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
