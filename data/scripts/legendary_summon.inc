@@ -61,8 +61,13 @@ EventScript_Summon_Lugia::
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Lugia_Caught
+	setvar VAR_0x8004, SPECIES_LUGIA
+	setvar VAR_0x8005, 60
+	special InitRoamerSpecies
+	playmoncry SPECIES_LUGIA, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Lugia_Fled, MSGBOX_DEFAULT
 	closemessage
+	waitmoncry
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
@@ -85,8 +90,13 @@ EventScript_Summon_Zapdos::
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Zapdos_Caught
+	setvar VAR_0x8004, SPECIES_ZAPDOS
+	setvar VAR_0x8005, 50
+	special InitRoamerSpecies
+	playmoncry SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Zapdos_Fled, MSGBOX_DEFAULT
 	closemessage
+	waitmoncry
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
@@ -109,8 +119,13 @@ EventScript_Summon_Moltres::
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Moltres_Caught
+	setvar VAR_0x8004, SPECIES_MOLTRES
+	setvar VAR_0x8005, 50
+	special InitRoamerSpecies
+	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Moltres_Fled, MSGBOX_DEFAULT
 	closemessage
+	waitmoncry
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
@@ -133,8 +148,13 @@ EventScript_Summon_Mewtwo::
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Mewtwo_Caught
+	setvar VAR_0x8004, SPECIES_MEWTWO
+	setvar VAR_0x8005, 70
+	special InitRoamerSpecies
+	playmoncry SPECIES_MEWTWO, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Mewtwo_Fled, MSGBOX_DEFAULT
 	closemessage
+	waitmoncry
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
@@ -157,8 +177,13 @@ EventScript_Summon_HoOh::
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_HoOh_Caught
+	setvar VAR_0x8004, SPECIES_HO_OH
+	setvar VAR_0x8005, 60
+	special InitRoamerSpecies
+	playmoncry SPECIES_HO_OH, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_HoOh_Fled, MSGBOX_DEFAULT
 	closemessage
+	waitmoncry
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
@@ -181,8 +206,13 @@ EventScript_Summon_Mew::
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Mew_Caught
+	setvar VAR_0x8004, SPECIES_MEW
+	setvar VAR_0x8005, 50
+	special InitRoamerSpecies
+	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Mew_Fled, MSGBOX_DEFAULT
 	closemessage
+	waitmoncry
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
@@ -205,8 +235,13 @@ EventScript_Summon_Celebi::
 	clearflag FLAG_SUMMONING_LEGEND
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, EventScript_Summon_Celebi_Caught
+	setvar VAR_0x8004, SPECIES_CELEBI
+	setvar VAR_0x8005, 50
+	special InitRoamerSpecies
+	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
 	msgbox gText_Summon_Celebi_Fled, MSGBOX_DEFAULT
 	closemessage
+	waitmoncry
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, EventScript_Summon_WhiteOut
 	releaseall
 	end
