@@ -726,18 +726,20 @@ PetalburgCity_Text_WallyHouseSign:
 	.string "WALLY'S HOUSE$"
 
 PetalburgCity_Text_AreYouATrainer:
-	.string "Excuse me!\p"
-	.string "Let me guess, from the way you're\n"
-	.string "dressed, are you a POKéMON TRAINER?$"
+	.string "Ehi, un secondo!\p"
+	.string "Ma quello sguardo…\n"
+	.string "Non sarai mica il CAMPIONE?$"
 
 PetalburgCity_Text_WellMaybeNot:
 	.string "… … … … … …\p"
-	.string "Well, maybe not.\n"
-	.string "Your clothes aren't all that dirty.\p"
-	.string "You're either a rookie TRAINER,\n"
-	.string "or maybe you're just an ordinary kid.$"
+	.string "Sì, sei proprio tu!\n"
+	.string "Ho saputo del vile ricatto…\p"
+	.string "Il TEAM IDRO che osa rapire\n"
+	.string "la madre del CAMPIONE!$"
 
 PetalburgCity_Text_ImLookingForTalentedTrainers:
-	.string "I'm roaming the land in search of\n"
-	.string "talented TRAINERS.\p"
-	.string "I'm sorry to have taken your time.$"
+	.string "Io cerco talenti in giro,\n"
+	.string "ma la tua è una vera corsa!\p"
+	.string "Raccogli quel milione e salva\n"
+	.string "tua madre da quei pirati!\p"
+	.string "Ci vediamo in giro, CAMPIONE!$"

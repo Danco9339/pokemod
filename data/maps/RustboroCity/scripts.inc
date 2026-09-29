@@ -990,38 +990,40 @@ RustboroCity_Text_TradePokemonGrowFast:
 	.string "BADGES, it may not obey you…$"
 
 RustboroCity_Text_OutOfTheWay:
-	.string "Get out!\n"
-	.string "Out of the way!$"
+	.string "Largo! Fuori dai piedi!\n"
+	.string "Il TEAM IDRO vince sempre!$"
 
 RustboroCity_Text_WaitDontTakeMyGoods:
-	.string "Wait! Pleeeaaase!\p"
-	.string "Don't take my GOODS!$"
+	.string "Aspetta! Ti prego!\p"
+	.string "Non prendere le mie MERCI!$"
 
 RustboroCity_Text_HelpMeIWasRobbed:
-	.string "Oh, it's you!\p"
-	.string "You're that fantastic TRAINER who\n"
-	.string "helped me in PETALBURG WOODS!\p"
-	.string "Help me! I was robbed by TEAM AQUA!\n"
-	.string "I have to get the DEVON GOODS back!\p"
-	.string "If I don't…\n"
-	.string "I'm going to be in serious trouble.$"
+	.string "Oh, sei tu!\p"
+	.string "Sei il formidabile ALLENATORE\n"
+	.string "di BOSCO PETALO!\p"
+	.string "Aiutami! Il TEAM IDRO mi ha\n"
+	.string "rubato le MERCI DEVON!\p"
+	.string "Dicevano cose orribili su tua\n"
+	.string "madre e ridevano del riscatto!\p"
+	.string "Se non le recupero, per la DEVON\n"
+	.string "sarà un disastro totale!$"
 
 RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel:
-	.string "That shady character, I think he took\n"
-	.string "off towards the tunnel over there.$"
+	.string "Quel ceffo del TEAM IDRO è\n"
+	.string "scappato verso il tunnel lassù!$"
 
 RustboroCity_Text_YouGotItThankYou:
-	.string "Oh! How did it go?\n"
-	.string "The DEVON GOODS?\p"
-	.string "You did!\n"
-	.string "You got them back!\p"
-	.string "You really are a great TRAINER!\p"
-	.string "I know! As my thanks, I'll give you\n"
-	.string "another GREAT BALL!$"
+	.string "Oh! Com'è andata?\n"
+	.string "Le MERCI DEVON?\p"
+	.string "Evviva! Le hai recuperate!\n"
+	.string "Sei davvero un grande CAMPIONE!\p"
+	.string "Spero che ti aiuteranno a\n"
+	.string "salvare tua madre!\p"
+	.string "Tieni, accetta un'altra MEGABALL!$"
 
 RustboroCity_Text_YoureLoadedWithItems:
-	.string "You're loaded with items.\n"
-	.string "I can't give you this GREAT BALL.$"
+	.string "Hai lo ZAINO troppo pieno.\n"
+	.string "Non posso darti la MEGABALL.$"
 
 RustboroCity_Text_PleaseComeWithMe:
 	.string "Excuse me, please!\n"

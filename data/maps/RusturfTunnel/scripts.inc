@@ -412,26 +412,30 @@ RusturfTunnel_Text_Peeko:
 	.string "PEEKO: Pii pihyoh!$"
 
 RusturfTunnel_Text_GruntIntro:
-	.string "Grah, keelhaul it all!\p"
-	.string "That hostage POKéMON turned out to\n"
-	.string "be worthless!\p"
-	.string "And to think I made a getaway…\n"
-	.string "In this tunnel to nowhere!\p"
-	.string "Hey! You!\n"
-	.string "So you want to battle me?$"
+	.string "Accidenti a tutto!\p"
+	.string "Quel POKéMON in ostaggio non\n"
+	.string "mi è servito a nulla!\p"
+	.string "E sono finito in trappola\n"
+	.string "in questo tunnel cieco!\p"
+	.string "Ma guarda chi si rivede…\n"
+	.string "Il moccioso senza mamma!\p"
+	.string "Ahah! Tua madre piange e si\n"
+	.string "dispera nella nostra cella,\l"
+	.string "e tu sei qui a inseguire me?!\p"
+	.string "Ora ti faccio a pezzi!$"
 
 RusturfTunnel_Text_GruntDefeat:
-	.string "Urrrggh! My career in crime comes to\n"
-	.string "a dead end!$"
+	.string "Arrrgh! Battuto di nuovo da un\n"
+	.string "maledetto moccioso!$"
 
 RusturfTunnel_Text_GruntTakePackage:
-	.string "This is plain not right…\p"
-	.string "The BOSS told me this would be a\n"
-	.string "slick-and-easy job to pull.\p"
-	.string "All I had to do was steal some package\n"
-	.string "from DEVON.\p"
-	.string "Tch!\n"
-	.string "You want it back that badly, take it!$"
+	.string "Non è affatto giusto…\p"
+	.string "Il CAPO mi aveva promesso che\n"
+	.string "sarebbe stato facilissimo!\p"
+	.string "Dovevo solo rubare il pacco DEVON…\p"
+	.string "Tsk! Te lo riprendi pure, ma\n"
+	.string "sappi che tua madre non sarà mai\l"
+	.string "libera senza quel milione!$"
 
 RusturfTunnel_Text_PeekoGladToSeeYouSafe:
 	.string "PEEKO!\n"

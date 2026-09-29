@@ -1,6 +1,6 @@
 RustboroCity_Gym_EventScript_RoxanneColletta::
 	msgbox gText_RoxanneCollettaIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_ROXANNE_5, gText_RoxanneCollettaDefeat
+	trainerbattle_no_intro TRAINER_ROXANNE_1, gText_RoxanneCollettaDefeat
 	msgbox gText_RoxanneCollettaPost, MSGBOX_DEFAULT
 	addmoney 100000
 	playfanfare MUS_OBTAIN_ITEM
@@ -16,7 +16,7 @@ RustboroCity_Gym_EventScript_RoxanneColletta::
 
 DewfordTown_Gym_EventScript_BrawlyColletta::
 	msgbox gText_BrawlyCollettaIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_BRAWLY_5, gText_BrawlyCollettaDefeat
+	trainerbattle_no_intro TRAINER_BRAWLY_1, gText_BrawlyCollettaDefeat
 	msgbox gText_BrawlyCollettaPost, MSGBOX_DEFAULT
 	addmoney 100000
 	playfanfare MUS_OBTAIN_ITEM
@@ -32,7 +32,7 @@ DewfordTown_Gym_EventScript_BrawlyColletta::
 
 MauvilleCity_Gym_EventScript_WattsonColletta::
 	msgbox gText_WattsonCollettaIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_WATTSON_5, gText_WattsonCollettaDefeat
+	trainerbattle_no_intro TRAINER_WATTSON_1, gText_WattsonCollettaDefeat
 	msgbox gText_WattsonCollettaPost, MSGBOX_DEFAULT
 	addmoney 100000
 	playfanfare MUS_OBTAIN_ITEM
@@ -48,7 +48,7 @@ MauvilleCity_Gym_EventScript_WattsonColletta::
 
 LavaridgeTown_Gym_EventScript_FlanneryColletta::
 	msgbox gText_FlanneryCollettaIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_FLANNERY_5, gText_FlanneryCollettaDefeat
+	trainerbattle_no_intro TRAINER_FLANNERY_1, gText_FlanneryCollettaDefeat
 	msgbox gText_FlanneryCollettaPost, MSGBOX_DEFAULT
 	addmoney 100000
 	playfanfare MUS_OBTAIN_ITEM
@@ -65,7 +65,7 @@ LavaridgeTown_Gym_EventScript_FlanneryColletta::
 PetalburgCity_Gym_EventScript_NormanColletta::
 	goto_if_lt VAR_COLLETTA_GYMS_COUNT, 7, PetalburgCity_Gym_EventScript_NormanBusySearching
 	msgbox gText_NormanCollettaIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_NORMAN_5, gText_NormanCollettaDefeat
+	trainerbattle_no_intro TRAINER_NORMAN_1, gText_NormanCollettaDefeat
 	msgbox gText_NormanCollettaPost, MSGBOX_DEFAULT
 	addmoney 100000
 	playfanfare MUS_OBTAIN_ITEM
@@ -88,7 +88,7 @@ PetalburgCity_Gym_EventScript_NormanBusySearching::
 
 FortreeCity_Gym_EventScript_WinonaColletta::
 	msgbox gText_WinonaCollettaIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_WINONA_5, gText_WinonaCollettaDefeat
+	trainerbattle_no_intro TRAINER_WINONA_1, gText_WinonaCollettaDefeat
 	msgbox gText_WinonaCollettaPost, MSGBOX_DEFAULT
 	addmoney 100000
 	playfanfare MUS_OBTAIN_ITEM
@@ -104,7 +104,7 @@ FortreeCity_Gym_EventScript_WinonaColletta::
 
 MossdeepCity_Gym_EventScript_TateAndLizaColletta::
 	msgbox gText_TateAndLizaCollettaIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_TATE_AND_LIZA_5, gText_TateAndLizaCollettaDefeat
+	trainerbattle_no_intro TRAINER_TATE_AND_LIZA_1, gText_TateAndLizaCollettaDefeat
 	msgbox gText_TateAndLizaCollettaPost, MSGBOX_DEFAULT
 	addmoney 100000
 	playfanfare MUS_OBTAIN_ITEM
@@ -120,7 +120,7 @@ MossdeepCity_Gym_EventScript_TateAndLizaColletta::
 
 SootopolisCity_Gym_1F_EventScript_JuanColletta::
 	msgbox gText_JuanCollettaIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_JUAN_5, gText_JuanCollettaDefeat
+	trainerbattle_no_intro TRAINER_JUAN_1, gText_JuanCollettaDefeat
 	msgbox gText_JuanCollettaPost, MSGBOX_DEFAULT
 	addmoney 100000
 	playfanfare MUS_OBTAIN_ITEM

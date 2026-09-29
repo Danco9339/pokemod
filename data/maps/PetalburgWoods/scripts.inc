@@ -297,69 +297,79 @@ PetalburgWoods_EventScript_JamesRematch::
 	end
 
 PetalburgWoods_Text_NotAOneToBeFound:
-	.string "Hmmm…\n"
-	.string "Not a one to be found…$"
+	.string "Uhm…\n"
+	.string "Non se ne vede nemmeno uno…$"
 
 PetalburgWoods_Text_HaveYouSeenShroomish:
-	.string "Hello, have you seen any POKéMON\n"
-	.string "called SHROOMISH around here?\p"
-	.string "I really love that POKéMON.$"
+	.string "Ciao! Per caso hai visto dei\n"
+	.string "POKéMON chiamati SHROOMISH?\p"
+	.string "Adoro quel POKéMON, ma devo\n"
+	.string "anche sbrigarmi con le MERCI…$"
 
 PetalburgWoods_Text_IWasGoingToAmbushYou:
-	.string "I was going to ambush you, but you\n"
-	.string "had to dawdle in PETALBURG WOODS\l"
-	.string "forever, didn't you?\p"
-	.string "I got sick of waiting, so here I am!$"
+	.string "Volevo tendere un agguato, ma\n"
+	.string "ti sei attardato nei boschi!\p"
+	.string "Ehi… ma guarda un po' chi c'è!\n"
+	.string "Sei il famoso CAMPIONCINO!\p"
+	.string "Ahaha! Mentre passeggi qui,\n"
+	.string "tua madre trema di paura\l"
+	.string "prigioniera del TEAM IDRO!$"
 
 PetalburgWoods_Text_HandOverThosePapers:
-	.string "You! DEVON RESEARCHER!\p"
-	.string "Hand over those papers!$"
+	.string "E tu, topo della DEVON!\n"
+	.string "Molla subito quel pacchetto!$"
 
 PetalburgWoods_Text_YouHaveToHelpMe:
-	.string "Aiyeeeh!\p"
-	.string "You're a POKéMON TRAINER, aren't you?\n"
-	.string "You've got to help me, please!$"
+	.string "Aiutooo!\p"
+	.string "Sei un ALLENATORE, vero?\n"
+	.string "Ti prego, proteggimi tu!$"
 
 PetalburgWoods_Text_NoOneCrossesTeamAqua:
-	.string "Hunh? What do you think you're doing?\n"
-	.string "What, you're going to protect him?\p"
-	.string "No one who crosses TEAM AQUA\n"
-	.string "gets any mercy, not even a kid!\p"
-	.string "Come on and battle me!$"
+	.string "Ah! Vuoi fare l'eroe per caso?\n"
+	.string "Povero illuso senza mamma!\p"
+	.string "Nessuno ostacola il TEAM IDRO!\n"
+	.string "Non rivedrai mai tua madre se non\l"
+	.string "paghi fino all'ultimo centesimo!\p"
+	.string "Fatti sotto, moccioso!$"
 
 PetalburgWoods_Text_YoureKiddingMe:
-	.string "You're kidding me! You're tough!$"
+	.string "Ma stai scherzando?!\n"
+	.string "Sei ancora così forte?!$"
 
 PetalburgWoods_Text_YouveGotSomeNerve:
-	.string "Grrr… You've got some nerve\n"
-	.string "meddling with TEAM AQUA!\l"
-	.string "Come on and battle me again!\p"
-	.string "I wish I could say that, but I'm out of\n"
-	.string "POKéMON…\p"
-	.string "And, hey, we of TEAM AQUA are also\n"
-	.string "after something in RUSTBORO.\p"
-	.string "I'll let you go today!$"
+	.string "Grrr… Che fegato a metterti\n"
+	.string "contro il grande TEAM IDRO!\p"
+	.string "Ridi pure, ma tua madre resta\n"
+	.string "al buio nella nostra base!\p"
+	.string "Vedi di racimolare il milione,\n"
+	.string "o non la rivedrai mai più!\p"
+	.string "E poi noi del TEAM IDRO abbiamo\n"
+	.string "un altro colpo a FERRUGOLE!\p"
+	.string "Per oggi ti lascio andare!$"
 
 PetalburgWoods_Text_ThatWasAwfullyClose:
-	.string "Whew…\n"
-	.string "That was awfully close!\p"
-	.string "Thanks to you, he didn't rob me of\n"
-	.string "these important papers.\p"
-	.string "I know, I'll give you a GREAT BALL as\n"
-	.string "my thanks!$"
+	.string "Fiuuu… C'è mancato poco!\p"
+	.string "Grazie a te non ha rubato\n"
+	.string "questi importanti documenti!\p"
+	.string "Ma ho sentito cosa diceva…\n"
+	.string "Hanno rapito tua madre?!\p"
+	.string "Che infami senza cuore!\p"
+	.string "Ti prego, accetta questa\n"
+	.string "MEGABALL come ricompensa!$"
 
 PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro:
-	.string "Didn't that TEAM AQUA thug say\n"
-	.string "they were after something in\l"
-	.string "RUSTBORO, too?$"
+	.string "Quel furfante del TEAM IDRO\n"
+	.string "ha detto che tramano qualcosa\l"
+	.string "anche a FERRUGOLE!\p"
+	.string "Devo sbrigarmi a fare rapporto!$"
 
 PetalburgWoods_Text_ICantBeWastingTime:
-	.string "Uh-oh! It's a crisis!\n"
-	.string "I can't be wasting time!$"
+	.string "È una vera emergenza!\n"
+	.string "Non posso perdere tempo!$"
 
 PetalburgWoods_Text_YoureLoadedWithItems:
-	.string "You're loaded with items.\n"
-	.string "I can't give you this GREAT BALL.$"
+	.string "Hai lo ZAINO troppo pieno.\n"
+	.string "Non posso darti la MEGABALL.$"
 
 PetalburgWoods_Text_GoBugPokemonTeam:
 	.string "I caught a whole bunch of POKéMON!\p"
