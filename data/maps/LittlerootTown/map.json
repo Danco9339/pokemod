@@ -160,7 +160,34 @@
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "0",
-      "script": "LittlerootTown_EventScript_NeedPokemonTriggerLeft"
+      "script": "LittlerootTown_EventScript_BlockRoute101"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var_value": "1",
+      "script": "LittlerootTown_EventScript_BlockRoute101"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var_value": "2",
+      "script": "LittlerootTown_EventScript_BlockRoute101"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var_value": "3",
+      "script": "LittlerootTown_EventScript_BlockRoute101"
     },
     {
       "type": "trigger",
@@ -169,7 +196,7 @@
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "0",
-      "script": "LittlerootTown_EventScript_NeedPokemonTriggerRight"
+      "script": "LittlerootTown_EventScript_BlockRoute101"
     },
     {
       "type": "trigger",
@@ -178,7 +205,25 @@
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "1",
-      "script": "LittlerootTown_EventScript_GoSaveBirchTrigger"
+      "script": "LittlerootTown_EventScript_BlockRoute101"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var_value": "2",
+      "script": "LittlerootTown_EventScript_BlockRoute101"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var_value": "3",
+      "script": "LittlerootTown_EventScript_BlockRoute101"
     },
     {
       "type": "trigger",

@@ -113,18 +113,18 @@
       "x": 10,
       "y": 19,
       "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
+      "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "1",
-      "script": "Route101_EventScript_StartBirchRescue"
+      "script": "Route101_EventScript_BlockRoute101"
     },
     {
       "type": "trigger",
       "x": 11,
       "y": 19,
       "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
+      "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "1",
-      "script": "Route101_EventScript_StartBirchRescue"
+      "script": "Route101_EventScript_BlockRoute101"
     },
     {
       "type": "trigger",

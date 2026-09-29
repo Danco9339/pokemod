@@ -94,9 +94,8 @@ LittlerootTown_EventScript_MoveMomToMaysDoor::
 	return
 
 LittlerootTown_EventScript_SetTwinPos::
-	goto_if_eq VAR_LITTLEROOT_TOWN_STATE, 0, LittlerootTown_EventScript_SetTwinGuardingRoutePos
-	setobjectxyperm LOCALID_LITTLEROOT_TWIN, 10, 1
-	setobjectmovementtype LOCALID_LITTLEROOT_TWIN, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_LITTLEROOT_TWIN, 7, 2
+	setobjectmovementtype LOCALID_LITTLEROOT_TWIN, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 LittlerootTown_EventScript_SetTwinGuardingRoutePos::
@@ -311,55 +310,23 @@ LittlerootTown_EventScript_GoodLuck::
 	release
 	end
 
-LittlerootTown_EventScript_NeedPokemonTriggerLeft::
+LittlerootTown_EventScript_BlockRoute101::
 	lockall
-	applywaitmovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinApproachPlayerLeft
-	call LittlerootTown_EventScript_DangerousWithoutPokemon
-	applywaitmovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinReturnLeft
+	goto_if_set FLAG_RECEIVED_BEAST_STARTER, LittlerootTown_EventScript_BlockRoute101_Done
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 30
+	msgbox LittlerootTown_Text_BetterGoToBirchFirst, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PushPlayerBackFromRoute
+	waitmovement 0
 	releaseall
 	end
 
-LittlerootTown_EventScript_DangerousWithoutPokemon::
-	msgbox LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinPushPlayerFromRoute
-	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PushPlayerBackFromRoute
-	waitmovement 0
-	msgbox LittlerootTown_Text_DangerousIfYouDontHavePokemon, MSGBOX_DEFAULT
-	closemessage
-	return
-
-LittlerootTown_Movement_TwinApproachPlayerLeft:
-	face_right
-	delay_8
-	disable_jump_landing_ground_effect
-	jump_in_place_right
-	delay_8
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_up
-	walk_fast_up
-	walk_fast_left
-	face_down
-	step_end
-
-LittlerootTown_Movement_TwinPushPlayerFromRoute:
-	walk_down
-	step_end
-
-LittlerootTown_Movement_TwinReturnLeft:
-	walk_right
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_in_place_faster_down
-	step_end
+LittlerootTown_EventScript_BlockRoute101_Done::
+	releaseall
+	end
 
 LittlerootTown_Movement_PushPlayerBackFromRoute:
 	lock_facing_direction
@@ -367,49 +334,14 @@ LittlerootTown_Movement_PushPlayerBackFromRoute:
 	unlock_facing_direction
 	step_end
 
+LittlerootTown_EventScript_NeedPokemonTriggerLeft::
+	goto LittlerootTown_EventScript_BlockRoute101
+
 LittlerootTown_EventScript_NeedPokemonTriggerRight::
-	lockall
-	applywaitmovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinApproachPlayerRight
-	call LittlerootTown_EventScript_DangerousWithoutPokemon
-	applywaitmovement LOCALID_LITTLEROOT_TWIN, LittlerootTown_Movement_TwinReturnRight
-	releaseall
-	end
-
-LittlerootTown_Movement_TwinApproachPlayerRight:
-	face_right
-	delay_8
-	disable_jump_landing_ground_effect
-	jump_in_place_right
-	delay_8
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	face_down
-	step_end
-
-LittlerootTown_Movement_TwinReturnRight:
-	walk_left
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_in_place_faster_down
-	step_end
+	goto LittlerootTown_EventScript_BlockRoute101
 
 LittlerootTown_EventScript_GoSaveBirchTrigger::
-	lockall
-	goto_if_set FLAG_RECEIVED_BEAST_STARTER, LittlerootTown_EventScript_GoSaveBirchTriggerDone
-	applywaitmovement LOCALID_LITTLEROOT_TWIN, Common_Movement_WalkInPlaceFasterRight
-	applywaitmovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
-	msgbox LittlerootTown_Text_TwinGoToBirch, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PushPlayerBackFromRoute
-	waitmovement 0
-	releaseall
-	end
+	goto LittlerootTown_EventScript_BlockRoute101
 
 LittlerootTown_EventScript_GoSaveBirchTriggerDone::
 	releaseall
@@ -966,6 +898,11 @@ LittlerootTown_Text_MomRescuedSafe:
 	.string "Riposati pure qui a casa quando\n"
 	.string "vuoi!$"
 
+.global LittlerootTown_Text_BetterGoToBirchFirst
+LittlerootTown_Text_BetterGoToBirchFirst:
+	.string "Forse è meglio andare prima\n"
+	.string "dal PROF. BIRCH al LABORATORIO...$"
+
 LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "MOM: {PLAYER}, we're here, honey!\p"
 	.string "It must be tiring riding with our things\n"
@@ -1016,10 +953,10 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 
 LittlerootTown_Text_CanUsePCToStoreItems:
 	.string "Quei malviventi del TEAM IDRO…\n"
-	.string "Come hanno osato rapire tua madre?!\p"
-	.string "Sei il nostro CAMPIONE!\n"
-	.string "Fagli vedere di cosa sei capace,\l"
-	.string "siamo tutti con te!$"
+	.string "Come hanno osato rapire tua\l"
+	.string "madre?! Sei il nostro CAMPIONE!\p"
+	.string "Fagli vedere di cosa sei capace,\n"
+	.string "siamo tutti quanti con te!$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
 	.string "Ho visto quando l'hanno portata\n"

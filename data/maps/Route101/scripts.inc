@@ -18,6 +18,28 @@ Route101_EventScript_HideMapNamePopup::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	end
 
+Route101_EventScript_BlockRoute101::
+	lockall
+	goto_if_set FLAG_RECEIVED_BEAST_STARTER, Route101_EventScript_BlockRoute101_Done
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 30
+	msgbox LittlerootTown_Text_BetterGoToBirchFirst, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Route101_Movement_PushBackToTown
+	waitmovement 0
+	releaseall
+	end
+
+Route101_EventScript_BlockRoute101_Done::
+	releaseall
+	end
+
+Route101_Movement_PushBackToTown:
+	walk_down
+	step_end
+
 Route101_EventScript_StartBirchRescue::
 	setvar VAR_ROUTE101_STATE, 3
 	releaseall
