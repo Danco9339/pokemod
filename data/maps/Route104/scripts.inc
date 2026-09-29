@@ -982,34 +982,32 @@ Route104_EventScript_Darian::
 	end
 
 Route104_Text_BrineyLivesInSeasideCottage:
-	.string "That seaside cottage is where\n"
-	.string "MR. BRINEY lives.\p"
-	.string "He was once a mighty sailor who never\n"
-	.string "feared the sea, however stormy.$"
+	.string "Lì vive il SIG. BRINEY.\p"
+	.string "Preghiamo tutti per tua madre!\n"
+	.string "Il vecchio BRINEY è furioso col\l"
+	.string "TEAM IDRO per questo vile gesto!$"
 
 Route104_Text_WhatsItLikeAtBottomOfSea:
-	.string "The sea, huh?\p"
-	.string "I wonder what it's like at the bottom\n"
-	.string "of the sea?$"
+	.string "Il mare aperto…\p"
+	.string "Chissà dove il TEAM IDRO tiene\n"
+	.string "rinchiusa tua madre…$"
 
 Route104_Text_ThrowBallAtWeakenedPokemon:
-	.string "If you're going to throw a POKé BALL,\n"
-	.string "weaken the wild POKéMON first.\p"
-	.string "It will be easier to catch if it's been\n"
-	.string "poisoned, burned, or lulled to sleep.$"
+	.string "CAMPIONE, per catturare POKéMON\n"
+	.string "e completare le richieste,\l"
+	.string "indebolisci prima il bersaglio\l"
+	.string "e poi lancia la POKé BALL!$"
 
 Route104_Text_OnlyThrowBallAtWildPokemon:
-	.string "You're a thief if you try to steal\n"
-	.string "someone else's POKéMON.\p"
-	.string "You should throw POKé BALLS only at\n"
-	.string "wild POKéMON.$"
+	.string "Il TEAM IDRO è una banda di ladri\n"
+	.string "infami che rapisce le persone!\p"
+	.string "Tu pensa a catturare POKéMON\n"
+	.string "selvatici per la tua missione!$"
 
 Route104_Text_ImNotATrainer:
-	.string "Oh, no, I'm not a TRAINER.\p"
-	.string "But that's right, if TRAINERS lock eyes,\n"
-	.string "it's a challenge to battle.\p"
-	.string "If you don't want to battle, stay out\n"
-	.string "of their sight.$"
+	.string "Oh, ciao CAMPIONE! Io non lotto,\n"
+	.string "ma spero con tutto il cuore che\l"
+	.string "salverai presto tua madre!$"
 
 Route104_Text_LikeFillingMouthWithSeedsTakeThis:
 	.string "I like filling my mouth with seeds,\n"

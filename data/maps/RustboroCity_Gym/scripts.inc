@@ -106,76 +106,64 @@ RustboroCity_Gym_EventScript_RegisterRoxanne::
 	end
 
 RustboroCity_Gym_Text_GymGuideAdvice:
-	.string "Yo, how's it going?\p"
-	.string "Listen, my friend!\n"
-	.string "Would you like to become the CHAMPION?\p"
-	.string "I'm no TRAINER, not me, but I can\n"
-	.string "sure give you winning advice.\p"
-	.string "That's settled, then! We'll aim for the\n"
-	.string "POKéMON CHAMPIONSHIP together!\p"
-	.string "It's your job as a TRAINER to collect\n"
-	.string "GYM BADGES, am I right?\p"
-	.string "But GYM LEADERS aren't pushovers!\p"
-	.string "And that's where I come in!\n"
-	.string "I'm here to provide expert advice!\p"
-	.string "ROXANNE, the GYM LEADER, is a user\n"
-	.string "of ROCK-type POKéMON.\p"
-	.string "The ROCK type is very durable, but\n"
-	.string "it can't stand WATER-type and\l"
-	.string "GRASS-type moves.\p"
-	.string "Come see me afterwards, if you beat\n"
-	.string "the GYM LEADER.\p"
-	.string "Well, go for it!$"
+	.string "Ehi, CAMPIONE!\p"
+	.string "Tutti qui sappiamo della vile\n"
+	.string "azione del TEAM IDRO!\p"
+	.string "PETRA e i CAPIPALESTRA doneranno\n"
+	.string "100.000 ¥ per aiutarti,\l"
+	.string "ma devi mostrare la tua forza!\p"
+	.string "PETRA usa il tipo ROCCIA:\n"
+	.string "è resistente, ma soffre molto\l"
+	.string "le mosse ACQUA ed ERBA!\p"
+	.string "Forza, sconfiggila e salva\n"
+	.string "tua madre!$"
 
 RustboroCity_Gym_Text_GymGuidePostVictory:
-	.string "Whoa! What a breathtaking victory!\n"
-	.string "My cheering must've worked!\p"
-	.string "Great!\n"
-	.string "Check your TRAINER CARD.\p"
-	.string "The STONE BADGE you got should be\n"
-	.string "properly recorded on it.\p"
-	.string "In other words…\p"
-	.string "You've climbed the first step on\n"
-	.string "the stairs to the CHAMPIONSHIP!\p"
-	.string "That's got to feel awesome!$"
+	.string "Vittoria spettacolare!\p"
+	.string "Hai ottenuto la MEDAGLIA PIETRA\n"
+	.string "e i primi 100.000 ¥!\p"
+	.string "Un grande passo avanti per\n"
+	.string "salvare tua madre!$"
 
 RustboroCity_Gym_Text_JoshIntro:
-	.string "Don't take us GYM TRAINERS lightly!\n"
-	.string "I'll show you why we're better!$"
+	.string "Sei il CAMPIONE, vero?\n"
+	.string "Ho saputo di tua madre…\p"
+	.string "Per aiutarti a temprare la\n"
+	.string "squadra non ti farò sconti!$"
 
 RustboroCity_Gym_Text_JoshDefeat:
-	.string "You were too good for me…$"
+	.string "Sei davvero eccezionale!$"
 
 RustboroCity_Gym_Text_JoshPostBattle:
-	.string "You haven't seen anything of the ROCK\n"
-	.string "type's terrifying power!$"
+	.string "Con questa grinta il TEAM IDRO\n"
+	.string "non avrà scampo!$"
 
 RustboroCity_Gym_Text_TommyIntro:
-	.string "If you can't beat me, you won't stand\n"
-	.string "a chance against ROXANNE!$"
+	.string "Tutti a FERRUGOLE parlano del\n"
+	.string "rapimento di tua madre!\p"
+	.string "Fammi vedere se hai la stoffa\n"
+	.string "per affrontare PETRA e salvarla!$"
 
 RustboroCity_Gym_Text_TommyDefeat:
-	.string "Wow! You've got some potential!$"
+	.string "Incredibile! Hai una forza unica!$"
 
 RustboroCity_Gym_Text_TommyPostBattle:
-	.string "ROXANNE is stronger than me by\n"
-	.string "several times.\p"
-	.string "You'd better be on your guard!$"
+	.string "PETRA è forte, ma tu hai una\n"
+	.string "motivazione indistruttibile!\p"
+	.string "Vai e conquista la donazione!$"
 
 RustboroCity_Gym_Text_MarcIntro:
-	.string "We might be in the middle of town,\n"
-	.string "but so what?\p"
-	.string "My ROCK POKéMON need room to\n"
-	.string "rampage!$"
+	.string "Anche noi della PALESTRA tifiamo\n"
+	.string "per te e per tua madre!\p"
+	.string "Ma una lotta seria è il modo\n"
+	.string "migliore per farti allenare!$"
 
 RustboroCity_Gym_Text_MarcDefeat:
-	.string "Oh, man oh man!\n"
-	.string "Our challenger is one feisty customer!$"
+	.string "Mamma mia, che potenza!$"
 
 RustboroCity_Gym_Text_MarcPostBattle:
-	.string "I have to hand it to our LEADER.\p"
-	.string "It took smarts and sense for her to\n"
-	.string "pick the ROCK type at her young age.$"
+	.string "PETRA ti aspetta! La donazione\n"
+	.string "da 100.000 ¥ sarà presto tua!$"
 
 RustboroCity_Gym_Text_RoxanneIntro:
 	.string "Hello, I am ROXANNE, the RUSTBORO\n"

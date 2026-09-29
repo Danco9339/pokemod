@@ -246,80 +246,78 @@ Route103_Text_MarcosPostBattle:
 	.string "Heh, maybe I should turn pro.$"
 
 Route104_Text_GinaIntro:
-	.string "GINA: Okay, let's battle with our\n"
-	.string "POKéMON!$"
+	.string "GINA: Ti riconosciamo, CAMPIONE!\n"
+	.string "Non piangere per tua madre!\l"
+	.string "Lotta con noi per farti forza!$"
 
 Route104_Text_GinaDefeat:
-	.string "GINA: Losing upsets me!$"
+	.string "GINA: Sei davvero fortissimo!$"
 
 Route104_Text_GinaPostBattle:
-	.string "GINA: You are strong!\n"
-	.string "We have to train lots more!$"
+	.string "GINA: Salverai tua madre, siamo\n"
+	.string "sicure al cento per cento!$"
 
 Route104_Text_GinaNotEnoughMons:
-	.string "GINA: Oh? Only one POKéMON?\n"
-	.string "Then, we don't battle with you.\p"
-	.string "If there's only one POKéMON, it will\n"
-	.string "be lonesome. That's not nice.$"
+	.string "GINA: Solo un POKéMON?\n"
+	.string "Ne servono due per lottare!$"
 
 Route104_Text_MiaIntro:
-	.string "MIA: We are twins, so we battle\n"
-	.string "POKéMON together.$"
+	.string "MIA: Noi gemelle siamo unite,\n"
+	.string "proprio come te e tua madre!\l"
+	.string "Fatti sotto, CAMPIONE!$"
 
 Route104_Text_MiaDefeat:
-	.string "MIA: We battled together, but we\n"
-	.string "both lost…$"
+	.string "MIA: Che forza strabiliante!$"
 
 Route104_Text_MiaPostBattle:
-	.string "MIA: We will train our POKéMON more\n"
-	.string "and be strong like you.$"
+	.string "MIA: Fagliela vedere ai pirati\n"
+	.string "cattivi del TEAM IDRO!$"
 
 Route104_Text_MiaNotEnoughMons:
-	.string "MIA: You want to battle with us?\p"
-	.string "It's a big no-no if you don't have two\n"
-	.string "POKéMON with you.\l"
-	.string "We're too strong for you!$"
+	.string "MIA: Torna con due POKéMON se\n"
+	.string "vuoi sfidare noi gemelle!$"
 
 Route104_Text_IvanIntro:
-	.string "Why keep it a secret?\n"
-	.string "I'm the WATER POKéMON expert!\p"
-	.string "Huh?\n"
-	.string "You don't know me?$"
+	.string "Ehi, ma tu sei il CAMPIONE!\n"
+	.string "Ho saputo di tua madre…\p"
+	.string "Se vuoi battere il TEAM IDRO,\n"
+	.string "fai pratica con i miei POKéMON!$"
 
 Route104_Text_IvanDefeat:
-	.string "I thought I wasn't too bad, if I may\n"
-	.string "say so, but I guess not… Bleah…$"
+	.string "Incredibile! Sei formidabile!\n"
+	.string "Salverai tua madre di sicuro!$"
 
 Route104_Text_IvanPostBattle:
-	.string "I got too into fishing.\n"
-	.string "I forgot I had to raise my POKéMON…$"
+	.string "I tuoi POKéMON lottano col cuore.\n"
+	.string "Tua madre sarà fiera di te!$"
 
 Route104_Text_BillyIntro:
-	.string "Leaving footprints in the sand is\n"
-	.string "so fun!$"
+	.string "Ehi, CAMPIONE! Corri veloce\n"
+	.string "sulla sabbia per tua madre?\p"
+	.string "Lottiamo un po' per farti\n"
+	.string "dimenticare la tristezza!$"
 
 Route104_Text_BillyDefeat:
-	.string "Waah! I got sand in my runners!\n"
-	.string "They're all gritty!$"
+	.string "Urrà! Anche se ho perso,\n"
+	.string "spero di averti tirato su!$"
 
 Route104_Text_BillyPostBattle:
-	.string "I want to leave my footprints in\n"
-	.string "the sand everywhere, but they\l"
-	.string "disappear quickly…$"
+	.string "Non arrenderti mai, CAMPIONE!\n"
+	.string "Tutto il percorso fa il tifo!$"
 
 Route104_Text_HaleyIntro:
-	.string "Should I…\n"
-	.string "Or shouldn't I?\p"
-	.string "Okay, sure, I will battle!$"
+	.string "Dovrei sfidare il CAMPIONE?\n"
+	.string "O non dovrei disturbarlo?\p"
+	.string "Ho saputo del TEAM IDRO…\n"
+	.string "Voglio aiutarti ad allenarti!$"
 
 Route104_Text_HaleyDefeat:
-	.string "I shouldn't have battled…$"
+	.string "Che forza straordinaria!$"
 
 Route104_Text_HaleyPostBattle:
-	.string "If you're faced with a decision and\n"
-	.string "you let someone else choose for you,\l"
-	.string "you will regret it, however things\l"
-	.string "turn out.$"
+	.string "Ho fatto bene a sfidarti!\n"
+	.string "Con questa forza, il TEAM IDRO\l"
+	.string "non potrà fermarti!$"
 
 Route104_Text_HaleyRegister1:
 	.string "You're strong, but should I register\n"
@@ -346,15 +344,19 @@ Route104_Text_HaleyPostRematch:
 	.string "I am still upset about losing!$"
 
 Route104_Text_WinstonIntro:
-	.string "Oh, sure, I'll accept your challenge.\n"
-	.string "I have a lot of money.$"
+	.string "CAMPIONE! So che cerchi fondi\n"
+	.string "per il riscatto di tua madre!\p"
+	.string "Io ho un sacco di soldi:\n"
+	.string "battimi e ti darò un bel premio!$"
 
 Route104_Text_WinstonDefeat:
-	.string "Why couldn't I win?$"
+	.string "Ben fatto! I miei soldi andranno\n"
+	.string "per una nobile causa!$"
 
 Route104_Text_WinstonPostBattle:
-	.string "There are some things money can't buy.\n"
-	.string "That's POKéMON…$"
+	.string "I soldi non comprano tutto,\n"
+	.string "ma spero che la mia ricompensa\l"
+	.string "ti aiuti a liberarla subito!$"
 
 Route104_Text_WinstonRegister1:
 	.string "Hm?\n"
@@ -382,15 +384,17 @@ Route104_Text_WinstonPostRematch:
 	.string "It's so deep, the world of POKéMON…$"
 
 Route104_Text_CindyIntro:
-	.string "We must have been fated to meet.\n"
-	.string "May I ask you for a battle?$"
+	.string "Povero CAMPIONE… Il rapimento\n"
+	.string "di tua madre mi spezza il cuore.\p"
+	.string "Se mi batti, ti ricompenserò\n"
+	.string "con molto denaro per la causa!$"
 
 Route104_Text_CindyDefeat:
-	.string "Oh, my!$"
+	.string "Magnifico stile, CAMPIONE!$"
 
 Route104_Text_CindyPostBattle:
-	.string "“Hello” is the beginning of “good-bye.”\n"
-	.string "I hope we meet again.$"
+	.string "Accetta la mia ricompensa.\n"
+	.string "Salva tua madre, te ne prego!$"
 
 Route104_Text_CindyRegister1:
 	.string "Hello, we meet again.\p"
@@ -416,16 +420,17 @@ Route104_Text_CindyPostRematch:
 	.string "I hope we meet again.$"
 
 Route104_Text_DarianIntro:
-	.string "I fished up a tough-looking POKéMON!\p"
-	.string "It has this magical quality to it!\n"
-	.string "It surely looks tough, yes it does!$"
+	.string "CAMPIONE! Pescavo qui quando ho\n"
+	.string "saputo di tua madre!\p"
+	.string "Ho all'amo un POKéMON tosto,\n"
+	.string "vediamo se regge il tuo passo!$"
 
 Route104_Text_DarianDefeat:
-	.string "What the…$"
+	.string "Niente da fare, sei fortissimo!$"
 
 Route104_Text_DarianPostBattle:
-	.string "Hey, MAGIKARP, you sure don't live up\n"
-	.string "to your name, do you?$"
+	.string "Il mare nasconde pericoli,\n"
+	.string "ma di sicuro salverai tua madre!$"
 
 Route105_Text_FosterIntro:
 	.string "There's supposed to be a mystical\n"
@@ -2171,65 +2176,67 @@ Route115_Text_MarlenePostBattle:
 	.string "But this place isn't very peaceful…$"
 
 Route116_Text_ClarkIntro:
-	.string "If the tunnel doesn't go through, then\n"
-	.string "I'll just go over the top.$"
+	.string "CAMPIONE! Se il tunnel è chiuso,\n"
+	.string "io scalo la montagna!\p"
+	.string "Ho saputo del TEAM IDRO…\n"
+	.string "Lotta con me e temprati bene!$"
 
 Route116_Text_ClarkDefeat:
-	.string "Gasp… Gasp…\n"
-	.string "Losing made me tired…$"
+	.string "Pant… Pant… Sei fortissimo!$"
 
 Route116_Text_ClarkPostBattle:
-	.string "It's no big deal if there's no tunnel.\n"
-	.string "To a HIKER, mountains are roads!$"
+	.string "Scalare monti o battere nemici\n"
+	.string "vuole grinta: salverai tua madre!$"
 
 Route116_Text_JoeyIntro:
-	.string "My POKéMON rule!\n"
-	.string "Check them out!$"
+	.string "CAMPIONE! Vendicherai tua madre\n"
+	.string "contro i pirati del TEAM IDRO?\p"
+	.string "Fammi vedere quanto sei tosto!$"
 
 Route116_Text_JoeyDefeat:
-	.string "Ouch! A scrape!\n"
-	.string "I have to put on a bandage!$"
+	.string "Ahi! Che colpo poderoso!$"
 
 Route116_Text_JoeyPostBattle:
-	.string "Bandages are signs of toughness!\n"
-	.string "I've got another one!$"
+	.string "Fagliela vedere al TEAM IDRO!\n"
+	.string "Tua madre sarà fiera di te!$"
 
 Route116_Text_JoseIntro:
-	.string "My BUG POKéMON are tough!\n"
-	.string "Let's battle!$"
+	.string "Tutti parlano del rapimento!\n"
+	.string "Lotta con i miei COLEOTTERO\l"
+	.string "per prepararti alla grande sfida!$"
 
 Route116_Text_JoseDefeat:
-	.string "I lost!\n"
-	.string "I thought I had you!$"
+	.string "Niente da fare, sei una furia!$"
 
 Route116_Text_JosePostBattle:
-	.string "BUG POKéMON evolve quickly.\n"
-	.string "So they get strong quickly, too.$"
+	.string "Con quella grinta libererai\n"
+	.string "tua madre in un batter d'occhio!$"
 
 Route116_Text_JaniceIntro:
-	.string "Let me teach you how strong my\n"
-	.string "adorable POKéMON is!$"
+	.string "Ho saputo della tua mamma…\n"
+	.string "Che vigliacchi al TEAM IDRO!\p"
+	.string "Ti va una lotta per farti\n"
+	.string "tornare un po' il sorriso?$"
 
 Route116_Text_JaniceDefeat:
-	.string "You're a notch above me…$"
+	.string "Sei davvero bravissimo!$"
 
 Route116_Text_JanicePostBattle:
-	.string "POKéMON that possess cuteness and\n"
-	.string "power, that's ideal, I think.$"
+	.string "Non mollare mai, CAMPIONE!\n"
+	.string "Siamo tutti dalla tua parte!$"
 
 Route116_Text_JerryIntro:
-	.string "We learn all sorts of things at the\n"
-	.string "TRAINER'S SCHOOL.\p"
-	.string "I want to test things out for real!$"
+	.string "A SCUOLA tutti parlano di te\n"
+	.string "e del riscatto per tua madre!\p"
+	.string "Ti sfido per darti la mia\n"
+	.string "ricompensa per la causa!$"
 
 Route116_Text_JerryDefeat:
-	.string "I slacked off in school…\n"
-	.string "That's why I lost.$"
+	.string "Hai vinto! Ecco la donazione!$"
 
 Route116_Text_JerryPostBattle:
-	.string "I'll have to redo some courses at\n"
-	.string "the TRAINER'S SCHOOL.\l"
-	.string "If I don't, ROXANNE will be steamed.$"
+	.string "Spero che la mia ricompensa\n"
+	.string "ti aiuti a pagare il riscatto!$"
 
 Route116_Text_JerryRegister1:
 	.string "I learned at the TRAINER'S SCHOOL\n"
@@ -2258,15 +2265,17 @@ Route116_Text_JerryPostRematch:
 	.string "If I don't, ROXANNE will be steamed.$"
 
 Route116_Text_KarenIntro:
-	.string "I study at school, and I study on\n"
-	.string "the way home, too!$"
+	.string "CAMPIONE! Studio giorno e notte\n"
+	.string "per diventare forte come te!\p"
+	.string "Ti allenerò volentieri per\n"
+	.string "salvare tua madre dal TEAM IDRO!$"
 
 Route116_Text_KarenDefeat:
-	.string "I'm in shock--I lost?$"
+	.string "Sei di un altro livello!$"
 
 Route116_Text_KarenPostBattle:
-	.string "Awww, I'll never become an elegant\n"
-	.string "TRAINER like ROXANNE this way!$"
+	.string "Hai preso la donazione di PETRA?\n"
+	.string "Così salverai presto tua madre!$"
 
 Route116_Text_KarenRegister1:
 	.string "Oh, wow! Isn't that a POKéNAV?\n"
@@ -2289,54 +2298,54 @@ Route116_Text_KarenPostRematch:
 	.string "I can't beat you, then. Not yet.$"
 
 Route116_Text_SarahIntro:
-	.string "Just so you know, I've never once been\n"
-	.string "bested by anyone at anything.$"
+	.string "Povero CAMPIONE… Ho saputo\n"
+	.string "della tua adorata madre.\p"
+	.string "Se mi batti, ti donerò una bella\n"
+	.string "somma per la nobile causa!$"
 
 Route116_Text_SarahDefeat:
-	.string "Oh, my goodness.\n"
-	.string "This is a new experience for me.$"
+	.string "Una vittoria impeccabile!$"
 
 Route116_Text_SarahPostBattle:
-	.string "My life of luxury affords me all that\n"
-	.string "I could possibly desire.\p"
-	.string "However, when it comes to POKéMON,\n"
-	.string "my wealth has no meaning.$"
+	.string "Usa questi soldi per liberare\n"
+	.string "tua madre da quei barbari!$"
 
 Route116_Text_DawsonIntro:
-	.string "When you lay your eyes on my POKéMON's\n"
-	.string "gorgeous fur, their beauty will render\l"
-	.string "you helpless!$"
+	.string "CAMPIONE! La colletta per tua\n"
+	.string "madre mi ha davvero colpito.\p"
+	.string "Io ho molto denaro: battimi\n"
+	.string "e il premio sarà tutto tuo!$"
 
 Route116_Text_DawsonDefeat:
-	.string "Oh, baby, say it isn't so!$"
+	.string "Sconfitto! Ma felice di donare!$"
 
 Route116_Text_DawsonPostBattle:
-	.string "Oh, no, no, no!\n"
-	.string "You've mussed up my POKéMON's fur!\l"
-	.string "You've ruined my hairdo, too!\l"
-	.string "I'll have to call my stylist now!$"
+	.string "I miei soldi ti serviranno per\n"
+	.string "il riscatto. Buona fortuna!$"
 
 Route116_Text_DevanIntro:
-	.string "We'll rock you hard!$"
+	.string "CAMPIONE! Ti serve una roccia su\n"
+	.string "cui testare la tua squadra?\p"
+	.string "Lottiamo per temprare i POKéMON\n"
+	.string "in vista dello scontro finale!$"
 
 Route116_Text_DevanDefeat:
-	.string "Aiyiyi!\n"
-	.string "No contest at all!$"
+	.string "Incredibile! Che forza immensa!$"
 
 Route116_Text_DevanPostBattle:
-	.string "I should try different POKéMON\n"
-	.string "types, that's what I ought to do.$"
+	.string "Con tale forza, il TEAM IDRO\n"
+	.string "non potrà più fuggire!$"
 
 Route116_Text_JohnsonIntro:
-	.string "It's a dead end up here.\n"
-	.string "I'm bored, so can we battle?$"
+	.string "Ehi CAMPIONE! Ho saputo di mamma!\n"
+	.string "Lotta con me e sfoga la rabbia!$"
 
 Route116_Text_JohnsonDefeat:
-	.string "That was fun even though I lost.$"
+	.string "Uao! Determinazione d'acciaio!$"
 
 Route116_Text_JohnsonPostBattle:
-	.string "Want to stay here and keep\n"
-	.string "me company?$"
+	.string "Salva tua madre, CAMPIONE!\n"
+	.string "Nessuno merita un ricatto simile!$"
 
 Route117_Text_IsaacIntro:
 	.string "Listen, could I get you to battle\n"

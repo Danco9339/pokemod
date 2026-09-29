@@ -372,28 +372,28 @@ PetalburgWoods_Text_YoureLoadedWithItems:
 	.string "Non posso darti la MEGABALL.$"
 
 PetalburgWoods_Text_GoBugPokemonTeam:
-	.string "I caught a whole bunch of POKéMON!\p"
-	.string "Go, go, go!\n"
-	.string "My BUG POKéMON team!$"
+	.string "CAMPIONE! Ho saputo di tua madre!\p"
+	.string "Non sarò forte, ma i miei POKéMON\n"
+	.string "COLEOTTERO ti alleneranno bene!$"
 
 PetalburgWoods_Text_ICouldntWin:
-	.string "I have all these POKéMON,\n"
-	.string "but I couldn't win…$"
+	.string "Non avevo speranze, ma che onore!$"
 
 PetalburgWoods_Text_ImOutOfPokeBalls:
-	.string "I caught a bunch of POKéMON.\n"
-	.string "Now I'm out of POKé BALLS.$"
+	.string "Salva tua madre, CAMPIONE!\n"
+	.string "Tutta HOENN fa il tifo per te!$"
 
 PetalburgWoods_Text_InstantlyPopularWithBugPokemon:
-	.string "If you take BUG POKéMON to school,\n"
-	.string "you get to be instantly popular!$"
+	.string "Ehi! Tu sei il CAMPIONE!\p"
+	.string "Tutti parlano del rapimento!\n"
+	.string "Lotta con me per farti coraggio!$"
 
 PetalburgWoods_Text_CantBePopularIfILose:
-	.string "I can't be popular if I lose.$"
+	.string "Che potenza travolgente!$"
 
 PetalburgWoods_Text_PeopleRespectYou:
-	.string "If you have a big BUG POKéMON,\n"
-	.string "people respect you for it.$"
+	.string "Con una tale forza spazzerai via\n"
+	.string "quei vigliacchi del TEAM IDRO!$"
 
 PetalburgWoods_Text_IWantRematch1:
 	.string "I want a rematch when my BUG\n"
@@ -418,17 +418,17 @@ PetalburgWoods_Text_IveBeenTrainingHard:
 	.string "So, I've been training hard.$"
 
 PetalburgWoods_Text_StayOutOfTallGrass:
-	.string "Yo, there!\n"
-	.string "Your POKéMON doing okay?\p"
-	.string "If your POKéMON are weak and you want\n"
-	.string "to avoid battles, you should stay out\l"
-	.string "of tall grass.$"
+	.string "Ehi, CAMPIONE! Sei in ansia per\n"
+	.string "tua madre, vero?\p"
+	.string "Se i tuoi POKéMON sono esausti,\n"
+	.string "evita l'erba alta e corri al\l"
+	.string "CENTRO POKéMON!$"
 
 PetalburgWoods_Text_HiddenItemsExplanation:
-	.string "Sometimes, there are things on the\n"
-	.string "ground even if you can't see them.\p"
-	.string "That's why I always check where I'm\n"
-	.string "walking.$"
+	.string "CAMPIONE, per il riscatto cerca\n"
+	.string "anche strumenti nascosti a terra!\p"
+	.string "Potrai rivenderli per ottenere\n"
+	.string "altre monete per la causa!$"
 
 PetalburgWoods_Text_TryUsingThisItem:
 	.string "Oh, neat!\n"

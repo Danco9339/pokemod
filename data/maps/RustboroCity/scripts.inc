@@ -926,48 +926,48 @@ RustboroCity_Text_SneakyLookingManWentAroundCorner:
 	.string "looking guy went around the corner.$"
 
 RustboroCity_Text_HaveYouChallengedGym:
-	.string "Have you taken the POKéMON GYM\n"
-	.string "challenge?\p"
-	.string "When you get that shiny GYM BADGE\n"
-	.string "in hand, I guess TRAINERS begin to\l"
-	.string "realize what is required of them.$"
+	.string "CAMPIONE! Sfiderai PETRA per\n"
+	.string "la colletta del riscatto?\p"
+	.string "Dimostra che la tua volontà\n"
+	.string "è solida come la roccia!$"
 
 RustboroCity_Text_HeyThatsRustborosGymBadge:
-	.string "Hey, that's RUSTBORO's GYM BADGE!\p"
-	.string "Out of all the POKéMON GYM BADGES,\n"
-	.string "RUSTBORO's is the coolest, I'd say.$"
+	.string "Ehi, quella è la MEDAGLIA PIETRA!\p"
+	.string "Hai ottenuto i primi 100.000 ¥\n"
+	.string "per il riscatto di tua madre!\p"
+	.string "Continua così, CAMPIONE!$"
 
 RustboroCity_Text_YoureNewAroundHere:
-	.string "Oh? Who might you be?\n"
-	.string "You're a new face around these parts.\p"
-	.string "Have you just transferred into the\n"
-	.string "POKéMON TRAINER'S SCHOOL?$"
+	.string "Oh? Ma tu sei il CAMPIONE!\p"
+	.string "Tutti in città sappiamo del vile\n"
+	.string "rapimento di tua madre!\p"
+	.string "Non arrenderti mai, tutta\n"
+	.string "HOENN fa il tifo per te!$"
 
 RustboroCity_Text_GymLeaderIsntEasyWithFire:
-	.string "I challenged the GYM LEADER, but…\p"
-	.string "It's not going to be easy winning with\n"
-	.string "my FIRE-type POKéMON…\p"
-	.string "FIRE-type POKéMON don't match up\n"
-	.string "well against ROCK-type POKéMON…$"
+	.string "Ho saputo di tua madre…\n"
+	.string "Che infami quelli del TEAM IDRO!\p"
+	.string "Per battere la CAPOPALESTRA e\n"
+	.string "avere la colletta, usa mosse\l"
+	.string "ACQUA o ERBA contro la ROCCIA!$"
 
 RustboroCity_Text_MrBrineyWalksInTheTunnel:
-	.string "The old sailor MR. BRINEY lives in\n"
-	.string "a cottage by the sea.\p"
-	.string "He goes for walks in the tunnel every\n"
-	.string "so often.$"
+	.string "Il vecchio marinaio BRINEY è\n"
+	.string "disperato: il TEAM IDRO ha\l"
+	.string "rapito anche la sua PEEKO!\p"
+	.string "Quei pirati pagheranno per aver\n"
+	.string "toccato lui e tua madre!$"
 
 RustboroCity_Text_MrBrineyLovesPeeko:
-	.string "The old sailor MR. BRINEY lives in\n"
-	.string "a cottage by the sea.\p"
-	.string "He said he was going shopping in\n"
-	.string "SLATEPORT for his pet, PEEKO.\p"
-	.string "That old sea dog, he must really love\n"
-	.string "that PEEKO.$"
+	.string "Il SIG. BRINEY ha riavuto PEEKO\n"
+	.string "grazie al tuo coraggio!\p"
+	.string "Ora tocca a tua madre:\n"
+	.string "salvala dalle grinfie del crimine!$"
 
 RustboroCity_Text_WowYouHavePokemon:
-	.string "Wow, you have POKéMON with you, too.\p"
-	.string "When I get bigger, I'm going to go\n"
-	.string "places with POKéMON, too.$"
+	.string "Ehi, tu sei il CAMPIONE!\n"
+	.string "Ti prego, salva la tua mamma dai\l"
+	.string "cattivi del TEAM IDRO!$"
 
 RustboroCity_Text_CatchRarePokemonIfIGoToSchool:
 	.string "POKéMON TRAINER'S SCHOOL!\p"
